@@ -17,14 +17,16 @@ public struct DefineDependencyStatement {
         _dependency = dependency
     }
     
-    public func inSingletonScope() {
+    public func inSingletonScope() -> DefineDependencyStatement {
         let singletonDependency = SingletonDependency(dependency: _dependency)
         Container.setDependency(singletonDependency, forType: _type)
+        return self
     }
     
-    public func inCacheScope(interval interval: TimeInteval) {
+    public func inCacheScope(interval interval: TimeInterval) -> DefineDependencyStatement {
         let singletonDependency = CacheDependency(dependency: _dependency, interval: interval)
         Container.setDependency(singletonDependency, forType: _type)
+        return self
     }
     
     public func decorate(wrapper: (Dependency) -> Dependency) {

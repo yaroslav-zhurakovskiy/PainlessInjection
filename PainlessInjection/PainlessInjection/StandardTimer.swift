@@ -11,29 +11,45 @@ import Foundation
 public class StandardTimer: NSObject, TimerProtocol {
     public var delegate: TimerDelelgate?
     
-    private let _timeInterval: TimeInteval
-    private var _timer: NSTimer!
+    private let _timeInterval: TimeInterval
     
-    public init(interval: TimeInteval) {
+    public init(interval: TimeInterval) {
         _timeInterval = interval
-        _timer = nil
-        
         super.init()
-        
-        _timer = NSTimer.scheduledTimerWithTimeInterval(_timeInterval.timeInterval, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
+    }
+    
+    var _nstimer:NSTimer?
+    public var nstimer: NSTimer {
+        get {
+            if let timer = _nstimer {
+                return timer
+            }
+            return NSTimer(timeInterval: _timeInterval.timeInterval, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
+        }
+        set {
+            _nstimer = newValue
+        }
+    }
+    
+    public func start() {
+        self.nstimer.fire()
+    }
+    
+    public func stop() {
+        self.nstimer.invalidate()
     }
     
     deinit {
-        _timer.invalidate()
+        self.nstimer.invalidate()
     }
     
-    func onTimer() {
+    public func onTimer() {
         delegate?.onTick()
     }
 }
 
 public class StandardTimerFactory: TimerFactoryProtocol {
-    public func newTimerWithInterval(interval: TimeInteval) -> TimerProtocol {
+    public func newTimerWithInterval(interval: TimeInterval) -> TimerProtocol {
         return StandardTimer(interval: interval)
     }
 }

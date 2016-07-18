@@ -13,7 +13,7 @@ class CacheDependency: Dependency, TimerDelelgate {
     private var _value: Any!
     private var _dependency: Dependency
     private let _timer: TimerProtocol
-    init(dependency: Dependency, interval: TimeInteval) {
+    init(dependency: Dependency, interval: TimeInterval) {
         _dependency = dependency
         _timer = Timer.factory.newTimerWithInterval(interval)
         _timer.delegate = self
@@ -27,6 +27,7 @@ class CacheDependency: Dependency, TimerDelelgate {
         if _value == nil {
             objc_sync_enter(self)
             _value = _dependency.create(args)
+            _timer.start()
             objc_sync_exit(self)
         }
         return _value;
@@ -34,5 +35,6 @@ class CacheDependency: Dependency, TimerDelelgate {
     
     func onTick() {
         _value = nil
+        _timer.stop()
     }
 }

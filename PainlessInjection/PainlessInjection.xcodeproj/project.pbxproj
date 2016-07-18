@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		047CD6E523B8128B0551EF93 /* Pods_PainlessInjection_PainlessInjectionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED8A06520EB5C31D129C73F /* Pods_PainlessInjection_PainlessInjectionTests.framework */; };
+		C4251EE71D3D4201005C5A57 /* OnDemandDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4251EE61D3D4201005C5A57 /* OnDemandDependency.swift */; };
+		C4251EE91D3D4657005C5A57 /* StandardTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4251EE81D3D4657005C5A57 /* StandardTimerTests.swift */; };
 		C4466D151D3D2761008D0A80 /* ModuleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4466D141D3D2761008D0A80 /* ModuleLoader.swift */; };
 		C4A0CFCB1D3CF88F00BCEC00 /* ArgumentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFBC1D3CF88F00BCEC00 /* ArgumentList.swift */; };
 		C4A0CFCC1D3CF88F00BCEC00 /* CacheDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFBD1D3CF88F00BCEC00 /* CacheDependency.swift */; };
@@ -21,7 +23,7 @@
 		C4A0CFD51D3CF88F00BCEC00 /* SingletonDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFC61D3CF88F00BCEC00 /* SingletonDependency.swift */; };
 		C4A0CFD61D3CF88F00BCEC00 /* StandardFatalErrorNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFC71D3CF88F00BCEC00 /* StandardFatalErrorNotifier.swift */; };
 		C4A0CFD71D3CF88F00BCEC00 /* StandardTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFC81D3CF88F00BCEC00 /* StandardTimer.swift */; };
-		C4A0CFD81D3CF88F00BCEC00 /* TimeInteval.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFC91D3CF88F00BCEC00 /* TimeInteval.swift */; };
+		C4A0CFD81D3CF88F00BCEC00 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFC91D3CF88F00BCEC00 /* TimeInterval.swift */; };
 		C4A0CFD91D3CF88F00BCEC00 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFCA1D3CF88F00BCEC00 /* Timer.swift */; };
 		C4A0D00B1D3CFB8E00BCEC00 /* ArgumentListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFDB1D3CF89700BCEC00 /* ArgumentListTests.swift */; };
 		C4A0D00C1D3CFB8E00BCEC00 /* ContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFDC1D3CF89700BCEC00 /* ContainerTests.swift */; };
@@ -49,6 +51,8 @@
 		5F6CB7F1DCD19AA2473C6096 /* Pods-PainlessInjection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PainlessInjection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PainlessInjection/Pods-PainlessInjection.debug.xcconfig"; sourceTree = "<group>"; };
 		A594AFA22154B33BAD7AB162 /* Pods_PainlessInjection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PainlessInjection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE4F60DB130F49109E1B72DD /* Pods-PainlessInjection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PainlessInjection.release.xcconfig"; path = "Pods/Target Support Files/Pods-PainlessInjection/Pods-PainlessInjection.release.xcconfig"; sourceTree = "<group>"; };
+		C4251EE61D3D4201005C5A57 /* OnDemandDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnDemandDependency.swift; sourceTree = "<group>"; };
+		C4251EE81D3D4657005C5A57 /* StandardTimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardTimerTests.swift; sourceTree = "<group>"; };
 		C4466D141D3D2761008D0A80 /* ModuleLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleLoader.swift; sourceTree = "<group>"; };
 		C4A0CFBC1D3CF88F00BCEC00 /* ArgumentList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArgumentList.swift; sourceTree = "<group>"; };
 		C4A0CFBD1D3CF88F00BCEC00 /* CacheDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheDependency.swift; sourceTree = "<group>"; };
@@ -63,7 +67,7 @@
 		C4A0CFC61D3CF88F00BCEC00 /* SingletonDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingletonDependency.swift; sourceTree = "<group>"; };
 		C4A0CFC71D3CF88F00BCEC00 /* StandardFatalErrorNotifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardFatalErrorNotifier.swift; sourceTree = "<group>"; };
 		C4A0CFC81D3CF88F00BCEC00 /* StandardTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardTimer.swift; sourceTree = "<group>"; };
-		C4A0CFC91D3CF88F00BCEC00 /* TimeInteval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeInteval.swift; sourceTree = "<group>"; };
+		C4A0CFC91D3CF88F00BCEC00 /* TimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
 		C4A0CFCA1D3CF88F00BCEC00 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		C4A0CFDB1D3CF89700BCEC00 /* ArgumentListTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArgumentListTests.swift; sourceTree = "<group>"; };
 		C4A0CFDC1D3CF89700BCEC00 /* ContainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerTests.swift; sourceTree = "<group>"; };
@@ -125,9 +129,10 @@
 				C4A0CFC61D3CF88F00BCEC00 /* SingletonDependency.swift */,
 				C4A0CFC71D3CF88F00BCEC00 /* StandardFatalErrorNotifier.swift */,
 				C4A0CFC81D3CF88F00BCEC00 /* StandardTimer.swift */,
-				C4A0CFC91D3CF88F00BCEC00 /* TimeInteval.swift */,
+				C4A0CFC91D3CF88F00BCEC00 /* TimeInterval.swift */,
 				C4A0CFCA1D3CF88F00BCEC00 /* Timer.swift */,
 				C4466D141D3D2761008D0A80 /* ModuleLoader.swift */,
+				C4251EE61D3D4201005C5A57 /* OnDemandDependency.swift */,
 			);
 			path = PainlessInjection;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 				C4A0CFE01D3CF89700BCEC00 /* ModuleLoadingTests.swift */,
 				C4A0CFE11D3CF89700BCEC00 /* TimeIntervalTests.swift */,
 				C4A0CFE21D3CF89700BCEC00 /* TimerTests.swift */,
+				C4251EE81D3D4657005C5A57 /* StandardTimerTests.swift */,
 			);
 			path = PainlessInjectionTests;
 			sourceTree = "<group>";
@@ -373,6 +379,7 @@
 				C4A0CFCB1D3CF88F00BCEC00 /* ArgumentList.swift in Sources */,
 				C4A0CFCF1D3CF88F00BCEC00 /* Dependency.swift in Sources */,
 				C4A0CFCE1D3CF88F00BCEC00 /* DefineConfigurator.swift in Sources */,
+				C4251EE71D3D4201005C5A57 /* OnDemandDependency.swift in Sources */,
 				C4A0CFD91D3CF88F00BCEC00 /* Timer.swift in Sources */,
 				C4A0CFD61D3CF88F00BCEC00 /* StandardFatalErrorNotifier.swift in Sources */,
 				C4466D151D3D2761008D0A80 /* ModuleLoader.swift in Sources */,
@@ -381,7 +388,7 @@
 				C4A0CFD31D3CF88F00BCEC00 /* ModuleLoadingPredicate.swift in Sources */,
 				C4A0CFD21D3CF88F00BCEC00 /* Module.swift in Sources */,
 				C4A0CFCD1D3CF88F00BCEC00 /* Container.swift in Sources */,
-				C4A0CFD81D3CF88F00BCEC00 /* TimeInteval.swift in Sources */,
+				C4A0CFD81D3CF88F00BCEC00 /* TimeInterval.swift in Sources */,
 				C4A0CFCC1D3CF88F00BCEC00 /* CacheDependency.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4251EE91D3D4657005C5A57 /* StandardTimerTests.swift in Sources */,
 				C4A0D00B1D3CFB8E00BCEC00 /* ArgumentListTests.swift in Sources */,
 				C4A0D0111D3CFB8E00BCEC00 /* TimerTests.swift in Sources */,
 				C4A0D00F1D3CFB8E00BCEC00 /* ModuleLoadingTests.swift in Sources */,

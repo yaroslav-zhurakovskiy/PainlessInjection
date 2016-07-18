@@ -1,5 +1,5 @@
 //
-//  TimeInteval.swift
+//  TimeInterval.swift
 //  PainlessInjection
 //
 //  Created by Yaroslav Zhurakovskiy on 7/12/16.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct TimeInteval {
+public struct TimeInterval {
     private let _timeInterval: Double
     
     public init(seconds: Int) {

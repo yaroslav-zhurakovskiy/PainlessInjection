@@ -13,12 +13,15 @@ public protocol TimerDelelgate: class {
 }
 
 public protocol TimerProtocol {
-    weak var delegate: TimerDelelgate? { get set }    
+    weak var delegate: TimerDelelgate? { get set }
+    
+    func start()
+    func stop()
 }
 
 
 public protocol TimerFactoryProtocol {
-    func newTimerWithInterval(interval: TimeInteval) -> TimerProtocol
+    func newTimerWithInterval(interval: TimeInterval) -> TimerProtocol
 }
 
 public struct Timer {

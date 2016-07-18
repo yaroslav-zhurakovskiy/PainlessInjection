@@ -12,9 +12,9 @@ import PainlessInjection
 class TimerTests: XCTestCase {
     
     func testShouldHaveDefaultTimer() {
-        let timer = Timer.factory.newTimerWithInterval(TimeInteval(minutes: 1))
+        let timer = Timer.factory.newTimerWithInterval(TimeInterval(minutes: 1))
         
-        XCTAssertTrue(timer is StandardTimer)
+        XCTAssertTrue(timer is StandardTimer, "Expected StandardTimer but got \(timer.self)")
     }
 
 }

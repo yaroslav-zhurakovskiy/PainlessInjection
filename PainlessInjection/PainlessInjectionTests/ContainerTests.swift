@@ -188,7 +188,7 @@ class ContainerTests: XCTestCase {
     func testShouldCreateDependencyWithCachedScope() {
         class TestModule: Module {
             override func load() {
-                define(Service.self) { Service() } . inCacheScope(interval: TimeInteval(seconds: 60))
+                define(Service.self) { Service() } . inCacheScope(interval: TimeInterval(seconds: 60))
             }
         }
         let module = TestModule()
@@ -199,10 +199,13 @@ class ContainerTests: XCTestCase {
         XCTAssertEqual(s1.id, 1, "Should have the same id until cache is valid")
         XCTAssertEqual(s2.id, 1, "Should have the same id until cache is valid")
 
+        timer.assertStartWasCalledTimes(1)
         timer.timeout()
+        timer.assertStopWasCalledOnce()
 
         let s3: Service = Container.get()
         XCTAssertEqual(s3.id, 2, "Should have a new service.")
+        timer.assertStartWasCalledTimes(2)
     }
 
     func testShouldReturnDefineConfigurator() {
@@ -217,5 +220,50 @@ class ContainerTests: XCTestCase {
         module.load()
 
         XCTAssertNotNil(module.configurator)
+    }
+    
+    func testWhenUseSimpleDependencyShouldReturnCorrectDependencyType() {
+        class TestModule: ModuleWithDependency {
+            override func load() {
+                define(String.self) { "Hello" } . decorate { dependency in
+                    self.dependency = dependency
+                    return dependency
+                }
+            }
+        }
+        let module = TestModule()
+        module.load()
+        
+        module.assertDependencyType(String.self)
+    }
+    
+    func testWhenUseSingletoneScopeShouldReturnCorrectDependencyType() {
+        class TestModule: ModuleWithDependency {
+            override func load() {
+                define(String.self) { "Hello" } . inSingletonScope() . decorate { dependency in
+                    self.dependency = dependency
+                    return dependency
+                }
+            }
+        }
+        let module = TestModule()
+        module.load()
+        
+        module.assertDependencyType(String.self)
+    }
+    
+    func testWhenUseCacheScopeShouldReturnCorrectDependencyType() {
+        class TestModule: ModuleWithDependency {
+            override func load() {
+                define(String.self) { "Hello" } . inCacheScope(interval: TimeInterval(minutes: 1)) . decorate { dependency in
+                    self.dependency = dependency
+                    return dependency
+                }
+            }
+        }
+        let module = TestModule()
+        module.load()
+        
+        module.assertDependencyType(String.self)
     }
 }

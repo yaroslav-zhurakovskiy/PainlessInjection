@@ -95,6 +95,24 @@ class FakeTimer: TimerProtocol {
     func timeout() {
         delegate?.onTick()
     }
+    
+    var startWasCalledTimes: Int = 0
+    func start() {
+        startWasCalledTimes += 1
+    }
+    
+    var stopWasCalledTimes: Int = 0
+    func stop() {
+        stopWasCalledTimes += 1
+    }
+    
+    func assertStartWasCalledTimes(times: Int, file: StaticString = #file, line: UInt = #line) {
+        XCTAssertTrue(startWasCalledTimes == times, "Expected start() to be called \(times). But was called \(startWasCalledTimes).", file: file, line: line)
+    }
+    
+    func assertStopWasCalledOnce(file: StaticString = #file, line: UInt = #line) {
+        XCTAssertTrue(stopWasCalledTimes == 1, "Expected stop() to be called once. But was called \(startWasCalledTimes).", file: file, line: line)
+    }
 }
 
 class FakeTimerFactory: TimerFactoryProtocol {
@@ -102,7 +120,69 @@ class FakeTimerFactory: TimerFactoryProtocol {
     init(timer: FakeTimer) {
         _timer = timer
     }
-    func newTimerWithInterval(interval: TimeInteval) -> TimerProtocol {
+    func newTimerWithInterval(interval: TimeInterval) -> TimerProtocol {
         return _timer
+    }
+}
+
+class ModuleWithDependency : Module {
+    var dependency: Dependency!
+    override func load() {
+        define(String.self) { "Hello" } . decorate { dependency in
+            self.dependency = dependency
+            return dependency
+        }
+    }
+    
+    func assertDependencyType(type: Any.Type, file: StaticString = #file, line: UInt = #line) {
+        XCTAssertTrue(dependency.type == type, "Type should be String but got \(dependency.type)", file: file, line: line)
+
+    }
+}
+
+class FakeTimerDelegate: TimerDelelgate {
+    
+    private  var calls: Int = 0
+    
+    func onTick() {
+        calls += 1
+    }
+    
+    func assertCallOnTickOnce(file: StaticString = #file, line: UInt = #line) {
+        XCTAssertTrue(calls == 1, "Expected onTick to be called once. But was called \(calls).", file: file, line: line)
+    }
+}
+
+class FakeNSTimer: NSTimer {
+    var spyTarget: AnyObject
+    var spySelector: Selector
+    var spyFireDate: NSDate
+    var spyInterval: NSTimeInterval
+    
+    override init(fireDate date: NSDate, interval ti: NSTimeInterval, target t: AnyObject, selector s: Selector, userInfo ui: AnyObject?, repeats rep: Bool) {
+        self.spyTarget = t
+        self.spySelector = s
+        self.spyFireDate = date
+        self.spyInterval = ti
+        super.init(fireDate: date, interval: ti, target: t, selector: s, userInfo: ui, repeats: rep)
+    }
+    
+    var fireWasCalledTimes: Int = 0
+    override func fire() {
+        fireWasCalledTimes += 1
+        
+        //        self.spyTarget.performSelector(self.spySelector)
+        
+    }
+    func assertFireWasCallTimes(times: Int, file: StaticString = #file, line: UInt = #line) {
+        XCTAssertTrue(fireWasCalledTimes == times, "Expected fire() to be called \(times). But was called \(fireWasCalledTimes).", file: file, line: line)
+    }
+    
+    var invalidateWasCalledTimes: Int = 0
+    override func invalidate() {
+        invalidateWasCalledTimes += 1
+    }
+    func assertInvalidateCallTimes(times: Int, file: StaticString = #file, line: UInt = #line) {
+        XCTAssertTrue(invalidateWasCalledTimes == times, "Expected fire() to be called \(times). But was called \(invalidateWasCalledTimes).", file: file, line: line)
     }
 }

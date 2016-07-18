@@ -23,7 +23,6 @@ class ModuleLoader {
             objc_getClassList(classes, numberOfClasses)
             for index in 0..<Int(numberOfClasses) {
                 if let cls: AnyClass = classes[index] {
-                    if class_isMetaClass(cls) { continue }
                     if class_getSuperclass(cls) != Module.self { continue }
                     if  let moduleClass = cls as? Module.Type {
                         let module: Module = moduleClass.init()
