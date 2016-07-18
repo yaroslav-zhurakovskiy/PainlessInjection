@@ -7,142 +7,77 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1138BAD849BD2B3ABE8C6A3786AF4C59 /* PIModuleLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7A404978BCAD8E8E6E6AF6CEB15F17 /* PIModuleLoader.m */; };
-		22039910E567C53C2DD25B1A483E93E6 /* PainlessInjectionLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 21BD759BD84EA68BEBA2F045C198990F /* PainlessInjectionLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		56BA0563177709B44D56D1FE225E7ACA /* Pods-PainlessInjection-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E1B8CF92FBE81445CE478BF98A563A /* Pods-PainlessInjection-dummy.m */; };
-		5B6F005D9E031B463F2611117423C86D /* PainlessInjectionLoader-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F4ADD31DA81AC2457391022519669A57 /* PainlessInjectionLoader-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6C4C3D0B2BE4F550885AF0FAE725BACF /* Pods-PainlessInjection-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EDFEDFC976A115180D2081BC4141461 /* Pods-PainlessInjection-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		75BB697BA63DDF0FA3FA0E70AE2D6582 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		89309C4F48EEAD382BF5817BABC67EA4 /* Pods-PainlessInjectionTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4349C0A40E019A7C0C1BC61D21D252 /* Pods-PainlessInjectionTests-dummy.m */; };
-		8A117E79DBD355231171B311E1B5E85C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		B894B6AEE3649E25A0F539E5AF84D746 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		BBB328E13B3140494B356F67523B1173 /* PIModuleLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D991DF3935DBCE3A8911C5950A4EAF0 /* PIModuleLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E887B2C2A5B4A2D8EC8154CF07FE70AA /* Pods-PainlessInjectionTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 943BFD9FFEDDDC9E35A09F3EA4807A42 /* Pods-PainlessInjectionTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EE2D4645DDF2443525897ECF69915897 /* PainlessInjectionLoader-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF1037C68E8380B82D35812320903C /* PainlessInjectionLoader-dummy.m */; };
+		02B717BFD9FBDBCFD65C3B80B1A04EFB /* Pods-PainlessInjection-PainlessInjectionTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1E6E9EF69A22416A2B7CECD8C1E3A5 /* Pods-PainlessInjection-PainlessInjectionTests-dummy.m */; };
+		A71ED162A71A27033A7A7E5A636A04A2 /* Pods-PainlessInjection-PainlessInjectionTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E75455D637F15DB13B1619141E19743A /* Pods-PainlessInjection-PainlessInjectionTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A8EE8753FE5ECF6BEA1FD8556F069A15 /* Pods-PainlessInjection-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB090682F11C2370FD6A4329A06D17A /* Pods-PainlessInjection-dummy.m */; };
+		B7369194AF8DA619832F40DB1DEDE41D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		E053E7F6845EB59184D7B0FFBEFED0AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		F30077BEBAE4428A5BE085305C126F2C /* Pods-PainlessInjection-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E396AD8F61020AFEE36C8E436F4D2121 /* Pods-PainlessInjection-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		6F52F671CAF99FC601254C4042F8A446 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2F7597B46B4A3C1BA4CCE65BDCBA15C4;
-			remoteInfo = PainlessInjectionLoader;
-		};
-		7069605731ED769809C02EC1CD10EAF0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2F7597B46B4A3C1BA4CCE65BDCBA15C4;
-			remoteInfo = PainlessInjectionLoader;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		04A7FDEF6EB805A35EF8EC0788BCF646 /* Pods_PainlessInjection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PainlessInjection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A89037F80BD1CDE0038B48C4C57EF86 /* PainlessInjectionLoader-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PainlessInjectionLoader-prefix.pch"; sourceTree = "<group>"; };
-		21BD759BD84EA68BEBA2F045C198990F /* PainlessInjectionLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PainlessInjectionLoader.h; sourceTree = "<group>"; };
-		2D991DF3935DBCE3A8911C5950A4EAF0 /* PIModuleLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PIModuleLoader.h; sourceTree = "<group>"; };
-		463D13B71C99C6DFDD819608A26C6144 /* Pods-PainlessInjection-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PainlessInjection-resources.sh"; sourceTree = "<group>"; };
-		488683555B5BEBE19E1BEA3F3883B205 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4ACF1037C68E8380B82D35812320903C /* PainlessInjectionLoader-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PainlessInjectionLoader-dummy.m"; sourceTree = "<group>"; };
-		4EDFEDFC976A115180D2081BC4141461 /* Pods-PainlessInjection-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PainlessInjection-umbrella.h"; sourceTree = "<group>"; };
-		4F4349C0A40E019A7C0C1BC61D21D252 /* Pods-PainlessInjectionTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PainlessInjectionTests-dummy.m"; sourceTree = "<group>"; };
-		5EEA9F197771843DFA5ED12927D8E5A6 /* Pods-PainlessInjection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PainlessInjection.release.xcconfig"; sourceTree = "<group>"; };
-		681379527BC55CA95238C3878777AE17 /* Pods-PainlessInjection.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PainlessInjection.modulemap"; sourceTree = "<group>"; };
-		6D6A6ABCB5C423CE13570D751FF43C6F /* Pods-PainlessInjectionTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PainlessInjectionTests-resources.sh"; sourceTree = "<group>"; };
-		71599FBEFE9EEF1B8492FCC9A3429AA8 /* PainlessInjectionLoader.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PainlessInjectionLoader.xcconfig; sourceTree = "<group>"; };
-		83967D1878BCB165DB91238E030D60B3 /* Pods-PainlessInjection-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PainlessInjection-acknowledgements.plist"; sourceTree = "<group>"; };
+		0EF5574A69A50126942E2635D8CE43CB /* Pods-PainlessInjection-PainlessInjectionTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PainlessInjection-PainlessInjectionTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		105AA5327DD8321F423AD9B54C9C5619 /* Pods-PainlessInjection-PainlessInjectionTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PainlessInjection-PainlessInjectionTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1AE9991BE9D3C42BA241C87C4A59EE92 /* Pods-PainlessInjection-PainlessInjectionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PainlessInjection-PainlessInjectionTests.release.xcconfig"; sourceTree = "<group>"; };
+		36EF48766B5B7DB1E3440E4C06CFDD02 /* Pods-PainlessInjection-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PainlessInjection-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5786EC999DDA9DADEA1CBFAA8B4E4D64 /* Pods_PainlessInjection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PainlessInjection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AFFF8074B4EF5A760A42028019A88F7 /* Pods-PainlessInjection-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PainlessInjection-resources.sh"; sourceTree = "<group>"; };
+		5B43AE8AEBAEFB2702ABAC9D2A650D91 /* Pods-PainlessInjection-PainlessInjectionTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PainlessInjection-PainlessInjectionTests.modulemap"; sourceTree = "<group>"; };
+		5C05675D82338719F47807CBFE15C3FA /* Pods-PainlessInjection-PainlessInjectionTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PainlessInjection-PainlessInjectionTests-resources.sh"; sourceTree = "<group>"; };
+		67D6E41FE659C7A3E7334CD759AE0F06 /* Pods-PainlessInjection-PainlessInjectionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PainlessInjection-PainlessInjectionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6E99A2888795CC8E3D4F225CEB858B53 /* Pods-PainlessInjection-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PainlessInjection-acknowledgements.plist"; sourceTree = "<group>"; };
+		764EF553C8BDD470245ECB09CDF53707 /* Pods-PainlessInjection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PainlessInjection.debug.xcconfig"; sourceTree = "<group>"; };
+		7CB090682F11C2370FD6A4329A06D17A /* Pods-PainlessInjection-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PainlessInjection-dummy.m"; sourceTree = "<group>"; };
+		85E815CC6B4342ECB68558B273ECC345 /* Pods-PainlessInjection-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PainlessInjection-frameworks.sh"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		943BFD9FFEDDDC9E35A09F3EA4807A42 /* Pods-PainlessInjectionTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PainlessInjectionTests-umbrella.h"; sourceTree = "<group>"; };
-		99E1B8CF92FBE81445CE478BF98A563A /* Pods-PainlessInjection-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PainlessInjection-dummy.m"; sourceTree = "<group>"; };
-		A4AC4DCEE8C37168302D66589E0DAC13 /* Pods-PainlessInjectionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PainlessInjectionTests.release.xcconfig"; sourceTree = "<group>"; };
-		A7619EA186109922CFC7BD1AE11EDD90 /* Pods-PainlessInjectionTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PainlessInjectionTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		A7CC6B99DDF47655B905AEECA3477FF0 /* PainlessInjectionLoader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PainlessInjectionLoader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC7985ED6C988C81711330CF27618796 /* Pods-PainlessInjection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PainlessInjection.debug.xcconfig"; sourceTree = "<group>"; };
-		B55B6A5A1801AC10FA0AA06263C3E64F /* Pods-PainlessInjectionTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PainlessInjectionTests-frameworks.sh"; sourceTree = "<group>"; };
-		C9D4B252941070714BB049C13483FFE0 /* PainlessInjectionLoader.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PainlessInjectionLoader.modulemap; sourceTree = "<group>"; };
-		CBE3CA26F0D1BA3F5793F2ABBDFCE976 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CC48E7581267A3147AEDF57354EA42BF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE7A404978BCAD8E8E6E6AF6CEB15F17 /* PIModuleLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PIModuleLoader.m; sourceTree = "<group>"; };
+		97158C54F46D0194EFA91A3DE992855B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98C0FCCC80522D5FECE4B1267BA25FBE /* Pods-PainlessInjection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PainlessInjection.release.xcconfig"; sourceTree = "<group>"; };
+		BCDAD0E40E24119988D21F62D31EC2E4 /* Pods_PainlessInjection_PainlessInjectionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PainlessInjection_PainlessInjectionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C83647E62A95F123DF05DCF4CC594EC1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D1F27699681EF63EB4DD9A7799A42AAC /* Pods-PainlessInjection-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PainlessInjection-frameworks.sh"; sourceTree = "<group>"; };
-		D6DC3C68C069DD5EA5E3DA6078D0F5F4 /* Pods-PainlessInjection-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PainlessInjection-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DEF2A0F5AE6073D2FE68AD081302BF03 /* Pods_PainlessInjectionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PainlessInjectionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1D647BED031BD1F5FF6873D164A7A47 /* Pods-PainlessInjectionTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PainlessInjectionTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E53457B4E8847AE1FB9ECD8C8778DE3E /* Pods-PainlessInjectionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PainlessInjectionTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F4ADD31DA81AC2457391022519669A57 /* PainlessInjectionLoader-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PainlessInjectionLoader-umbrella.h"; sourceTree = "<group>"; };
-		F8D1EF8F7178808B487874FB7081EF40 /* Pods-PainlessInjectionTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PainlessInjectionTests.modulemap"; sourceTree = "<group>"; };
+		E071A733EC1A8BE7F9121278E215CC04 /* Pods-PainlessInjection-PainlessInjectionTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PainlessInjection-PainlessInjectionTests-frameworks.sh"; sourceTree = "<group>"; };
+		E396AD8F61020AFEE36C8E436F4D2121 /* Pods-PainlessInjection-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PainlessInjection-umbrella.h"; sourceTree = "<group>"; };
+		E75455D637F15DB13B1619141E19743A /* Pods-PainlessInjection-PainlessInjectionTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PainlessInjection-PainlessInjectionTests-umbrella.h"; sourceTree = "<group>"; };
+		F90E08A7795850EB5E71F14E11544546 /* Pods-PainlessInjection.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PainlessInjection.modulemap"; sourceTree = "<group>"; };
+		FD1E6E9EF69A22416A2B7CECD8C1E3A5 /* Pods-PainlessInjection-PainlessInjectionTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PainlessInjection-PainlessInjectionTests-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		95B364B0871774E524CBEC3605830054 /* Frameworks */ = {
+		4CB1FC3BDE3572B856E9A21594DC41BC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A117E79DBD355231171B311E1B5E85C /* Foundation.framework in Frameworks */,
+				B7369194AF8DA619832F40DB1DEDE41D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C8112EB1E1BADA2D1D1C7CB0FEDDE21 /* Frameworks */ = {
+		5C4BD2E1A6A12D9F04D9DF4B9C99FE56 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B894B6AEE3649E25A0F539E5AF84D746 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EDFFEB66B93D5B67917F0B0A4A7DD582 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				75BB697BA63DDF0FA3FA0E70AE2D6582 /* Foundation.framework in Frameworks */,
+				E053E7F6845EB59184D7B0FFBEFED0AB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		01B82F48E8CCF780C7C942297EEADA51 /* Support Files */ = {
+		374F3251668ABBA14ADFF3D3188B7104 /* Pods-PainlessInjection-PainlessInjectionTests */ = {
 			isa = PBXGroup;
 			children = (
-				488683555B5BEBE19E1BEA3F3883B205 /* Info.plist */,
-				C9D4B252941070714BB049C13483FFE0 /* PainlessInjectionLoader.modulemap */,
-				71599FBEFE9EEF1B8492FCC9A3429AA8 /* PainlessInjectionLoader.xcconfig */,
-				4ACF1037C68E8380B82D35812320903C /* PainlessInjectionLoader-dummy.m */,
-				0A89037F80BD1CDE0038B48C4C57EF86 /* PainlessInjectionLoader-prefix.pch */,
-				F4ADD31DA81AC2457391022519669A57 /* PainlessInjectionLoader-umbrella.h */,
+				97158C54F46D0194EFA91A3DE992855B /* Info.plist */,
+				5B43AE8AEBAEFB2702ABAC9D2A650D91 /* Pods-PainlessInjection-PainlessInjectionTests.modulemap */,
+				105AA5327DD8321F423AD9B54C9C5619 /* Pods-PainlessInjection-PainlessInjectionTests-acknowledgements.markdown */,
+				0EF5574A69A50126942E2635D8CE43CB /* Pods-PainlessInjection-PainlessInjectionTests-acknowledgements.plist */,
+				FD1E6E9EF69A22416A2B7CECD8C1E3A5 /* Pods-PainlessInjection-PainlessInjectionTests-dummy.m */,
+				E071A733EC1A8BE7F9121278E215CC04 /* Pods-PainlessInjection-PainlessInjectionTests-frameworks.sh */,
+				5C05675D82338719F47807CBFE15C3FA /* Pods-PainlessInjection-PainlessInjectionTests-resources.sh */,
+				E75455D637F15DB13B1619141E19743A /* Pods-PainlessInjection-PainlessInjectionTests-umbrella.h */,
+				67D6E41FE659C7A3E7334CD759AE0F06 /* Pods-PainlessInjection-PainlessInjectionTests.debug.xcconfig */,
+				1AE9991BE9D3C42BA241C87C4A59EE92 /* Pods-PainlessInjection-PainlessInjectionTests.release.xcconfig */,
 			);
-			name = "Support Files";
-			path = "../PainlessInjection/PainlessInjection/Pods/Target Support Files/PainlessInjectionLoader";
-			sourceTree = "<group>";
-		};
-		0D5B7DF8BC668D72491456A0800A18EB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A7CC6B99DDF47655B905AEECA3477FF0 /* PainlessInjectionLoader.framework */,
-				04A7FDEF6EB805A35EF8EC0788BCF646 /* Pods_PainlessInjection.framework */,
-				DEF2A0F5AE6073D2FE68AD081302BF03 /* Pods_PainlessInjectionTests.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		11E923D6577140AD9F7F134E640B2DD6 /* Pods-PainlessInjectionTests */ = {
-			isa = PBXGroup;
-			children = (
-				CC48E7581267A3147AEDF57354EA42BF /* Info.plist */,
-				F8D1EF8F7178808B487874FB7081EF40 /* Pods-PainlessInjectionTests.modulemap */,
-				E1D647BED031BD1F5FF6873D164A7A47 /* Pods-PainlessInjectionTests-acknowledgements.markdown */,
-				A7619EA186109922CFC7BD1AE11EDD90 /* Pods-PainlessInjectionTests-acknowledgements.plist */,
-				4F4349C0A40E019A7C0C1BC61D21D252 /* Pods-PainlessInjectionTests-dummy.m */,
-				B55B6A5A1801AC10FA0AA06263C3E64F /* Pods-PainlessInjectionTests-frameworks.sh */,
-				6D6A6ABCB5C423CE13570D751FF43C6F /* Pods-PainlessInjectionTests-resources.sh */,
-				943BFD9FFEDDDC9E35A09F3EA4807A42 /* Pods-PainlessInjectionTests-umbrella.h */,
-				E53457B4E8847AE1FB9ECD8C8778DE3E /* Pods-PainlessInjectionTests.debug.xcconfig */,
-				A4AC4DCEE8C37168302D66589E0DAC13 /* Pods-PainlessInjectionTests.release.xcconfig */,
-			);
-			name = "Pods-PainlessInjectionTests";
-			path = "Target Support Files/Pods-PainlessInjectionTests";
+			name = "Pods-PainlessInjection-PainlessInjectionTests";
+			path = "Target Support Files/Pods-PainlessInjection-PainlessInjectionTests";
 			sourceTree = "<group>";
 		};
 		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
@@ -153,61 +88,41 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		5210742BB266357D648EB601D00DB316 /* Pods-PainlessInjection */ = {
+		44930F7E66758C23B1C6ED95C7E55312 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				CBE3CA26F0D1BA3F5793F2ABBDFCE976 /* Info.plist */,
-				681379527BC55CA95238C3878777AE17 /* Pods-PainlessInjection.modulemap */,
-				D6DC3C68C069DD5EA5E3DA6078D0F5F4 /* Pods-PainlessInjection-acknowledgements.markdown */,
-				83967D1878BCB165DB91238E030D60B3 /* Pods-PainlessInjection-acknowledgements.plist */,
-				99E1B8CF92FBE81445CE478BF98A563A /* Pods-PainlessInjection-dummy.m */,
-				D1F27699681EF63EB4DD9A7799A42AAC /* Pods-PainlessInjection-frameworks.sh */,
-				463D13B71C99C6DFDD819608A26C6144 /* Pods-PainlessInjection-resources.sh */,
-				4EDFEDFC976A115180D2081BC4141461 /* Pods-PainlessInjection-umbrella.h */,
-				AC7985ED6C988C81711330CF27618796 /* Pods-PainlessInjection.debug.xcconfig */,
-				5EEA9F197771843DFA5ED12927D8E5A6 /* Pods-PainlessInjection.release.xcconfig */,
+				57B323C64C2EC696842D56D1CEDE4949 /* Pods-PainlessInjection */,
+				374F3251668ABBA14ADFF3D3188B7104 /* Pods-PainlessInjection-PainlessInjectionTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		57B323C64C2EC696842D56D1CEDE4949 /* Pods-PainlessInjection */ = {
+			isa = PBXGroup;
+			children = (
+				C83647E62A95F123DF05DCF4CC594EC1 /* Info.plist */,
+				F90E08A7795850EB5E71F14E11544546 /* Pods-PainlessInjection.modulemap */,
+				36EF48766B5B7DB1E3440E4C06CFDD02 /* Pods-PainlessInjection-acknowledgements.markdown */,
+				6E99A2888795CC8E3D4F225CEB858B53 /* Pods-PainlessInjection-acknowledgements.plist */,
+				7CB090682F11C2370FD6A4329A06D17A /* Pods-PainlessInjection-dummy.m */,
+				85E815CC6B4342ECB68558B273ECC345 /* Pods-PainlessInjection-frameworks.sh */,
+				5AFFF8074B4EF5A760A42028019A88F7 /* Pods-PainlessInjection-resources.sh */,
+				E396AD8F61020AFEE36C8E436F4D2121 /* Pods-PainlessInjection-umbrella.h */,
+				764EF553C8BDD470245ECB09CDF53707 /* Pods-PainlessInjection.debug.xcconfig */,
+				98C0FCCC80522D5FECE4B1267BA25FBE /* Pods-PainlessInjection.release.xcconfig */,
 			);
 			name = "Pods-PainlessInjection";
 			path = "Target Support Files/Pods-PainlessInjection";
-			sourceTree = "<group>";
-		};
-		65E561E3A6DC0E8108274BE7D0067691 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8C42C453C8AFE8B64B777795209A566D /* PainlessInjectionLoader */,
-			);
-			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				65E561E3A6DC0E8108274BE7D0067691 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				0D5B7DF8BC668D72491456A0800A18EB /* Products */,
-				F4BECE5F3A8624B1DC45655957DFF9BD /* Targets Support Files */,
+				F8236EBC4A8E2B71F3C177CB39E0B9F5 /* Products */,
+				44930F7E66758C23B1C6ED95C7E55312 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		83260EDE8517E937E263058D6D5FEC02 /* PainlessInjectionLoader */ = {
-			isa = PBXGroup;
-			children = (
-				21BD759BD84EA68BEBA2F045C198990F /* PainlessInjectionLoader.h */,
-				2D991DF3935DBCE3A8911C5950A4EAF0 /* PIModuleLoader.h */,
-				CE7A404978BCAD8E8E6E6AF6CEB15F17 /* PIModuleLoader.m */,
-			);
-			path = PainlessInjectionLoader;
-			sourceTree = "<group>";
-		};
-		8C42C453C8AFE8B64B777795209A566D /* PainlessInjectionLoader */ = {
-			isa = PBXGroup;
-			children = (
-				83260EDE8517E937E263058D6D5FEC02 /* PainlessInjectionLoader */,
-				01B82F48E8CCF780C7C942297EEADA51 /* Support Files */,
-			);
-			name = PainlessInjectionLoader;
-			path = ../../../PainlessInjectionLoader;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -218,98 +133,69 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F4BECE5F3A8624B1DC45655957DFF9BD /* Targets Support Files */ = {
+		F8236EBC4A8E2B71F3C177CB39E0B9F5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5210742BB266357D648EB601D00DB316 /* Pods-PainlessInjection */,
-				11E923D6577140AD9F7F134E640B2DD6 /* Pods-PainlessInjectionTests */,
+				5786EC999DDA9DADEA1CBFAA8B4E4D64 /* Pods_PainlessInjection.framework */,
+				BCDAD0E40E24119988D21F62D31EC2E4 /* Pods_PainlessInjection_PainlessInjectionTests.framework */,
 			);
-			name = "Targets Support Files";
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1016517D6E8750F32D994DEF1745BFBD /* Headers */ = {
+		B580D01A791C816FC10EB14415DC6074 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E887B2C2A5B4A2D8EC8154CF07FE70AA /* Pods-PainlessInjectionTests-umbrella.h in Headers */,
+				A71ED162A71A27033A7A7E5A636A04A2 /* Pods-PainlessInjection-PainlessInjectionTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		992F9A3DC0149E3B96A265EFFF26B7A5 /* Headers */ = {
+		E90E63BABD4669D5E44142D170C641D6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C4C3D0B2BE4F550885AF0FAE725BACF /* Pods-PainlessInjection-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F14B754582F3DFAA8A9A8500E1673996 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5B6F005D9E031B463F2611117423C86D /* PainlessInjectionLoader-umbrella.h in Headers */,
-				22039910E567C53C2DD25B1A483E93E6 /* PainlessInjectionLoader.h in Headers */,
-				BBB328E13B3140494B356F67523B1173 /* PIModuleLoader.h in Headers */,
+				F30077BEBAE4428A5BE085305C126F2C /* Pods-PainlessInjection-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2F7597B46B4A3C1BA4CCE65BDCBA15C4 /* PainlessInjectionLoader */ = {
+		20B1F9D580DC25A8086FD8F2E808A4B2 /* Pods-PainlessInjection */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BE3E89D0A92E2BF9595E8EDB1B2DAD6A /* Build configuration list for PBXNativeTarget "PainlessInjectionLoader" */;
+			buildConfigurationList = 5347CA8AC2D7AF57185F001BFC9CC4F4 /* Build configuration list for PBXNativeTarget "Pods-PainlessInjection" */;
 			buildPhases = (
-				9189865C19C8353F86342921CAFEC478 /* Sources */,
-				95B364B0871774E524CBEC3605830054 /* Frameworks */,
-				F14B754582F3DFAA8A9A8500E1673996 /* Headers */,
+				848CBAC2EDB6DDFA2BE5D891091E3991 /* Sources */,
+				5C4BD2E1A6A12D9F04D9DF4B9C99FE56 /* Frameworks */,
+				E90E63BABD4669D5E44142D170C641D6 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = PainlessInjectionLoader;
-			productName = PainlessInjectionLoader;
-			productReference = A7CC6B99DDF47655B905AEECA3477FF0 /* PainlessInjectionLoader.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		3A305F87CBBFE0467E7C5BAE8C4DB6AA /* Pods-PainlessInjection */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AFFA8788509CF41FC1D994622C1E836C /* Build configuration list for PBXNativeTarget "Pods-PainlessInjection" */;
-			buildPhases = (
-				48AB8038920AC3BD9885EE683BB219A7 /* Sources */,
-				EDFFEB66B93D5B67917F0B0A4A7DD582 /* Frameworks */,
-				992F9A3DC0149E3B96A265EFFF26B7A5 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				21ADD892E01B17153210ACCBAA169C56 /* PBXTargetDependency */,
 			);
 			name = "Pods-PainlessInjection";
 			productName = "Pods-PainlessInjection";
-			productReference = 04A7FDEF6EB805A35EF8EC0788BCF646 /* Pods_PainlessInjection.framework */;
+			productReference = 5786EC999DDA9DADEA1CBFAA8B4E4D64 /* Pods_PainlessInjection.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		8798F6E80271C3B799A74E977A1D5CCC /* Pods-PainlessInjectionTests */ = {
+		A8C31554C146A7F1D41A3B64F8497330 /* Pods-PainlessInjection-PainlessInjectionTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F8CBC74CB1E12AE9B18AE864133D9583 /* Build configuration list for PBXNativeTarget "Pods-PainlessInjectionTests" */;
+			buildConfigurationList = EC17C676A067E768F27EAA644284BBDE /* Build configuration list for PBXNativeTarget "Pods-PainlessInjection-PainlessInjectionTests" */;
 			buildPhases = (
-				DF9FCC42B6C3057FDAA1796F8DD21809 /* Sources */,
-				9C8112EB1E1BADA2D1D1C7CB0FEDDE21 /* Frameworks */,
-				1016517D6E8750F32D994DEF1745BFBD /* Headers */,
+				A3C396DF62262AFB7B6221801BA2C6E4 /* Sources */,
+				4CB1FC3BDE3572B856E9A21594DC41BC /* Frameworks */,
+				B580D01A791C816FC10EB14415DC6074 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				08B7ADC6289F16AB5E95671795589114 /* PBXTargetDependency */,
 			);
-			name = "Pods-PainlessInjectionTests";
-			productName = "Pods-PainlessInjectionTests";
-			productReference = DEF2A0F5AE6073D2FE68AD081302BF03 /* Pods_PainlessInjectionTests.framework */;
+			name = "Pods-PainlessInjection-PainlessInjectionTests";
+			productName = "Pods-PainlessInjection-PainlessInjectionTests";
+			productReference = BCDAD0E40E24119988D21F62D31EC2E4 /* Pods_PainlessInjection_PainlessInjectionTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -329,89 +215,68 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 0D5B7DF8BC668D72491456A0800A18EB /* Products */;
+			productRefGroup = F8236EBC4A8E2B71F3C177CB39E0B9F5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2F7597B46B4A3C1BA4CCE65BDCBA15C4 /* PainlessInjectionLoader */,
-				3A305F87CBBFE0467E7C5BAE8C4DB6AA /* Pods-PainlessInjection */,
-				8798F6E80271C3B799A74E977A1D5CCC /* Pods-PainlessInjectionTests */,
+				20B1F9D580DC25A8086FD8F2E808A4B2 /* Pods-PainlessInjection */,
+				A8C31554C146A7F1D41A3B64F8497330 /* Pods-PainlessInjection-PainlessInjectionTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		48AB8038920AC3BD9885EE683BB219A7 /* Sources */ = {
+		848CBAC2EDB6DDFA2BE5D891091E3991 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56BA0563177709B44D56D1FE225E7ACA /* Pods-PainlessInjection-dummy.m in Sources */,
+				A8EE8753FE5ECF6BEA1FD8556F069A15 /* Pods-PainlessInjection-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9189865C19C8353F86342921CAFEC478 /* Sources */ = {
+		A3C396DF62262AFB7B6221801BA2C6E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE2D4645DDF2443525897ECF69915897 /* PainlessInjectionLoader-dummy.m in Sources */,
-				1138BAD849BD2B3ABE8C6A3786AF4C59 /* PIModuleLoader.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DF9FCC42B6C3057FDAA1796F8DD21809 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				89309C4F48EEAD382BF5817BABC67EA4 /* Pods-PainlessInjectionTests-dummy.m in Sources */,
+				02B717BFD9FBDBCFD65C3B80B1A04EFB /* Pods-PainlessInjection-PainlessInjectionTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		08B7ADC6289F16AB5E95671795589114 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = PainlessInjectionLoader;
-			target = 2F7597B46B4A3C1BA4CCE65BDCBA15C4 /* PainlessInjectionLoader */;
-			targetProxy = 6F52F671CAF99FC601254C4042F8A446 /* PBXContainerItemProxy */;
-		};
-		21ADD892E01B17153210ACCBAA169C56 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = PainlessInjectionLoader;
-			target = 2F7597B46B4A3C1BA4CCE65BDCBA15C4 /* PainlessInjectionLoader */;
-			targetProxy = 7069605731ED769809C02EC1CD10EAF0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		18EA22215E1BC5EDCECE1D474F27F50E /* Release */ = {
+		0F2FE79509D5C1664A6FB22146D1F97E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71599FBEFE9EEF1B8492FCC9A3429AA8 /* PainlessInjectionLoader.xcconfig */;
+			baseConfigurationReference = 764EF553C8BDD470245ECB09CDF53707 /* Pods-PainlessInjection.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/PainlessInjectionLoader/PainlessInjectionLoader-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PainlessInjectionLoader/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-PainlessInjection/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PainlessInjectionLoader/PainlessInjectionLoader.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = PainlessInjectionLoader;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PainlessInjection/Pods-PainlessInjection.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PainlessInjection;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		47BEF9D903506B003EA5C2B249729489 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -455,34 +320,38 @@
 			};
 			name = Debug;
 		};
-		929E597A060888FA68F05FBB9BE2A425 /* Debug */ = {
+		889986409378CBA1DF24413F7268DA42 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71599FBEFE9EEF1B8492FCC9A3429AA8 /* PainlessInjectionLoader.xcconfig */;
+			baseConfigurationReference = 98C0FCCC80522D5FECE4B1267BA25FBE /* Pods-PainlessInjection.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/PainlessInjectionLoader/PainlessInjectionLoader-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PainlessInjectionLoader/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-PainlessInjection/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PainlessInjectionLoader/PainlessInjectionLoader.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = PainlessInjectionLoader;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PainlessInjection/Pods-PainlessInjection.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PainlessInjection;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		AAF678CED40D3499169D10F63CA0719E /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -522,9 +391,9 @@
 			};
 			name = Release;
 		};
-		B7D8E7EDA554BB483055F847E77D951C /* Release */ = {
+		AE2A11E8AC62DC872AF067328600C62F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5EEA9F197771843DFA5ED12927D8E5A6 /* Pods-PainlessInjection.release.xcconfig */;
+			baseConfigurationReference = 1AE9991BE9D3C42BA241C87C4A59EE92 /* Pods-PainlessInjection-PainlessInjectionTests.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -535,18 +404,18 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-PainlessInjection/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-PainlessInjection-PainlessInjectionTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PainlessInjection/Pods-PainlessInjection.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-PainlessInjection-PainlessInjectionTests/Pods-PainlessInjection-PainlessInjectionTests.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_PainlessInjection;
+				PRODUCT_NAME = Pods_PainlessInjection_PainlessInjectionTests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -555,9 +424,9 @@
 			};
 			name = Release;
 		};
-		BDD9E462B9ACA0FA03CA84C39BC08A8F /* Debug */ = {
+		C1C24710FF87B3EA1B4A5410FFC8BA86 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC7985ED6C988C81711330CF27618796 /* Pods-PainlessInjection.debug.xcconfig */;
+			baseConfigurationReference = 67D6E41FE659C7A3E7334CD759AE0F06 /* Pods-PainlessInjection-PainlessInjectionTests.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -568,18 +437,18 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-PainlessInjection/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-PainlessInjection-PainlessInjectionTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PainlessInjection/Pods-PainlessInjection.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-PainlessInjection-PainlessInjectionTests/Pods-PainlessInjection-PainlessInjectionTests.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_PainlessInjection;
+				PRODUCT_NAME = Pods_PainlessInjection_PainlessInjectionTests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -587,72 +456,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		E624CC362C5470024A5A26D77CA31FB2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E53457B4E8847AE1FB9ECD8C8778DE3E /* Pods-PainlessInjectionTests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-PainlessInjectionTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PainlessInjectionTests/Pods-PainlessInjectionTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_PainlessInjectionTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		F8147A040C874A963108496385C795A6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4AC4DCEE8C37168302D66589E0DAC13 /* Pods-PainlessInjectionTests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-PainlessInjectionTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PainlessInjectionTests/Pods-PainlessInjectionTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_PainlessInjectionTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -666,29 +469,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AFFA8788509CF41FC1D994622C1E836C /* Build configuration list for PBXNativeTarget "Pods-PainlessInjection" */ = {
+		5347CA8AC2D7AF57185F001BFC9CC4F4 /* Build configuration list for PBXNativeTarget "Pods-PainlessInjection" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BDD9E462B9ACA0FA03CA84C39BC08A8F /* Debug */,
-				B7D8E7EDA554BB483055F847E77D951C /* Release */,
+				0F2FE79509D5C1664A6FB22146D1F97E /* Debug */,
+				889986409378CBA1DF24413F7268DA42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BE3E89D0A92E2BF9595E8EDB1B2DAD6A /* Build configuration list for PBXNativeTarget "PainlessInjectionLoader" */ = {
+		EC17C676A067E768F27EAA644284BBDE /* Build configuration list for PBXNativeTarget "Pods-PainlessInjection-PainlessInjectionTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				929E597A060888FA68F05FBB9BE2A425 /* Debug */,
-				18EA22215E1BC5EDCECE1D474F27F50E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F8CBC74CB1E12AE9B18AE864133D9583 /* Build configuration list for PBXNativeTarget "Pods-PainlessInjectionTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E624CC362C5470024A5A26D77CA31FB2 /* Debug */,
-				F8147A040C874A963108496385C795A6 /* Release */,
+				C1C24710FF87B3EA1B4A5410FFC8BA86 /* Debug */,
+				AE2A11E8AC62DC872AF067328600C62F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

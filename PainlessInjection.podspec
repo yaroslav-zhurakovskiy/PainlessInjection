@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary      = "PainlessInjection is a lightweight dependency injection framework for Swift."
 
   s.description  = <<-DESC
-  PainlessInjection is a lightweight dependency injection framework for Swift.
+  PainlessInjection is a lightweight dependency injection framework for Swift. Thanks.
                    DESC
 
   s.homepage     = "https://github.com/yaroslav-zhurakovskiy/PainlessInjection"
@@ -21,5 +21,4 @@ Pod::Spec.new do |s|
 
   s.source_files  = "PainlessInjection/PainlessInjection/*.swift"
 
-  s.dependency 'PainlessInjectionLoader'
 end

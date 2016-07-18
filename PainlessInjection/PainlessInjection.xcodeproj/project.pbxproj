@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC6EADA9EBA97184DE28B03D /* Pods_PainlessInjectionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD30D1500DF9B76584172F /* Pods_PainlessInjectionTests.framework */; };
+		047CD6E523B8128B0551EF93 /* Pods_PainlessInjection_PainlessInjectionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED8A06520EB5C31D129C73F /* Pods_PainlessInjection_PainlessInjectionTests.framework */; };
+		C4466D151D3D2761008D0A80 /* ModuleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4466D141D3D2761008D0A80 /* ModuleLoader.swift */; };
 		C4A0CFCB1D3CF88F00BCEC00 /* ArgumentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFBC1D3CF88F00BCEC00 /* ArgumentList.swift */; };
 		C4A0CFCC1D3CF88F00BCEC00 /* CacheDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFBD1D3CF88F00BCEC00 /* CacheDependency.swift */; };
 		C4A0CFCD1D3CF88F00BCEC00 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFBE1D3CF88F00BCEC00 /* Container.swift */; };
@@ -30,7 +31,7 @@
 		C4A0D0101D3CFB8E00BCEC00 /* TimeIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFE11D3CF89700BCEC00 /* TimeIntervalTests.swift */; };
 		C4A0D0111D3CFB8E00BCEC00 /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFE21D3CF89700BCEC00 /* TimerTests.swift */; };
 		C4A0D0161D3CFC0B00BCEC00 /* PainlessInjection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A6EE271D340F3F00CB7442 /* PainlessInjection.framework */; };
-		E3F23086F51374FD32E609CF /* Pods_PainlessInjection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58A74C19AFD18668B2E3B816 /* Pods_PainlessInjection.framework */; };
+		DE165031197F392EA1901DB6 /* Pods_PainlessInjection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A594AFA22154B33BAD7AB162 /* Pods_PainlessInjection.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,11 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2B7D81E275AA97BC7719C596 /* Pods-PainlessInjectionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PainlessInjectionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PainlessInjectionTests/Pods-PainlessInjectionTests.debug.xcconfig"; sourceTree = "<group>"; };
-		58A74C19AFD18668B2E3B816 /* Pods_PainlessInjection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PainlessInjection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		787ECEDC091457827435C113 /* Pods-PainlessInjection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PainlessInjection.release.xcconfig"; path = "Pods/Target Support Files/Pods-PainlessInjection/Pods-PainlessInjection.release.xcconfig"; sourceTree = "<group>"; };
-		B0BD30D1500DF9B76584172F /* Pods_PainlessInjectionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PainlessInjectionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDCB1A6D29DE071BDF94F1BC /* Pods-PainlessInjection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PainlessInjection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PainlessInjection/Pods-PainlessInjection.debug.xcconfig"; sourceTree = "<group>"; };
+		2BC6CDDF1ADAD73F5C66C1BA /* Pods-PainlessInjection-PainlessInjectionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PainlessInjection-PainlessInjectionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PainlessInjection-PainlessInjectionTests/Pods-PainlessInjection-PainlessInjectionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5F6CB7F1DCD19AA2473C6096 /* Pods-PainlessInjection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PainlessInjection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PainlessInjection/Pods-PainlessInjection.debug.xcconfig"; sourceTree = "<group>"; };
+		A594AFA22154B33BAD7AB162 /* Pods_PainlessInjection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PainlessInjection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE4F60DB130F49109E1B72DD /* Pods-PainlessInjection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PainlessInjection.release.xcconfig"; path = "Pods/Target Support Files/Pods-PainlessInjection/Pods-PainlessInjection.release.xcconfig"; sourceTree = "<group>"; };
+		C4466D141D3D2761008D0A80 /* ModuleLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleLoader.swift; sourceTree = "<group>"; };
 		C4A0CFBC1D3CF88F00BCEC00 /* ArgumentList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArgumentList.swift; sourceTree = "<group>"; };
 		C4A0CFBD1D3CF88F00BCEC00 /* CacheDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheDependency.swift; sourceTree = "<group>"; };
 		C4A0CFBE1D3CF88F00BCEC00 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
@@ -74,7 +75,8 @@
 		C4A0CFE21D3CF89700BCEC00 /* TimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerTests.swift; sourceTree = "<group>"; };
 		C4A6EE271D340F3F00CB7442 /* PainlessInjection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PainlessInjection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A6EE311D340F3F00CB7442 /* PainlessInjectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PainlessInjectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F743561BC63384EDDE974B0C /* Pods-PainlessInjectionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PainlessInjectionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PainlessInjectionTests/Pods-PainlessInjectionTests.release.xcconfig"; sourceTree = "<group>"; };
+		DED8A06520EB5C31D129C73F /* Pods_PainlessInjection_PainlessInjectionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PainlessInjection_PainlessInjectionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4421C033088D97CCB0546ED /* Pods-PainlessInjection-PainlessInjectionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PainlessInjection-PainlessInjectionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PainlessInjection-PainlessInjectionTests/Pods-PainlessInjection-PainlessInjectionTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3F23086F51374FD32E609CF /* Pods_PainlessInjection.framework in Frameworks */,
+				DE165031197F392EA1901DB6 /* Pods_PainlessInjection.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,29 +93,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4A0D0161D3CFC0B00BCEC00 /* PainlessInjection.framework in Frameworks */,
-				AC6EADA9EBA97184DE28B03D /* Pods_PainlessInjectionTests.framework in Frameworks */,
+				047CD6E523B8128B0551EF93 /* Pods_PainlessInjection_PainlessInjectionTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1754E88A2474805A8B2536B2 /* Pods */ = {
+		BEB9ECFBFAAEC33C9E8296B9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BDCB1A6D29DE071BDF94F1BC /* Pods-PainlessInjection.debug.xcconfig */,
-				787ECEDC091457827435C113 /* Pods-PainlessInjection.release.xcconfig */,
-				2B7D81E275AA97BC7719C596 /* Pods-PainlessInjectionTests.debug.xcconfig */,
-				F743561BC63384EDDE974B0C /* Pods-PainlessInjectionTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		380BC610FAD37AE06915060D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				58A74C19AFD18668B2E3B816 /* Pods_PainlessInjection.framework */,
-				B0BD30D1500DF9B76584172F /* Pods_PainlessInjectionTests.framework */,
+				A594AFA22154B33BAD7AB162 /* Pods_PainlessInjection.framework */,
+				DED8A06520EB5C31D129C73F /* Pods_PainlessInjection_PainlessInjectionTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -136,6 +127,7 @@
 				C4A0CFC81D3CF88F00BCEC00 /* StandardTimer.swift */,
 				C4A0CFC91D3CF88F00BCEC00 /* TimeInteval.swift */,
 				C4A0CFCA1D3CF88F00BCEC00 /* Timer.swift */,
+				C4466D141D3D2761008D0A80 /* ModuleLoader.swift */,
 			);
 			path = PainlessInjection;
 			sourceTree = "<group>";
@@ -161,8 +153,8 @@
 				C4A0CFBB1D3CF88F00BCEC00 /* PainlessInjection */,
 				C4A0CFDA1D3CF89700BCEC00 /* PainlessInjectionTests */,
 				C4A6EE281D340F3F00CB7442 /* Products */,
-				1754E88A2474805A8B2536B2 /* Pods */,
-				380BC610FAD37AE06915060D /* Frameworks */,
+				D48926A85AF751C85CA4F90F /* Pods */,
+				BEB9ECFBFAAEC33C9E8296B9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,6 +165,17 @@
 				C4A6EE311D340F3F00CB7442 /* PainlessInjectionTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D48926A85AF751C85CA4F90F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5F6CB7F1DCD19AA2473C6096 /* Pods-PainlessInjection.debug.xcconfig */,
+				BE4F60DB130F49109E1B72DD /* Pods-PainlessInjection.release.xcconfig */,
+				2BC6CDDF1ADAD73F5C66C1BA /* Pods-PainlessInjection-PainlessInjectionTests.debug.xcconfig */,
+				F4421C033088D97CCB0546ED /* Pods-PainlessInjection-PainlessInjectionTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,7 +299,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PainlessInjectionTests/Pods-PainlessInjectionTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PainlessInjection-PainlessInjectionTests/Pods-PainlessInjection-PainlessInjectionTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		34B8FE998E4BE2DA701C36C1 /* [CP] Copy Pods Resources */ = {
@@ -341,7 +344,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PainlessInjectionTests/Pods-PainlessInjectionTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PainlessInjection-PainlessInjectionTests/Pods-PainlessInjection-PainlessInjectionTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F6004F2A99D7298CFBF8FE1F /* [CP] Check Pods Manifest.lock */ = {
@@ -372,6 +375,7 @@
 				C4A0CFCE1D3CF88F00BCEC00 /* DefineConfigurator.swift in Sources */,
 				C4A0CFD91D3CF88F00BCEC00 /* Timer.swift in Sources */,
 				C4A0CFD61D3CF88F00BCEC00 /* StandardFatalErrorNotifier.swift in Sources */,
+				C4466D151D3D2761008D0A80 /* ModuleLoader.swift in Sources */,
 				C4A0CFD71D3CF88F00BCEC00 /* StandardTimer.swift in Sources */,
 				C4A0CFD01D3CF88F00BCEC00 /* FatalErrorNotifier.swift in Sources */,
 				C4A0CFD31D3CF88F00BCEC00 /* ModuleLoadingPredicate.swift in Sources */,
@@ -500,7 +504,7 @@
 		};
 		C4A6EE3C1D340F3F00CB7442 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDCB1A6D29DE071BDF94F1BC /* Pods-PainlessInjection.debug.xcconfig */;
+			baseConfigurationReference = 5F6CB7F1DCD19AA2473C6096 /* Pods-PainlessInjection.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -520,7 +524,7 @@
 		};
 		C4A6EE3D1D340F3F00CB7442 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 787ECEDC091457827435C113 /* Pods-PainlessInjection.release.xcconfig */;
+			baseConfigurationReference = BE4F60DB130F49109E1B72DD /* Pods-PainlessInjection.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -539,7 +543,7 @@
 		};
 		C4A6EE3F1D340F3F00CB7442 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2B7D81E275AA97BC7719C596 /* Pods-PainlessInjectionTests.debug.xcconfig */;
+			baseConfigurationReference = 2BC6CDDF1ADAD73F5C66C1BA /* Pods-PainlessInjection-PainlessInjectionTests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = PainlessInjectionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -550,7 +554,7 @@
 		};
 		C4A6EE401D340F3F00CB7442 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F743561BC63384EDDE974B0C /* Pods-PainlessInjectionTests.release.xcconfig */;
+			baseConfigurationReference = F4421C033088D97CCB0546ED /* Pods-PainlessInjection-PainlessInjectionTests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = PainlessInjectionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

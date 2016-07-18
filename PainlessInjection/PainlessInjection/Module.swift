@@ -11,6 +11,10 @@ import Foundation
 @objc(PIModule)
 public class Module: NSObject {
     
+    public required override init() {
+        super.init()
+    }
+    
     public func load() {
     
     }

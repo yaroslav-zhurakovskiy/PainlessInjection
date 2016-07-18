@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import PainlessInjectionLoader
 
 public struct Container {
     
@@ -32,11 +31,11 @@ public struct Container {
     }
     
     public static func load() {
-        if let modules = PIModuleLoader.listWithType(Module.self) as? [Module] {
-            _modules = modules.flatMap { module in module.loadingPredicate().shouldLoadModule() ? module : nil }
-            _modules.forEach { module in
-                module.load()
-            }
+        let loader = ModuleLoader()
+        let modules = loader.listOfModules()
+        _modules = modules.flatMap { module in module.loadingPredicate().shouldLoadModule() ? module : nil }
+        _modules.forEach { module in
+            module.load()
         }
     }
     
