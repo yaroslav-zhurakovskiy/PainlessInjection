@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/yaroslav-zhurakovskiy/PainlessInjection.git"}
 
-  s.source_files  = "PainlessInjection/PainlessInjection/**/*.swift"
+  s.source_files  = "PainlessInjection/PainlessInjection/*.swift"
 
   s.dependency 'PainlessInjectionLoader'
 end
