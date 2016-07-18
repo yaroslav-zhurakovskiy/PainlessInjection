@@ -5,7 +5,5 @@ notifications:
     on_success: never
 script:
     - xcodebuild clean test -workspace PainlessInjection/PainlessInjection.xcworkspace -scheme PainlessInjection -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
-
 after_success:
-    - pod lib lint --allow-warnings;
-    - bash <(curl -s https://codecov.io/bash)   
+    - pod lib lint --allow-warnings; 
