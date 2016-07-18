@@ -1,0 +1,6 @@
+framework module PainlessInjectionLoader {
+  umbrella header "PainlessInjectionLoader-umbrella.h"
+
+  export *
+  module * { export * }
+}

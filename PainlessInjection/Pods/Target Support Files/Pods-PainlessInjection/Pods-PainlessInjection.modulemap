@@ -1,0 +1,6 @@
+framework module Pods_PainlessInjection {
+  umbrella header "Pods-PainlessInjection-umbrella.h"
+
+  export *
+  module * { export * }
+}
