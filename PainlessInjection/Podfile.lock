@@ -1,0 +1,16 @@
+PODS:
+  - PainlessInjectionLoader (0.0.1)
+
+DEPENDENCIES:
+  - PainlessInjectionLoader (from `../../PainlessInjectionLoader`)
+
+EXTERNAL SOURCES:
+  PainlessInjectionLoader:
+    :path: "../../PainlessInjectionLoader"
+
+SPEC CHECKSUMS:
+  PainlessInjectionLoader: 9981887828a1f0e0829807d71b1b27a557809914
+
+PODFILE CHECKSUM: 07b186c489cacdd6421596e8480214e4dc3a6dc7
+
+COCOAPODS: 1.0.1

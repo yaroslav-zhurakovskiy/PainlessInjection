@@ -1,0 +1,15 @@
+platform :ios, '8.0'
+
+target 'PainlessInjection' do
+  use_frameworks!
+
+  pod 'PainlessInjectionLoader', :path=>'../../PainlessInjectionLoader'
+
+  target 'PainlessInjectionTests' do
+    inherit! :search_paths
+
+    pod 'PainlessInjectionLoader', :path=>'../../PainlessInjectionLoader'
+
+  end
+
+end

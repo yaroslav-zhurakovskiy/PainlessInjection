@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "01CA3043DE9DDFA2AA448D5B0D3364FE5C3175B2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "01CA3043DE9DDFA2AA448D5B0D3364FE5C3175B2" : 0,
+    "FC0943ECA55740D82EB10C8BA54A6238F225C8C7" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1A649834-AA24-4188-909A-37EC0D4E83BE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "01CA3043DE9DDFA2AA448D5B0D3364FE5C3175B2" : "PainlessInjection\/",
+    "FC0943ECA55740D82EB10C8BA54A6238F225C8C7" : "PainlessInjectionLoader\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PainlessInjection",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PainlessInjection\/PainlessInjection.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/yaroslav-zhurakovskiy\/PainlessInjection.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "01CA3043DE9DDFA2AA448D5B0D3364FE5C3175B2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/yaroslav-zhurakovskiy\/PainlessInjectionLoader.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FC0943ECA55740D82EB10C8BA54A6238F225C8C7"
+    }
+  ]
+}

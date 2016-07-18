@@ -1,7 +1,4 @@
 language: objective-c
 osx_image: xcode7.1
-branches:
- only:
- - master
 script:
-    - xcodebuild test -project PainlessInjection.xcodeproj -scheme PainlessInjection -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
+    - xcodebuild clean test -workspace PainlessInjection/PainlessInjection.xcworkspace -scheme PainlessInjection -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
