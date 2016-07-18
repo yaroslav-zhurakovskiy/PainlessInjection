@@ -1,0 +1,623 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C4A0CFCB1D3CF88F00BCEC00 /* ArgumentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFBC1D3CF88F00BCEC00 /* ArgumentList.swift */; };
+		C4A0CFCC1D3CF88F00BCEC00 /* CacheDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFBD1D3CF88F00BCEC00 /* CacheDependency.swift */; };
+		C4A0CFCD1D3CF88F00BCEC00 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFBE1D3CF88F00BCEC00 /* Container.swift */; };
+		C4A0CFCE1D3CF88F00BCEC00 /* DefineConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFBF1D3CF88F00BCEC00 /* DefineConfigurator.swift */; };
+		C4A0CFCF1D3CF88F00BCEC00 /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFC01D3CF88F00BCEC00 /* Dependency.swift */; };
+		C4A0CFD01D3CF88F00BCEC00 /* FatalErrorNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFC11D3CF88F00BCEC00 /* FatalErrorNotifier.swift */; };
+		C4A0CFD21D3CF88F00BCEC00 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFC31D3CF88F00BCEC00 /* Module.swift */; };
+		C4A0CFD31D3CF88F00BCEC00 /* ModuleLoadingPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFC41D3CF88F00BCEC00 /* ModuleLoadingPredicate.swift */; };
+		C4A0CFD41D3CF88F00BCEC00 /* PainlessInjector.h in Headers */ = {isa = PBXBuildFile; fileRef = C4A0CFC51D3CF88F00BCEC00 /* PainlessInjector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C4A0CFD51D3CF88F00BCEC00 /* SingletonDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFC61D3CF88F00BCEC00 /* SingletonDependency.swift */; };
+		C4A0CFD61D3CF88F00BCEC00 /* StandardFatalErrorNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFC71D3CF88F00BCEC00 /* StandardFatalErrorNotifier.swift */; };
+		C4A0CFD71D3CF88F00BCEC00 /* StandardTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFC81D3CF88F00BCEC00 /* StandardTimer.swift */; };
+		C4A0CFD81D3CF88F00BCEC00 /* TimeInteval.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFC91D3CF88F00BCEC00 /* TimeInteval.swift */; };
+		C4A0CFD91D3CF88F00BCEC00 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFCA1D3CF88F00BCEC00 /* Timer.swift */; };
+		C4A0D0051D3CF9EC00BCEC00 /* PainlessInjectionLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = C4A0CFFE1D3CF9E100BCEC00 /* PainlessInjectionLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C4A0D0061D3CF9EC00BCEC00 /* PIModuleLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = C4A0CFFF1D3CF9E100BCEC00 /* PIModuleLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C4A0D0071D3CF9EC00BCEC00 /* PIModuleLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A0D0001D3CF9E100BCEC00 /* PIModuleLoader.m */; };
+		C4A0D00A1D3CFAA500BCEC00 /* PainlessInjectionLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A6EE5B1D34294900CB7442 /* PainlessInjectionLoader.framework */; };
+		C4A0D00B1D3CFB8E00BCEC00 /* ArgumentListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFDB1D3CF89700BCEC00 /* ArgumentListTests.swift */; };
+		C4A0D00C1D3CFB8E00BCEC00 /* ContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFDC1D3CF89700BCEC00 /* ContainerTests.swift */; };
+		C4A0D00D1D3CFB8E00BCEC00 /* FataErrorNotifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFDD1D3CF89700BCEC00 /* FataErrorNotifierTests.swift */; };
+		C4A0D00E1D3CFB8E00BCEC00 /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFDE1D3CF89700BCEC00 /* Fixtures.swift */; };
+		C4A0D00F1D3CFB8E00BCEC00 /* ModuleLoadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFE01D3CF89700BCEC00 /* ModuleLoadingTests.swift */; };
+		C4A0D0101D3CFB8E00BCEC00 /* TimeIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFE11D3CF89700BCEC00 /* TimeIntervalTests.swift */; };
+		C4A0D0111D3CFB8E00BCEC00 /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFE21D3CF89700BCEC00 /* TimerTests.swift */; };
+		C4A0D0161D3CFC0B00BCEC00 /* PainlessInjection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A6EE271D340F3F00CB7442 /* PainlessInjection.framework */; };
+		C4A0D0171D3CFC0B00BCEC00 /* PainlessInjectionLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A6EE5B1D34294900CB7442 /* PainlessInjectionLoader.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C4A0D0081D3CF9FD00BCEC00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4A6EE1E1D340F3F00CB7442 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4A6EE5A1D34294900CB7442;
+			remoteInfo = PainlessInjectionLoader;
+		};
+		C4A0D0121D3CFC0400BCEC00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4A6EE1E1D340F3F00CB7442 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4A6EE261D340F3F00CB7442;
+			remoteInfo = PainlessInjection;
+		};
+		C4A0D0141D3CFC0700BCEC00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4A6EE1E1D340F3F00CB7442 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4A6EE5A1D34294900CB7442;
+			remoteInfo = PainlessInjectionLoader;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C4A0CFBC1D3CF88F00BCEC00 /* ArgumentList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArgumentList.swift; sourceTree = "<group>"; };
+		C4A0CFBD1D3CF88F00BCEC00 /* CacheDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheDependency.swift; sourceTree = "<group>"; };
+		C4A0CFBE1D3CF88F00BCEC00 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		C4A0CFBF1D3CF88F00BCEC00 /* DefineConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefineConfigurator.swift; sourceTree = "<group>"; };
+		C4A0CFC01D3CF88F00BCEC00 /* Dependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
+		C4A0CFC11D3CF88F00BCEC00 /* FatalErrorNotifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FatalErrorNotifier.swift; sourceTree = "<group>"; };
+		C4A0CFC21D3CF88F00BCEC00 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4A0CFC31D3CF88F00BCEC00 /* Module.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
+		C4A0CFC41D3CF88F00BCEC00 /* ModuleLoadingPredicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleLoadingPredicate.swift; sourceTree = "<group>"; };
+		C4A0CFC51D3CF88F00BCEC00 /* PainlessInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PainlessInjector.h; sourceTree = "<group>"; };
+		C4A0CFC61D3CF88F00BCEC00 /* SingletonDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingletonDependency.swift; sourceTree = "<group>"; };
+		C4A0CFC71D3CF88F00BCEC00 /* StandardFatalErrorNotifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardFatalErrorNotifier.swift; sourceTree = "<group>"; };
+		C4A0CFC81D3CF88F00BCEC00 /* StandardTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardTimer.swift; sourceTree = "<group>"; };
+		C4A0CFC91D3CF88F00BCEC00 /* TimeInteval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeInteval.swift; sourceTree = "<group>"; };
+		C4A0CFCA1D3CF88F00BCEC00 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		C4A0CFDB1D3CF89700BCEC00 /* ArgumentListTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArgumentListTests.swift; sourceTree = "<group>"; };
+		C4A0CFDC1D3CF89700BCEC00 /* ContainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerTests.swift; sourceTree = "<group>"; };
+		C4A0CFDD1D3CF89700BCEC00 /* FataErrorNotifierTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FataErrorNotifierTests.swift; sourceTree = "<group>"; };
+		C4A0CFDE1D3CF89700BCEC00 /* Fixtures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
+		C4A0CFDF1D3CF89700BCEC00 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4A0CFE01D3CF89700BCEC00 /* ModuleLoadingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleLoadingTests.swift; sourceTree = "<group>"; };
+		C4A0CFE11D3CF89700BCEC00 /* TimeIntervalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIntervalTests.swift; sourceTree = "<group>"; };
+		C4A0CFE21D3CF89700BCEC00 /* TimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerTests.swift; sourceTree = "<group>"; };
+		C4A0CFFD1D3CF9E100BCEC00 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4A0CFFE1D3CF9E100BCEC00 /* PainlessInjectionLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PainlessInjectionLoader.h; sourceTree = "<group>"; };
+		C4A0CFFF1D3CF9E100BCEC00 /* PIModuleLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIModuleLoader.h; sourceTree = "<group>"; };
+		C4A0D0001D3CF9E100BCEC00 /* PIModuleLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIModuleLoader.m; sourceTree = "<group>"; };
+		C4A6EE271D340F3F00CB7442 /* PainlessInjection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PainlessInjection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4A6EE311D340F3F00CB7442 /* PainlessInjectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PainlessInjectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4A6EE5B1D34294900CB7442 /* PainlessInjectionLoader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PainlessInjectionLoader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C4A6EE231D340F3F00CB7442 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4A0D00A1D3CFAA500BCEC00 /* PainlessInjectionLoader.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4A6EE2E1D340F3F00CB7442 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4A0D0161D3CFC0B00BCEC00 /* PainlessInjection.framework in Frameworks */,
+				C4A0D0171D3CFC0B00BCEC00 /* PainlessInjectionLoader.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4A6EE571D34294900CB7442 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C4A0CFBB1D3CF88F00BCEC00 /* PainlessInjection */ = {
+			isa = PBXGroup;
+			children = (
+				C4A0CFBC1D3CF88F00BCEC00 /* ArgumentList.swift */,
+				C4A0CFBD1D3CF88F00BCEC00 /* CacheDependency.swift */,
+				C4A0CFBE1D3CF88F00BCEC00 /* Container.swift */,
+				C4A0CFBF1D3CF88F00BCEC00 /* DefineConfigurator.swift */,
+				C4A0CFC01D3CF88F00BCEC00 /* Dependency.swift */,
+				C4A0CFC11D3CF88F00BCEC00 /* FatalErrorNotifier.swift */,
+				C4A0CFC21D3CF88F00BCEC00 /* Info.plist */,
+				C4A0CFC31D3CF88F00BCEC00 /* Module.swift */,
+				C4A0CFC41D3CF88F00BCEC00 /* ModuleLoadingPredicate.swift */,
+				C4A0CFC51D3CF88F00BCEC00 /* PainlessInjector.h */,
+				C4A0CFC61D3CF88F00BCEC00 /* SingletonDependency.swift */,
+				C4A0CFC71D3CF88F00BCEC00 /* StandardFatalErrorNotifier.swift */,
+				C4A0CFC81D3CF88F00BCEC00 /* StandardTimer.swift */,
+				C4A0CFC91D3CF88F00BCEC00 /* TimeInteval.swift */,
+				C4A0CFCA1D3CF88F00BCEC00 /* Timer.swift */,
+			);
+			path = PainlessInjection;
+			sourceTree = "<group>";
+		};
+		C4A0CFDA1D3CF89700BCEC00 /* PainlessInjectionTests */ = {
+			isa = PBXGroup;
+			children = (
+				C4A0CFDB1D3CF89700BCEC00 /* ArgumentListTests.swift */,
+				C4A0CFDC1D3CF89700BCEC00 /* ContainerTests.swift */,
+				C4A0CFDD1D3CF89700BCEC00 /* FataErrorNotifierTests.swift */,
+				C4A0CFDE1D3CF89700BCEC00 /* Fixtures.swift */,
+				C4A0CFDF1D3CF89700BCEC00 /* Info.plist */,
+				C4A0CFE01D3CF89700BCEC00 /* ModuleLoadingTests.swift */,
+				C4A0CFE11D3CF89700BCEC00 /* TimeIntervalTests.swift */,
+				C4A0CFE21D3CF89700BCEC00 /* TimerTests.swift */,
+			);
+			path = PainlessInjectionTests;
+			sourceTree = "<group>";
+		};
+		C4A0CFFC1D3CF9E100BCEC00 /* PainlessInjectionLoader */ = {
+			isa = PBXGroup;
+			children = (
+				C4A0CFFD1D3CF9E100BCEC00 /* Info.plist */,
+				C4A0CFFE1D3CF9E100BCEC00 /* PainlessInjectionLoader.h */,
+				C4A0CFFF1D3CF9E100BCEC00 /* PIModuleLoader.h */,
+				C4A0D0001D3CF9E100BCEC00 /* PIModuleLoader.m */,
+			);
+			path = PainlessInjectionLoader;
+			sourceTree = "<group>";
+		};
+		C4A6EE1D1D340F3F00CB7442 = {
+			isa = PBXGroup;
+			children = (
+				C4A0CFBB1D3CF88F00BCEC00 /* PainlessInjection */,
+				C4A0CFDA1D3CF89700BCEC00 /* PainlessInjectionTests */,
+				C4A0CFFC1D3CF9E100BCEC00 /* PainlessInjectionLoader */,
+				C4A6EE281D340F3F00CB7442 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C4A6EE281D340F3F00CB7442 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C4A6EE271D340F3F00CB7442 /* PainlessInjection.framework */,
+				C4A6EE311D340F3F00CB7442 /* PainlessInjectionTests.xctest */,
+				C4A6EE5B1D34294900CB7442 /* PainlessInjectionLoader.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C4A6EE241D340F3F00CB7442 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4A0CFD41D3CF88F00BCEC00 /* PainlessInjector.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4A6EE581D34294900CB7442 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4A0D0061D3CF9EC00BCEC00 /* PIModuleLoader.h in Headers */,
+				C4A0D0051D3CF9EC00BCEC00 /* PainlessInjectionLoader.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C4A6EE261D340F3F00CB7442 /* PainlessInjection */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4A6EE3B1D340F3F00CB7442 /* Build configuration list for PBXNativeTarget "PainlessInjection" */;
+			buildPhases = (
+				C4A6EE221D340F3F00CB7442 /* Sources */,
+				C4A6EE231D340F3F00CB7442 /* Frameworks */,
+				C4A6EE241D340F3F00CB7442 /* Headers */,
+				C4A6EE251D340F3F00CB7442 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4A0D0091D3CF9FD00BCEC00 /* PBXTargetDependency */,
+			);
+			name = PainlessInjection;
+			productName = PainlessInjector;
+			productReference = C4A6EE271D340F3F00CB7442 /* PainlessInjection.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C4A6EE301D340F3F00CB7442 /* PainlessInjectionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4A6EE3E1D340F3F00CB7442 /* Build configuration list for PBXNativeTarget "PainlessInjectionTests" */;
+			buildPhases = (
+				C4A6EE2D1D340F3F00CB7442 /* Sources */,
+				C4A6EE2E1D340F3F00CB7442 /* Frameworks */,
+				C4A6EE2F1D340F3F00CB7442 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4A0D0151D3CFC0700BCEC00 /* PBXTargetDependency */,
+				C4A0D0131D3CFC0400BCEC00 /* PBXTargetDependency */,
+			);
+			name = PainlessInjectionTests;
+			productName = PainlessInjectorTests;
+			productReference = C4A6EE311D340F3F00CB7442 /* PainlessInjectionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C4A6EE5A1D34294900CB7442 /* PainlessInjectionLoader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4A6EE601D34294A00CB7442 /* Build configuration list for PBXNativeTarget "PainlessInjectionLoader" */;
+			buildPhases = (
+				C4A6EE561D34294900CB7442 /* Sources */,
+				C4A6EE571D34294900CB7442 /* Frameworks */,
+				C4A6EE581D34294900CB7442 /* Headers */,
+				C4A6EE591D34294900CB7442 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PainlessInjectionLoader;
+			productName = PainlessInjectorLoader;
+			productReference = C4A6EE5B1D34294900CB7442 /* PainlessInjectionLoader.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C4A6EE1E1D340F3F00CB7442 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Yaroslav Zhurakovskiy";
+				TargetAttributes = {
+					C4A6EE261D340F3F00CB7442 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					C4A6EE301D340F3F00CB7442 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					C4A6EE5A1D34294900CB7442 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = C4A6EE211D340F3F00CB7442 /* Build configuration list for PBXProject "PainlessInjection" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C4A6EE1D1D340F3F00CB7442;
+			productRefGroup = C4A6EE281D340F3F00CB7442 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C4A6EE261D340F3F00CB7442 /* PainlessInjection */,
+				C4A6EE301D340F3F00CB7442 /* PainlessInjectionTests */,
+				C4A6EE5A1D34294900CB7442 /* PainlessInjectionLoader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C4A6EE251D340F3F00CB7442 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4A6EE2F1D340F3F00CB7442 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4A6EE591D34294900CB7442 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C4A6EE221D340F3F00CB7442 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4A0CFD51D3CF88F00BCEC00 /* SingletonDependency.swift in Sources */,
+				C4A0CFCB1D3CF88F00BCEC00 /* ArgumentList.swift in Sources */,
+				C4A0CFCF1D3CF88F00BCEC00 /* Dependency.swift in Sources */,
+				C4A0CFCE1D3CF88F00BCEC00 /* DefineConfigurator.swift in Sources */,
+				C4A0CFD91D3CF88F00BCEC00 /* Timer.swift in Sources */,
+				C4A0CFD61D3CF88F00BCEC00 /* StandardFatalErrorNotifier.swift in Sources */,
+				C4A0CFD71D3CF88F00BCEC00 /* StandardTimer.swift in Sources */,
+				C4A0CFD01D3CF88F00BCEC00 /* FatalErrorNotifier.swift in Sources */,
+				C4A0CFD31D3CF88F00BCEC00 /* ModuleLoadingPredicate.swift in Sources */,
+				C4A0CFD21D3CF88F00BCEC00 /* Module.swift in Sources */,
+				C4A0CFCD1D3CF88F00BCEC00 /* Container.swift in Sources */,
+				C4A0CFD81D3CF88F00BCEC00 /* TimeInteval.swift in Sources */,
+				C4A0CFCC1D3CF88F00BCEC00 /* CacheDependency.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4A6EE2D1D340F3F00CB7442 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4A0D00B1D3CFB8E00BCEC00 /* ArgumentListTests.swift in Sources */,
+				C4A0D0111D3CFB8E00BCEC00 /* TimerTests.swift in Sources */,
+				C4A0D00F1D3CFB8E00BCEC00 /* ModuleLoadingTests.swift in Sources */,
+				C4A0D00C1D3CFB8E00BCEC00 /* ContainerTests.swift in Sources */,
+				C4A0D0101D3CFB8E00BCEC00 /* TimeIntervalTests.swift in Sources */,
+				C4A0D00D1D3CFB8E00BCEC00 /* FataErrorNotifierTests.swift in Sources */,
+				C4A0D00E1D3CFB8E00BCEC00 /* Fixtures.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4A6EE561D34294900CB7442 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4A0D0071D3CF9EC00BCEC00 /* PIModuleLoader.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C4A0D0091D3CF9FD00BCEC00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4A6EE5A1D34294900CB7442 /* PainlessInjectionLoader */;
+			targetProxy = C4A0D0081D3CF9FD00BCEC00 /* PBXContainerItemProxy */;
+		};
+		C4A0D0131D3CFC0400BCEC00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4A6EE261D340F3F00CB7442 /* PainlessInjection */;
+			targetProxy = C4A0D0121D3CFC0400BCEC00 /* PBXContainerItemProxy */;
+		};
+		C4A0D0151D3CFC0700BCEC00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4A6EE5A1D34294900CB7442 /* PainlessInjectionLoader */;
+			targetProxy = C4A0D0141D3CFC0700BCEC00 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C4A6EE391D340F3F00CB7442 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C4A6EE3A1D340F3F00CB7442 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C4A6EE3C1D340F3F00CB7442 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/PainlessInjection/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "yaroslav-zhurakovskiy.PainlessInjector";
+				PRODUCT_NAME = PainlessInjection;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C4A6EE3D1D340F3F00CB7442 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/PainlessInjection/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "yaroslav-zhurakovskiy.PainlessInjector";
+				PRODUCT_NAME = PainlessInjection;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C4A6EE3F1D340F3F00CB7442 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PainlessInjectionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "yaroslav-zhurakovskiy.PainlessInjectionTests";
+				PRODUCT_NAME = PainlessInjectionTests;
+			};
+			name = Debug;
+		};
+		C4A6EE401D340F3F00CB7442 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PainlessInjectionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "yaroslav-zhurakovskiy.PainlessInjectionTests";
+				PRODUCT_NAME = PainlessInjectionTests;
+			};
+			name = Release;
+		};
+		C4A6EE611D34294A00CB7442 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/PainlessInjectionLoader/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "yaroslav-zhurakovskiy.PainlessInjectionLoader";
+				PRODUCT_NAME = PainlessInjectionLoader;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C4A6EE621D34294A00CB7442 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/PainlessInjectionLoader/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "yaroslav-zhurakovskiy.PainlessInjectionLoader";
+				PRODUCT_NAME = PainlessInjectionLoader;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C4A6EE211D340F3F00CB7442 /* Build configuration list for PBXProject "PainlessInjection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4A6EE391D340F3F00CB7442 /* Debug */,
+				C4A6EE3A1D340F3F00CB7442 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4A6EE3B1D340F3F00CB7442 /* Build configuration list for PBXNativeTarget "PainlessInjection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4A6EE3C1D340F3F00CB7442 /* Debug */,
+				C4A6EE3D1D340F3F00CB7442 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4A6EE3E1D340F3F00CB7442 /* Build configuration list for PBXNativeTarget "PainlessInjectionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4A6EE3F1D340F3F00CB7442 /* Debug */,
+				C4A6EE401D340F3F00CB7442 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4A6EE601D34294A00CB7442 /* Build configuration list for PBXNativeTarget "PainlessInjectionLoader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4A6EE611D34294A00CB7442 /* Debug */,
+				C4A6EE621D34294A00CB7442 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C4A6EE1E1D340F3F00CB7442 /* Project object */;
+}
