@@ -6,4 +6,4 @@ branches:
  - master
 
 script:
-- xcodebuild clean build test -project PainlessInjection.xcodeproj -scheme PainlessInjectionTests
+- xcodebuild clean build test -project PainlessInjection.xcodeproj -scheme PainlessInjection -sdk iphonesimulator
