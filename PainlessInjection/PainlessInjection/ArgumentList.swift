@@ -19,7 +19,7 @@ public struct ArgumentList {
             FatalErrorNotifier.currentNotifier.notify("Expected \(T.self) parameter at index \(index) but got nothing: file \(file), line \(line)")
             return nil
         }
-        if let value = _args[0] as? T {
+        if let value = _args[index] as? T {
             return value
         }
         FatalErrorNotifier.currentNotifier.notify("Expected \(T.self) parameter at index \(index) but got \(_args[0].dynamicType): file \(file), line \(line)")

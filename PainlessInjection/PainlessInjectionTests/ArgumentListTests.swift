@@ -43,7 +43,18 @@ class ArgumentListTests: XCTestCase {
         let line = #line - 2
         
         notifier.assertLastMessage("Expected NSDictionary parameter at index 0 but got nothing: file \(file), line \(line)")
-
+    }
+    
+    func testShouldUseMultipleParams() {
+        let list = ArgumentList(args: ["Hello", 12])
+        
+        let text: String = list.at(0)
+        let number: Int = list.at(1)
+        
+        XCTAssertEqual(text, "Hello")
+        XCTAssertEqual(number, 12)
+        notifier.assertNotErrors()
+        
     }
     
 }

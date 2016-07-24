@@ -44,6 +44,10 @@ class TestFatalErrorNotifier: FatalErrorNotifierProtocol {
         lastMessage = message
     }
     
+    func assertNotErrors(file: StaticString = #file, line: UInt = #line) {
+        XCTAssertNil(lastMessage, "Should not raise any errors")
+    }
+    
     func assertLastMessage(message: String, file: StaticString = #file, line: UInt = #line) {
         XCTAssertEqual(lastMessage!, message, file: file, line: line)
     }
