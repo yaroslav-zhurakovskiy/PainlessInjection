@@ -9,8 +9,8 @@
 import Foundation
 
 class SingletonDependency: Dependency {
-    private var _value: Any!
-    private var _dependency: Dependency
+    fileprivate var _value: Any!
+    fileprivate var _dependency: Dependency
     init(dependency: Dependency) {
         _dependency = dependency
     }
@@ -19,7 +19,7 @@ class SingletonDependency: Dependency {
         return _dependency.type
     }
     
-    func create(args: [Any]) -> Any {
+    func create(_ args: [Any]) -> Any {
         if _value == nil {
             objc_sync_enter(self)
             _value = _dependency.create(args)

@@ -8,8 +8,8 @@
 
 import Foundation
 
-public class StandardFatalErrorNotifier: FatalErrorNotifierProtocol {
-    public func notify(message: String) {
+open class StandardFatalErrorNotifier: FatalErrorNotifierProtocol {
+    open func notify(_ message: String) {
         assertionFailure(message)
     }
 }

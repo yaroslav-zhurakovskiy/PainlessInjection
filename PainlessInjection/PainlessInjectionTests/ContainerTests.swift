@@ -17,7 +17,7 @@ class ContainerTests: XCTestCase {
         super.setUp()
 
         timer = FakeTimer()
-        Timer.factory = FakeTimerFactory(timer: timer)
+        PainlessInjection.Timer.factory = FakeTimerFactory(timer: timer)
 
     }
 
@@ -27,7 +27,7 @@ class ContainerTests: XCTestCase {
         Container.unload();
         FatalErrorNotifier.reset();
         Service.createdInstances = 0
-        Timer.reset()
+        PainlessInjection.Timer.reset()
     }
 
     func testShouldCreateNewDependencyModule() {

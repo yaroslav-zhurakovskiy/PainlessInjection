@@ -9,12 +9,12 @@
 import Foundation
 
 public struct ArgumentList {
-    private let _args: [Any]
+    fileprivate let _args: [Any]
     public init(args: [Any]) {
         _args = args
     }
     
-    public func at<T>(index: Int, file: StaticString = #file, line: UInt = #line) -> T! {
+    public func at<T>(_ index: Int, file: StaticString = #file, line: UInt = #line) -> T! {
         if index >= _args.count {
             FatalErrorNotifier.currentNotifier.notify("Expected \(T.self) parameter at index \(index) but got nothing: file \(file), line \(line)")
             return nil
@@ -22,7 +22,7 @@ public struct ArgumentList {
         if let value = _args[index] as? T {
             return value
         }
-        FatalErrorNotifier.currentNotifier.notify("Expected \(T.self) parameter at index \(index) but got \(_args[0].dynamicType): file \(file), line \(line)")
+        FatalErrorNotifier.currentNotifier.notify("Expected \(T.self) parameter at index \(index) but got \(type(of: _args[0])): file \(file), line \(line)")
         return nil
     }
 }

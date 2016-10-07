@@ -9,7 +9,7 @@
 import Foundation
 
 public struct TimeInterval {
-    private let _timeInterval: Double
+    fileprivate let _timeInterval: Double
     
     public init(seconds: Int) {
         _timeInterval = Double(seconds)
@@ -19,7 +19,7 @@ public struct TimeInterval {
         _timeInterval = Double(minutes * 60)
     }
     
-    public var timeInterval: NSTimeInterval {
+    public var timeInterval: Foundation.TimeInterval {
         return _timeInterval;
     }
 }

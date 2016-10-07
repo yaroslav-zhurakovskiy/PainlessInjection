@@ -10,9 +10,9 @@ import Foundation
 
 class CacheDependency: Dependency, TimerDelelgate {
     
-    private var _value: Any!
-    private var _dependency: Dependency
-    private let _timer: TimerProtocol
+    fileprivate var _value: Any!
+    fileprivate var _dependency: Dependency
+    fileprivate let _timer: TimerProtocol
     init(dependency: Dependency, interval: TimeInterval) {
         _dependency = dependency
         _timer = Timer.factory.newTimerWithInterval(interval)
@@ -23,7 +23,7 @@ class CacheDependency: Dependency, TimerDelelgate {
         return _dependency.type
     }
     
-    func create(args: [Any]) -> Any {
+    func create(_ args: [Any]) -> Any {
         if _value == nil {
             objc_sync_enter(self)
             _value = _dependency.create(args)

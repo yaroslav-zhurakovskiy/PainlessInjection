@@ -10,26 +10,29 @@ import Foundation
 
 public struct DefineDependencyStatement {
     
-    private var _dependency: Dependency
-    private let _type: Any.Type
+    fileprivate var _dependency: Dependency
+    fileprivate let _type: Any.Type
     init(type: Any.Type, dependency: Dependency) {
         _type = type
         _dependency = dependency
     }
     
+    @discardableResult
     public func inSingletonScope() -> DefineDependencyStatement {
         let singletonDependency = SingletonDependency(dependency: _dependency)
         Container.setDependency(singletonDependency, forType: _type)
         return self
     }
     
-    public func inCacheScope(interval interval: TimeInterval) -> DefineDependencyStatement {
+    @discardableResult
+    public func inCacheScope(interval: TimeInterval) -> DefineDependencyStatement {
         let singletonDependency = CacheDependency(dependency: _dependency, interval: interval)
         Container.setDependency(singletonDependency, forType: _type)
         return self
     }
     
-    public func decorate(wrapper: (Dependency) -> Dependency) {
+    @discardableResult
+    public func decorate(_ wrapper: (Dependency) -> Dependency) {
         if let dependency = Container.dependencyForType(_type) {
             Container.setDependency(wrapper(dependency), forType: _type)
         }

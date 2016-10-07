@@ -25,12 +25,12 @@ class ModuleLoadingTests: XCTestCase {
                 TestModule.loaded = true
             }
             
-            class func assertWasLoaded(file: StaticString = #file, line: UInt = #line) {
-                XCTAssertTrue(loaded, "Module \(self.dynamicType) must be loaded.", file: file, line: line)
+            class func assertWasLoaded(_ file: StaticString = #file, line: UInt = #line) {
+                XCTAssertTrue(loaded, "Module \(type(of: self)) must be loaded.", file: file, line: line)
             }
             
-            class func assertWasNotLoaded(file: StaticString = #file, line: UInt = #line) {
-                XCTAssertFalse(loaded, "Module \(self.dynamicType) must not be loaded.", file: file, line: line)
+            class func assertWasNotLoaded(_ file: StaticString = #file, line: UInt = #line) {
+                XCTAssertFalse(loaded, "Module \(type(of: self)) must not be loaded.", file: file, line: line)
             }
         }
         
@@ -47,8 +47,8 @@ class ModuleLoadingTests: XCTestCase {
                 TestModule.loaded = true
             }
             
-            class func assertWasLoaded(file: StaticString = #file, line: UInt = #line) {
-                XCTAssertTrue(loaded, "Module \(self.dynamicType) must be loaded.", file: file, line: line)
+            class func assertWasLoaded(_ file: StaticString = #file, line: UInt = #line) {
+                XCTAssertTrue(loaded, "Module \(type(of: self)) must be loaded.", file: file, line: line)
             }
         }
         
@@ -73,8 +73,8 @@ class ModuleLoadingTests: XCTestCase {
                 return DoNotLoadPredicate()
             }
             
-            class func assertWasNotLoaded(file: StaticString = #file, line: UInt = #line) {
-                XCTAssertFalse(loaded, "Module \(self.dynamicType) must not be loaded.", file: file, line: line)
+            class func assertWasNotLoaded(_ file: StaticString = #file, line: UInt = #line) {
+                XCTAssertFalse(loaded, "Module \(type(of: self)) must not be loaded.", file: file, line: line)
             }
         }
         

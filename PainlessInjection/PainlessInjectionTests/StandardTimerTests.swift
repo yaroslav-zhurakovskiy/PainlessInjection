@@ -11,8 +11,8 @@ import PainlessInjection
 
 let TimerValueSeconds: Int = 2
 
-func dispatchAfter(seconds seconds: Int, block: () -> Void) {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(UInt64(seconds) * NSEC_PER_SEC)), dispatch_get_main_queue()) {
+func dispatchAfter(seconds: Int, block: @escaping () -> Void) {
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(UInt64(seconds) * NSEC_PER_SEC)) / Double(NSEC_PER_SEC)) {
         block()
     }
     
@@ -55,11 +55,11 @@ class StandardTimerTests: XCTestCase {
         let delegateMock = FakeTimerDelegate()
         timer.delegate = delegateMock
         timer.start()
-        let expectation = expectationWithDescription("Standard timer")
+        let expectation = self.expectation(description: "Standard timer")
         dispatchAfter(seconds: TimerValueSeconds) {
             expectation.fulfill()
         }
-        waitForExpectationsWithTimeout(NSTimeInterval(TimerValueSeconds + 1)) { error in
+        waitForExpectations(timeout: Foundation.TimeInterval(TimerValueSeconds + 1)) { error in
             XCTAssertNil(error, "Shold not return any error.")
             delegateMock.assertCallOnTickOnce()
         }

@@ -8,34 +8,34 @@
 
 import Foundation
 
-public class StandardTimer: NSObject, TimerProtocol {
-    public var delegate: TimerDelelgate?
+open class StandardTimer: NSObject, TimerProtocol {
+    open var delegate: TimerDelelgate?
     
-    private let _timeInterval: TimeInterval
+    fileprivate let _timeInterval: TimeInterval
     
     public init(interval: TimeInterval) {
         _timeInterval = interval
         super.init()
     }
     
-    var _nstimer:NSTimer?
-    public var nstimer: NSTimer {
+    var _nstimer:Foundation.Timer?
+    open var nstimer: Foundation.Timer {
         get {
             if let timer = _nstimer {
                 return timer
             }
-            return NSTimer(timeInterval: _timeInterval.timeInterval, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
+            return Foundation.Timer(timeInterval: _timeInterval.timeInterval, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
         }
         set {
             _nstimer = newValue
         }
     }
     
-    public func start() {
+    open func start() {
         self.nstimer.fire()
     }
     
-    public func stop() {
+    open func stop() {
         self.nstimer.invalidate()
     }
     
@@ -43,13 +43,13 @@ public class StandardTimer: NSObject, TimerProtocol {
         self.nstimer.invalidate()
     }
     
-    public func onTimer() {
+    open func onTimer() {
         delegate?.onTick()
     }
 }
 
-public class StandardTimerFactory: TimerFactoryProtocol {
-    public func newTimerWithInterval(interval: TimeInterval) -> TimerProtocol {
+open class StandardTimerFactory: TimerFactoryProtocol {
+    open func newTimerWithInterval(_ interval: TimeInterval) -> TimerProtocol {
         return StandardTimer(interval: interval)
     }
 }

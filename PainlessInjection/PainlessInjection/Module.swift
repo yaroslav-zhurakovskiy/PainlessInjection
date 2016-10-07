@@ -8,27 +8,29 @@
 
 import Foundation
 
-public class Module: NSObject {
+open class Module: NSObject {
     
     public required override init() {
         super.init()
     }
     
-    public func load() {
+    open func load() {
     
     }
     
-    public func loadingPredicate() -> ModuleLoadingPredicate {
+    open func loadingPredicate() -> ModuleLoadingPredicate {
         return LoadModulePredicate()
     }
     
-    public func define(type: Any.Type, configuration: () -> Any ) -> DefineDependencyStatement {
+    @discardableResult
+    open func define(_ type: Any.Type, configuration: @escaping () -> Any ) -> DefineDependencyStatement {
         let dependency = OnDemandDependency(type: type, configurator: { _ in configuration() })
         Container.add(type, dependency: dependency)
         return DefineDependencyStatement(type: type, dependency: dependency)
     }
     
-    public func define(type: Any.Type, configuration: (ArgumentList) -> Any) -> DefineDependencyStatement {
+    @discardableResult
+    open func define(_ type: Any.Type, configuration: @escaping (ArgumentList) -> Any) -> DefineDependencyStatement {
         let dependency = OnDemandDependency(type: type, configurator: { (args: [Any]) in
             return configuration(ArgumentList(args: args))
         })
@@ -36,7 +38,7 @@ public class Module: NSObject {
         return DefineDependencyStatement(type: type, dependency: dependency)
     }
     
-    public func resolve<T>(args: Any...) -> T {
+    open func resolve<T>(_ args: Any...) -> T {
         if args.count == 1 {
             return Container.get(args[0])
         }

@@ -9,12 +9,12 @@
 import Foundation
 
 public protocol FatalErrorNotifierProtocol {
-    func notify(message: String)
+    func notify(_ message: String)
 }
 
 public struct FatalErrorNotifier {
     
-    private static var _currentNotifier: FatalErrorNotifierProtocol?
+    fileprivate static var _currentNotifier: FatalErrorNotifierProtocol?
     public static var currentNotifier: FatalErrorNotifierProtocol {
         get {
             if let current = _currentNotifier {

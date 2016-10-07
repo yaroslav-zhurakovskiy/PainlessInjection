@@ -27,7 +27,7 @@ class WeatherServce: WeatherServiceProtocol {
 }
 
 class Weatherman {
-    private let _weatherService: WeatherServiceProtocol
+    fileprivate let _weatherService: WeatherServiceProtocol
     init(weatherService: WeatherServiceProtocol) {
         _weatherService = weatherService
     }
@@ -38,17 +38,17 @@ class Weatherman {
 }
 
 class TestFatalErrorNotifier: FatalErrorNotifierProtocol {
-    private var lastMessage: String!
+    fileprivate var lastMessage: String!
     
-    func notify(message: String) {
+    func notify(_ message: String) {
         lastMessage = message
     }
     
-    func assertNotErrors(file: StaticString = #file, line: UInt = #line) {
+    func assertNotErrors(_ file: StaticString = #file, line: UInt = #line) {
         XCTAssertNil(lastMessage, "Should not raise any errors")
     }
     
-    func assertLastMessage(message: String, file: StaticString = #file, line: UInt = #line) {
+    func assertLastMessage(_ message: String, file: StaticString = #file, line: UInt = #line) {
         XCTAssertEqual(lastMessage!, message, file: file, line: line)
     }
 }
@@ -87,7 +87,7 @@ class DependencyDecorator: Dependency {
         return dependency.type
     }
     
-    func create(args: [Any]) -> Any {
+    func create(_ args: [Any]) -> Any {
         wasCalled = true
         return dependency.create(args)
     }
@@ -110,21 +110,21 @@ class FakeTimer: TimerProtocol {
         stopWasCalledTimes += 1
     }
     
-    func assertStartWasCalledTimes(times: Int, file: StaticString = #file, line: UInt = #line) {
+    func assertStartWasCalledTimes(_ times: Int, file: StaticString = #file, line: UInt = #line) {
         XCTAssertTrue(startWasCalledTimes == times, "Expected start() to be called \(times). But was called \(startWasCalledTimes).", file: file, line: line)
     }
     
-    func assertStopWasCalledOnce(file: StaticString = #file, line: UInt = #line) {
+    func assertStopWasCalledOnce(_ file: StaticString = #file, line: UInt = #line) {
         XCTAssertTrue(stopWasCalledTimes == 1, "Expected stop() to be called once. But was called \(startWasCalledTimes).", file: file, line: line)
     }
 }
 
 class FakeTimerFactory: TimerFactoryProtocol {
-    private let _timer: FakeTimer
+    fileprivate let _timer: FakeTimer
     init(timer: FakeTimer) {
         _timer = timer
     }
-    func newTimerWithInterval(interval: TimeInterval) -> TimerProtocol {
+    func newTimerWithInterval(_ interval: PainlessInjection.TimeInterval) -> TimerProtocol {
         return _timer
     }
 }
@@ -138,7 +138,7 @@ class ModuleWithDependency : Module {
         }
     }
     
-    func assertDependencyType(type: Any.Type, file: StaticString = #file, line: UInt = #line) {
+    func assertDependencyType(_ type: Any.Type, file: StaticString = #file, line: UInt = #line) {
         XCTAssertTrue(dependency.type == type, "Type should be String but got \(dependency.type)", file: file, line: line)
 
     }
@@ -146,29 +146,29 @@ class ModuleWithDependency : Module {
 
 class FakeTimerDelegate: TimerDelelgate {
     
-    private  var calls: Int = 0
+    fileprivate  var calls: Int = 0
     
     func onTick() {
         calls += 1
     }
     
-    func assertCallOnTickOnce(file: StaticString = #file, line: UInt = #line) {
+    func assertCallOnTickOnce(_ file: StaticString = #file, line: UInt = #line) {
         XCTAssertTrue(calls == 1, "Expected onTick to be called once. But was called \(calls).", file: file, line: line)
     }
 }
 
-class FakeNSTimer: NSTimer {
+class FakeNSTimer: Foundation.Timer {
     var spyTarget: AnyObject
     var spySelector: Selector
-    var spyFireDate: NSDate
-    var spyInterval: NSTimeInterval
+    var spyFireDate: Date
+    var spyInterval: Foundation.TimeInterval
     
-    override init(fireDate date: NSDate, interval ti: NSTimeInterval, target t: AnyObject, selector s: Selector, userInfo ui: AnyObject?, repeats rep: Bool) {
-        self.spyTarget = t
+    override init(fireAt date: Date, interval ti: Foundation.TimeInterval, target t: Any, selector s: Selector, userInfo ui: Any?, repeats rep: Bool) {
+        self.spyTarget = t as AnyObject
         self.spySelector = s
         self.spyFireDate = date
         self.spyInterval = ti
-        super.init(fireDate: date, interval: ti, target: t, selector: s, userInfo: ui, repeats: rep)
+        super.init(fireAt: date, interval: ti, target: t, selector: s, userInfo: ui, repeats: rep)
     }
     
     var fireWasCalledTimes: Int = 0
@@ -178,7 +178,7 @@ class FakeNSTimer: NSTimer {
         //        self.spyTarget.performSelector(self.spySelector)
         
     }
-    func assertFireWasCallTimes(times: Int, file: StaticString = #file, line: UInt = #line) {
+    func assertFireWasCallTimes(_ times: Int, file: StaticString = #file, line: UInt = #line) {
         XCTAssertTrue(fireWasCalledTimes == times, "Expected fire() to be called \(times). But was called \(fireWasCalledTimes).", file: file, line: line)
     }
     
@@ -186,7 +186,7 @@ class FakeNSTimer: NSTimer {
     override func invalidate() {
         invalidateWasCalledTimes += 1
     }
-    func assertInvalidateCallTimes(times: Int, file: StaticString = #file, line: UInt = #line) {
+    func assertInvalidateCallTimes(_ times: Int, file: StaticString = #file, line: UInt = #line) {
         XCTAssertTrue(invalidateWasCalledTimes == times, "Expected fire() to be called \(times). But was called \(invalidateWasCalledTimes).", file: file, line: line)
     }
 }

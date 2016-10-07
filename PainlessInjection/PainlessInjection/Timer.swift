@@ -21,11 +21,11 @@ public protocol TimerProtocol {
 
 
 public protocol TimerFactoryProtocol {
-    func newTimerWithInterval(interval: TimeInterval) -> TimerProtocol
+    func newTimerWithInterval(_ interval: TimeInterval) -> TimerProtocol
 }
 
 public struct Timer {
-    private static var _factory: TimerFactoryProtocol?
+    fileprivate static var _factory: TimerFactoryProtocol?
     public static var factory: TimerFactoryProtocol {
         get {
             if let factory = _factory {

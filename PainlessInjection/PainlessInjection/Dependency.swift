@@ -10,5 +10,5 @@ import Foundation
 
 public protocol Dependency {
     var type: Any.Type { get }
-    func create(args: [Any]) -> Any
+    func create(_ args: [Any]) -> Any
 }
