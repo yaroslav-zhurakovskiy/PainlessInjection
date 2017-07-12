@@ -31,7 +31,6 @@ public struct DefineDependencyStatement {
         return self
     }
     
-    @discardableResult
     public func decorate(_ wrapper: (Dependency) -> Dependency) {
         if let dependency = Container.dependencyForType(_type) {
             Container.setDependency(wrapper(dependency), forType: _type)
