@@ -12,7 +12,7 @@ class CacheDependency: Dependency, TimerDelelgate {
     
     fileprivate var _value: Any!
     fileprivate var _dependency: Dependency
-    fileprivate let _timer: TimerProtocol
+    fileprivate var _timer: TimerProtocol
     init(dependency: Dependency, interval: TimeInterval) {
         _dependency = dependency
         _timer = Timer.factory.newTimerWithInterval(interval)
