@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
   s.requires_arc = true
 
-  s.source       = { :git => "https://github.com/yaroslav-zhurakovskiy/PainlessInjection.git", :tag => "v0.0.1"}
+  s.source       = { :git => "https://github.com/myrepo/Podspecs.git", :branch => "master", :tag => s.version.to_s }
 
   s.source_files  = "PainlessInjection/PainlessInjection/*.swift"
 
