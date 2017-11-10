@@ -19,15 +19,15 @@ class ModuleLoader {
             defer {
                 classesStorage.deallocate(capacity: Int(numberOfClasses))
             }
-            let classes = AutoreleasingUnsafeMutablePointer<AnyClass?>(classesStorage)
+            let classes = AutoreleasingUnsafeMutablePointer<AnyClass>(classesStorage)
             objc_getClassList(classes, numberOfClasses)
             for index in 0..<Int(numberOfClasses) {
-                if let cls: AnyClass = classes[index] {
-                    if class_getSuperclass(cls) != Module.self { continue }
-                    if  let moduleClass = cls as? Module.Type {
-                        let module: Module = moduleClass.init()
-                        result.append(module)
-                    }
+                let cls: AnyClass = classes[index]
+                if class_getSuperclass(cls) != Module.self { continue }
+                
+                if  let moduleClass = cls as? Module.Type {
+                    let module: Module = moduleClass.init()
+                    result.append(module)
                 }
             }
         }

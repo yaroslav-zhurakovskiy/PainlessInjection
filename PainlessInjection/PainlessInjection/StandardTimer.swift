@@ -23,8 +23,14 @@ open class StandardTimer: NSObject, TimerProtocol {
         get {
             if let timer = _nstimer {
                 return timer
+            } else {
+                return Foundation.Timer(
+                    timeInterval: _timeInterval.timeInterval,
+                    target: self,
+                    selector: #selector(onTimer),
+                    userInfo: nil,
+                    repeats: true)
             }
-            return Foundation.Timer(timeInterval: _timeInterval.timeInterval, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
         }
         set {
             _nstimer = newValue
@@ -43,7 +49,7 @@ open class StandardTimer: NSObject, TimerProtocol {
         self.nstimer.invalidate()
     }
     
-    open func onTimer() {
+    @objc open func onTimer() {
         delegate?.onTick()
     }
 }
