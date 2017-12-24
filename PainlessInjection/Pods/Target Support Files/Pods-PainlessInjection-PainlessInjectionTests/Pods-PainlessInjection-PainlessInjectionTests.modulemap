@@ -1,6 +1,0 @@
-framework module Pods_PainlessInjection_PainlessInjectionTests {
-  umbrella header "Pods-PainlessInjection-PainlessInjectionTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
