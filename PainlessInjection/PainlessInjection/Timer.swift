@@ -13,7 +13,7 @@ public protocol TimerDelelgate: class {
 }
 
 public protocol TimerProtocol {
-    weak var delegate: TimerDelelgate? { get set }
+    var delegate: TimerDelelgate? { get set }
     
     func start()
     func stop()

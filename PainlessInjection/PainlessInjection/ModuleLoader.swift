@@ -17,7 +17,7 @@ class ModuleLoader {
         if numberOfClasses > 0 {
             let classesStorage = UnsafeMutablePointer<AnyClass?>.allocate(capacity: Int(numberOfClasses))
             defer {
-                classesStorage.deallocate(capacity: Int(numberOfClasses))
+                classesStorage.deallocate()
             }
             let classes = AutoreleasingUnsafeMutablePointer<AnyClass>(classesStorage)
             objc_getClassList(classes, numberOfClasses)

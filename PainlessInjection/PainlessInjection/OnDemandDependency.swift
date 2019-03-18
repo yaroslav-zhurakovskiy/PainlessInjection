@@ -9,7 +9,6 @@
 import Foundation
 
 class OnDemandDependency: Dependency {
-    
     fileprivate var _type: Any.Type
     var type: Any.Type {
         return _type
@@ -24,5 +23,4 @@ class OnDemandDependency: Dependency {
     func create(_ args: [Any]) -> Any {
         return _configurator(args)
     }
-    
 }

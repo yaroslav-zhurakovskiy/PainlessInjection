@@ -10,6 +10,6 @@ import Foundation
 
 open class StandardFatalErrorNotifier: FatalErrorNotifierProtocol {
     open func notify(_ message: String) {
-        assertionFailure(message)
+        fatalError(message)
     }
 }

@@ -15,14 +15,26 @@ protocol WeatherServiceProtocol {
 }
 
 class WeatherServce: WeatherServiceProtocol {
+    let temperature: Double
     
-    var temperature: Double
     init(temperature: Double = 36.6) {
         self.temperature = temperature
     }
     
     func todayTemperature() -> Double {
         return temperature
+    }
+}
+
+class OptionalWeatherService: WeatherServiceProtocol {
+    let temperature: Double?
+    
+    init(temperature: Double?) {
+        self.temperature = temperature
+    }
+    
+    func todayTemperature() -> Double {
+        return temperature ?? 0
     }
 }
 
@@ -59,11 +71,11 @@ class EmptyTestModule: Module {
     }
 }
 
-protocol ServiceProtocol {
+protocol ServiceProtocol: class {
     func send()
 }
 
-struct  Service: ServiceProtocol {
+class Service: ServiceProtocol {
     static var createdInstances: Int = 0
     var id: Int
     init() {

@@ -97,6 +97,36 @@ class ContainerTests: XCTestCase {
         let service: WeatherServiceProtocol = Container.get(55.0)
         XCTAssertEqual(service.todayTemperature(), 55.0)
     }
+    
+    func testShouldGetDependenciesWithNilParams() {
+        class TestModule: Module {
+            override func load() {
+                define(WeatherServiceProtocol.self) { args in
+                    OptionalWeatherService(temperature: args.optionalAt(0))
+                }
+            }
+        }
+        let module = TestModule()
+        module.load()
+        
+        let service: WeatherServiceProtocol = Container.get(Optional<Any>.none)
+        XCTAssertEqual(service.todayTemperature(), 0)
+    }
+    
+    func testShouldGetDependenciesWithNilParamsWhenNonNillIsPAssed() {
+        class TestModule: Module {
+            override func load() {
+                define(WeatherServiceProtocol.self) { args in
+                    OptionalWeatherService(temperature: args.optionalAt(0))
+                }
+            }
+        }
+        let module = TestModule()
+        module.load()
+        
+        let service: WeatherServiceProtocol = Container.get(60.0)
+        XCTAssertEqual(service.todayTemperature(), 60)
+    }
 
     func testShouldThrowExceptionIfProtocolDependencyIsNotFound() {
         let module = EmptyTestModule()
@@ -209,7 +239,6 @@ class ContainerTests: XCTestCase {
     }
 
     func testShouldReturnDefineConfigurator() {
-
         class TestModule: Module {
             var configurator: DefineDependencyStatement!
             override func load() {
