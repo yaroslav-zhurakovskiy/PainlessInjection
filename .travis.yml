@@ -1,6 +1,7 @@
 language: swift
-osx_image: xcode10
-script:
-    - xcodebuild clean build test -workspace PainlessInjection/PainlessInjection.xcworkspace -scheme PainlessInjection -sdk iphonesimulator10.0 ONLY_ACTIVE_ARCH=NO | xcpretty
+osx_image: xcode10.2
+xcode_workspace: PainlessInjection/PainlessInjection.xcworkspace
+xcode_scheme: PainlessInjection
+xcode_destination: platform=iOS Simulator,OS=8.0,name=iPhone 5s
 after_success:
     - bash <(curl -s https://codecov.io/bash) -t d57dba6a-8e17-4a91-b7bf-ef7abe812e24
