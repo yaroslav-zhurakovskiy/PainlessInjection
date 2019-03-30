@@ -1,6 +1,6 @@
 language: swift
-osx_image: xcode8
+osx_image: xcode10
 script:
-    - xcodebuild clean test -workspace PainlessInjection/PainlessInjection.xcworkspace -scheme PainlessInjection -sdk iphonesimulator10.0 ONLY_ACTIVE_ARCH=NO | xcpretty
+    - xcodebuild clean build test -workspace PainlessInjection/PainlessInjection.xcworkspace -scheme PainlessInjection -sdk iphonesimulator10.0 ONLY_ACTIVE_ARCH=NO | xcpretty
 after_success:
-    - bash <(curl -s https://codecov.io/bash) -J 'PainlessInspector' -t d57dba6a-8e17-4a91-b7bf-ef7abe812e24
+    - bash <(curl -s https://codecov.io/bash) -t d57dba6a-8e17-4a91-b7bf-ef7abe812e24
