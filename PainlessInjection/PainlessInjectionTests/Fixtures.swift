@@ -15,9 +15,11 @@ protocol WeatherServiceProtocol {
 }
 
 class WeatherServce: WeatherServiceProtocol {
+    public static let defaultValue = 36.6
+    
     let temperature: Double
     
-    init(temperature: Double = 36.6) {
+    init(temperature: Double = defaultValue) {
         self.temperature = temperature
     }
     

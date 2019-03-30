@@ -9,7 +9,6 @@
 import Foundation
 
 public struct Container {
-    
     fileprivate static var _dependencies: [String: Dependency] = [:]
     fileprivate static var _modules: [Module] = []
     
@@ -37,6 +36,10 @@ public struct Container {
         _modules.forEach { module in
             module.load()
         }
+    }
+    
+    public static func get<T>(type: T.Type, args: [Any] = []) -> T {
+        return get(args: args)
     }
     
     public static func get<T>(_ args: Any...) -> T! {

@@ -50,7 +50,7 @@ class ContainerTests: XCTestCase {
         module.load()
 
         let service: WeatherServiceProtocol = Container.get()
-        XCTAssertEqual(service.todayTemperature(), 36.6)
+        AssertEqual(service.todayTemperature(), WeatherServce.defaultValue)
     }
 
     func testShouldAddDependencyOnleOnce() {
@@ -64,7 +64,7 @@ class ContainerTests: XCTestCase {
         module.load()
 
         let service: WeatherServiceProtocol = Container.get()
-        XCTAssertEqual(service.todayTemperature(), 40)
+        AssertEqual(service.todayTemperature(), 40)
     }
 
     func testShouldAddDifferentDependencies() {
@@ -81,7 +81,7 @@ class ContainerTests: XCTestCase {
 
         let service: WeatherServiceProtocol = Container.get()
         let text: String = Container.get()
-        XCTAssertEqual(service.todayTemperature(), 40)
+        AssertEqual(service.todayTemperature(), 40)
         XCTAssertEqual(text, "Hello")
     }
 
@@ -95,7 +95,7 @@ class ContainerTests: XCTestCase {
         module.load()
 
         let service: WeatherServiceProtocol = Container.get(55.0)
-        XCTAssertEqual(service.todayTemperature(), 55.0)
+        AssertEqual(service.todayTemperature(), 55.0)
     }
     
     func testShouldGetDependenciesWithNilParams() {
@@ -110,7 +110,7 @@ class ContainerTests: XCTestCase {
         module.load()
         
         let service: WeatherServiceProtocol = Container.get(Optional<Any>.none)
-        XCTAssertEqual(service.todayTemperature(), 0)
+        AssertEqual(service.todayTemperature(), 0)
     }
     
     func testShouldGetDependenciesWithNilParamsWhenNonNillIsPAssed() {
@@ -125,7 +125,7 @@ class ContainerTests: XCTestCase {
         module.load()
         
         let service: WeatherServiceProtocol = Container.get(60.0)
-        XCTAssertEqual(service.todayTemperature(), 60)
+        AssertEqual(service.todayTemperature(), 60)
     }
 
     func testShouldThrowExceptionIfProtocolDependencyIsNotFound() {
@@ -294,5 +294,22 @@ class ContainerTests: XCTestCase {
         module.load()
         
         module.assertDependencyType(String.self)
+    }
+    
+    func testSholdResolveTypeUsingTypeParam() {
+        class TestModule: ModuleWithDependency {
+            override func load() {
+                define(String.self) { "Hello" }
+                define(WeatherServiceProtocol.self) { args in WeatherServce(temperature: args.at(0)) }
+            }
+        }
+        let module = TestModule()
+        module.load()
+        
+        let string: String = Container.get(type: String.self)
+        let service = Container.get(type: WeatherServiceProtocol.self, args: [10.0])
+        
+        XCTAssertEqual(string, "Hello")
+        AssertEqual(service.todayTemperature(), 10)
     }
 }

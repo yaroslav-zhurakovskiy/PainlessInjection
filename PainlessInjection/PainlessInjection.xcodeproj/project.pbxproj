@@ -10,6 +10,7 @@
 		C4251EE71D3D4201005C5A57 /* OnDemandDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4251EE61D3D4201005C5A57 /* OnDemandDependency.swift */; };
 		C4251EE91D3D4657005C5A57 /* StandardTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4251EE81D3D4657005C5A57 /* StandardTimerTests.swift */; };
 		C4466D151D3D2761008D0A80 /* ModuleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4466D141D3D2761008D0A80 /* ModuleLoader.swift */; };
+		C44D7A70224F3A4700D5DBB2 /* CustomAsserts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44D7A6F224F3A4700D5DBB2 /* CustomAsserts.swift */; };
 		C4A0CFCB1D3CF88F00BCEC00 /* ArgumentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFBC1D3CF88F00BCEC00 /* ArgumentList.swift */; };
 		C4A0CFCC1D3CF88F00BCEC00 /* CacheDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFBD1D3CF88F00BCEC00 /* CacheDependency.swift */; };
 		C4A0CFCD1D3CF88F00BCEC00 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFBE1D3CF88F00BCEC00 /* Container.swift */; };
@@ -48,6 +49,7 @@
 		C4251EE61D3D4201005C5A57 /* OnDemandDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnDemandDependency.swift; sourceTree = "<group>"; };
 		C4251EE81D3D4657005C5A57 /* StandardTimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardTimerTests.swift; sourceTree = "<group>"; };
 		C4466D141D3D2761008D0A80 /* ModuleLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleLoader.swift; sourceTree = "<group>"; };
+		C44D7A6F224F3A4700D5DBB2 /* CustomAsserts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAsserts.swift; sourceTree = "<group>"; };
 		C4A0CFBC1D3CF88F00BCEC00 /* ArgumentList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArgumentList.swift; sourceTree = "<group>"; };
 		C4A0CFBD1D3CF88F00BCEC00 /* CacheDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheDependency.swift; sourceTree = "<group>"; };
 		C4A0CFBE1D3CF88F00BCEC00 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				C4A0CFE11D3CF89700BCEC00 /* TimeIntervalTests.swift */,
 				C4A0CFE21D3CF89700BCEC00 /* TimerTests.swift */,
 				C4251EE81D3D4657005C5A57 /* StandardTimerTests.swift */,
+				C44D7A6F224F3A4700D5DBB2 /* CustomAsserts.swift */,
 			);
 			path = PainlessInjectionTests;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = C4A6EE1D1D340F3F00CB7442;
@@ -290,6 +294,7 @@
 				C4A0D00F1D3CFB8E00BCEC00 /* ModuleLoadingTests.swift in Sources */,
 				C4A0D00C1D3CFB8E00BCEC00 /* ContainerTests.swift in Sources */,
 				C4A0D0101D3CFB8E00BCEC00 /* TimeIntervalTests.swift in Sources */,
+				C44D7A70224F3A4700D5DBB2 /* CustomAsserts.swift in Sources */,
 				C4A0D00D1D3CFB8E00BCEC00 /* FataErrorNotifierTests.swift in Sources */,
 				C4A0D00E1D3CFB8E00BCEC00 /* Fixtures.swift in Sources */,
 			);
@@ -336,7 +341,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -359,6 +364,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -395,7 +401,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -411,6 +417,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -425,7 +432,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 3;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/PainlessInjection/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -435,7 +442,7 @@
 				PRODUCT_NAME = PainlessInjection;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -446,7 +453,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 3;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/PainlessInjection/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -455,7 +462,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "yaroslav-zhurakovskiy.PainlessInjector";
 				PRODUCT_NAME = PainlessInjection;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -466,7 +473,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "yaroslav-zhurakovskiy.PainlessInjectionTests";
 				PRODUCT_NAME = PainlessInjectionTests;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -477,7 +484,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "yaroslav-zhurakovskiy.PainlessInjectionTests";
 				PRODUCT_NAME = PainlessInjectionTests;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
