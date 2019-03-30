@@ -1,6 +1,6 @@
 language: swift
 osx_image: xcode10.2
-xcode_workspace: PainlessInjection/PainlessInjection.xcworkspace
+xcode_project: PainlessInjection/PainlessInjection.xcodeproj
 xcode_scheme: PainlessInjection
 xcode_destination: platform=iOS Simulator,OS=8.0,name=iPhone 5s
 after_success:
