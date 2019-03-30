@@ -2,6 +2,6 @@ language: swift
 osx_image: xcode10.2
 xcode_project: PainlessInjection/PainlessInjection.xcodeproj
 xcode_scheme: PainlessInjection
-xcode_destination: platform=iOS Simulator,OS=8.0,name=iPhone 5s
+xcode_destination: platform=iOS Simulator,OS=8.1,name=iPhone 5
 after_success:
     - bash <(curl -s https://codecov.io/bash) -t d57dba6a-8e17-4a91-b7bf-ef7abe812e24
