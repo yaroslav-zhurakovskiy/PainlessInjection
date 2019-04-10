@@ -2,3 +2,271 @@
 
 # PainlessInjection
 PainlessInjection is a lightweight dependency injection framework for Swift.
+
+Dependency injection (DI) is a software design pattern that implements Inversion of Control (IoC) for resolving dependencies. In the pattern, PainlessInjection helps your app split into loosely-coupled components, which can be developed, tested and maintained more easily. PainlessInjection is powered by the Swift generic type system and first class functions to define dependencies of your app simply and fluently.
+
+# Installation
+PainlessInjection is avaialble via [Carthage](https://github.com/Carthage/Carthage) and [CocoaPods](https://cocoapods.org/).
+## Requirements
+* iOS 8.0+
+* Swift 5+
+* Carthage 0.18+ (if you use)
+* CocoaPods 1.1.1+ (if you use)
+## Carthage
+To install PainlessInjection with Carthage, add the following line to your Cartfile.
+```
+github "yaroslav-zhurakovskiy/PainlessInjection"
+```
+## CocoaPods
+To install PainlessInjection with CocoaPods, add the following lines to your Podfile.
+```
+pod "PainlessInjection"
+```
+# Usage
+## Simple dependencies
+```swift
+import PainlessInjection
+
+// Define Services
+class ServiceModule: Module {
+    override func load() {
+        define(Service.self) { InMemmoryService() }
+    }
+}
+
+// Load Modules
+Container.load()
+// Instantiate Service
+let service = Container.get(type: Service.self)
+// Using service
+print(type(of: service))
+```
+## Dependencies with arguments and subdependencies
+```swift
+// Define Services
+class ServiceModule: Module {
+    override func load() {
+        define(UserService.self) { RestUserService() }
+    }
+} 
+
+// Define Controllers
+class ControllersModule {
+    override func load() {)
+        define(ResetPasswordController.self) { args in
+            ResetPasswordController(email: args.at(0), userService: self.resolve())
+        }
+    }
+}
+
+// Load Modules
+Container.load()
+// Instantiate ResetPasswordController
+let controller = Container.get(type: ResetPasswordController.self, args: ["test@test.com"])
+```
+## Dependencies with optional arguments
+```swift
+// Define Services
+class ServiceModule: Module {
+    override func load() {
+        define(TaskService.self) { RestTaskService() }
+    }
+} 
+
+// Define Controllers
+class ControllersModule {
+    override func load() {)
+        define(EditTaskController.self) { args in
+            EditTaskController(task: args.optionalAt(0), service: self.resolve())
+        }
+    }
+}
+
+// Load Modules
+Container.load()
+// Passing nil
+let controller2 = Container.get(type: EditTaskController.self, args: [nil as Any])
+// Passing a task
+let task = Task(name: "Code something")
+let controller2 = Container.get(type: EditTaskController.self, args: [task])
+```
+## Using singltone scope
+Very often you do not want to recreate a service every time. You want to use some kind of a singletone. In order to do it you can use singletone scope.
+```swift
+import PainlessInjection
+
+class ServiceModule: Module {
+    override func load() {
+        define(Service.self) { InMemmoryService() }.inSingletonScope()
+    }
+}
+
+// Use Service as a singletone
+let service1 = Container.get(type: Service.self)
+let service2 = Container.get(type: Service.self)
+// service1 & service2 is the same object
+service1 === service2
+```
+## Using cache scope
+If you want to cache an object for some time you can use cache scope.
+```swift
+import PainlessInjection
+
+class ServiceModule: Module {
+    override func load() {
+        // Service will be cached for 10 minutes.
+        // After that it will be recreated again.
+        define(Service.self) { InMemmoryService() }.inCacheScope(interval: 10 * 60)
+    }
+}
+
+// Resolve Service type
+let service1 = Container.get(type: Service.self)
+let service2 = Container.get(type: Service.self)
+// service1 & service2 is the same object
+service1 === service2
+// Wait for 10 minutes and 1 second
+DispatchQueue.main.asyncAfter(deadline: .now() + 10 * 60 + 1) {
+    let service3 = Container.get(type: Service.self)
+    // service3 is different from service1 & service2
+    service3 != service1 && service3 != service2
+}
+```
+## Using decorators
+You can add additional logic to the dependency creation process using decorators. 
+For example you can log every time a dependency is resolved.
+```swift
+import PainlessInjection
+
+class PrintableDependency: Dependency {
+    private let original: Dependency
+    
+    init(original: Dependency) {
+        self.original = original
+    }
+    
+    var type: Any.Type {
+        return original.type
+    }
+    
+    func create(_ args: [Any]) -> Any {
+        print("\(type) was created with", args, ".")
+        return original.create(args)
+    }
+}
+
+class UserModule: Module {
+    override func load() {
+        // Every time you will try to resolve User dependency it will be printed.
+        define(User.self) { User() }.decorate({ PrintableDependency(original: $0) })
+    }
+}
+```
+## When to load dependencies
+Put Container.load() somewhere in application:didFinishLaunchingWithOptions method of your AppDelegate class.
+```swift
+import PainlessInjection
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    var window: UIWindow?
+    
+    func application(
+      _ application: UIApplication,
+      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+     ) -> Bool {
+        Container.load()
+        print(Container.loadedModules) // prints a list of loaded Modules
+        return true
+     }
+}
+```
+## Type inference
+```swift
+let service: Service = Container.get()
+let user: User = Container.get("John", "Doe")
+let anonymousUser: User = Container.get(nil as Any, nil as Any)
+```
+# Using different dependencies for different app versions
+## Using preprocessor macros.
+This module will be loaded only for debug builds.
+```swift
+import PainlessInjection
+
+#if DEBUG
+class DebugModule: Module {
+    override func load() {
+        define(Service.self) { InMemmoryService() }.inSingletonScope()
+    }
+}
+
+#endif
+```
+This module will be loaded only for release builds.
+```swift
+import PainlessInjection
+
+#if !DEBUG
+class ReleaseModule: Module {
+    override func load() {
+        define(Service.self) { RestService() }.inSingletonScope()
+    }
+}
+
+#endif
+```
+## Using LoadingPredicate.
+Use "STORE_TARGET" environemnt variable to determine the app version.
+```swift
+import PainlessInjection
+import Foundation
+
+class StorePredicate: LoadModulePredicate {
+    private let value: String
+    
+    init(valueMatching value: String) {
+        self.value = value
+    }
+    
+    func shouldLoadModule() -> Bool {
+        guard let value = ProcessInfo.processInfo.environment["TARGET_STORE"] else {
+            assertionFailure("No TARGET_STORE env var was found!")
+        }
+        
+        return value == self.value
+    }
+}
+```
+
+This module will be loaded only if the app is running in the Canadian store.
+```swift
+class CanadianStoreModule: Module {
+    override func load() {
+        define(Service.self) { CanadaRestService() }.inSingletonScope()
+    }
+    
+    override loadingPredicate() {
+        return StorePredicate(valueMatching: "Canada")
+    }
+}
+```
+
+This module will be loaded only if the app is running in the USA store.
+```swift
+class USAStoreModule: Module {
+    override func load() {
+        define(Service.self) { USARestService() }.inSingletonScope()
+    }
+    
+    override loadingPredicate() {
+        return StorePredicate(valueMatching: "USA")
+    }
+}
+```
+
+Loading the service
+```swift
+Container.load()
+let service = Container.get(type: Service.self)
+print(type(of: service)) // Will print USAStoreModule or CanadaRestService
+```
