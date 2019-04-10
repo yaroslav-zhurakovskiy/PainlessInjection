@@ -1,24 +1,28 @@
-Pod::Spec.new do |s|
+Pod::Spec.new do |spec|
 
-  s.name         = "PainlessInjection"
-  s.version      = "0.0.2"
-  s.summary      = "PainlessInjection is a lightweight dependency injection framework for Swift."
+  spec.name         = "PainlessInjection"
+  spec.version      = "0.0.4"
+  spec.summary      = "PainlessInjection is a lightweight dependency injection framework for Swift."
 
-  s.description  = <<-DESC
+  spec.description  = <<-DESC
   PainlessInjection is a lightweight dependency injection framework for Swift. Thanks.
                    DESC
 
-  s.homepage     = "https://github.com/yaroslav-zhurakovskiy/PainlessInjection"
+  spec.homepage     = "https://github.com/yaroslav-zhurakovskiy/PainlessInjection"
 
-  s.license      = { :type => "MIT", :file => "LICENSE" }
+  spec.license      = { :type => "MIT", :file => "LICENSE" }
 
-  s.author       = { "yaroslav-zhurakovskiy" => "yaroslav.zhurakovskiy@gmail.com" }
+  spec.author       = { "yaroslav-zhurakovskiy" => "yaroslav.zhurakovskiy@gmail.com" }
 
-  s.platform     = :ios, "8.0"
-  s.requires_arc = true
+  spec.platform     = :ios, "8.0"
+  spec.requires_arc = true
+  spec.swift_version = '5.0'
 
-  s.source       = { :git => "https://github.com/yaroslav-zhurakovskiy/PainlessInjection.git", :branch => "master", :tag => s.version.to_s }
+  spec.source       = {
+    :git => "https://github.com/yaroslav-zhurakovskiy/PainlessInjection.git", :branch => "master",
+    :tag => "v" + spec.version.to_s
+  }
 
-  s.source_files  = "PainlessInjection/PainlessInjection/*.swift"
+  spec.source_files  = "PainlessInjection/PainlessInjection/*.swift"
 
 end
