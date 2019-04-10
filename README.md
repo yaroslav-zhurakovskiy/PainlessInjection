@@ -90,7 +90,7 @@ let controller2 = Container.get(type: EditTaskController.self, args: [nil as Any
 let task = Task(name: "Code something")
 let controller2 = Container.get(type: EditTaskController.self, args: [task])
 ```
-## Using singltone scope
+## Using singletone scope
 Very often you do not want to recreate a service every time. You want to use some kind of a singletone. In order to do it you can use singletone scope.
 ```swift
 import PainlessInjection
