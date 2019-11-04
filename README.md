@@ -6,7 +6,7 @@ PainlessInjection is a lightweight dependency injection framework for Swift.
 Dependency injection (DI) is a software design pattern that implements Inversion of Control (IoC) for resolving dependencies. In the pattern, PainlessInjection helps your app split into loosely-coupled components, which can be developed, tested and maintained more easily. PainlessInjection is powered by the Swift generic type system and first class functions to define dependencies of your app simply and fluently.
 
 # Installation
-PainlessInjection is avaialble via [Carthage](https://github.com/Carthage/Carthage) and [CocoaPods](https://cocoapods.org/).
+PainlessInjection is avaialble via [Carthage](https://github.com/Carthage/Carthage), [CocoaPods](https://cocoapods.org/) or [Swift Package Manager](https://swift.org/package-manager/).
 ## Requirements
 * iOS 8.0+
 * Swift 5+
@@ -21,6 +21,19 @@ github "yaroslav-zhurakovskiy/PainlessInjection"
 To install PainlessInjection with CocoaPods, add the following lines to your Podfile.
 ```
 pod "PainlessInjection"
+```
+## Swift Package Manager
+You can use The Swift Package Manager to install PainlessInjection by adding the proper description to your Package.swift file:
+```
+// swift-tools-version:5.1
+import PackageDescription
+
+let package = Package(
+    name: "YOUR_PROJECT_NAME",
+    dependencies: [
+        .package(url: "https://github.com/yaroslav-zhurakovskiy/PainlessInjection.git", from: "1.1.0"),
+    ]
+)
 ```
 # Usage
 ## Simple dependencies
