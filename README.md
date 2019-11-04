@@ -31,7 +31,7 @@ import PackageDescription
 let package = Package(
     name: "YOUR_PROJECT_NAME",
     dependencies: [
-        .package(url: "https://github.com/yaroslav-zhurakovskiy/PainlessInjection.git", from: "1.1.0"),
+        .package(url: "https://github.com/yaroslav-zhurakovskiy/PainlessInjection.git", from: "1.4.0"),
     ]
 )
 ```
