@@ -1,11 +1,12 @@
-language: swift
 jobs:
     inclue:
-    -   osx_image: xcode10.2
+    -   language: swift
+        osx_image: xcode10.2
         xcode_destination: platform=iOS Simulator,OS=8.1,name=iPhone 5
         xcode_project: PainlessInjection/PainlessInjection.xcodeproj
         xcode_scheme: PainlessInjection
-    -   osx_image: xcode11.1
+    -   language: swift
+        osx_image: xcode11.1
         xcode_destination: platform=iOS Simulator,OS=13.1,name=iPhone 8
         xcode_project: PainlessInjection/PainlessInjection.xcodeproj
         xcode_scheme: PainlessInjection
