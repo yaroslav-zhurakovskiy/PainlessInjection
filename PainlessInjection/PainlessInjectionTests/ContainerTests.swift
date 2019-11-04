@@ -133,7 +133,7 @@ class ContainerTests: XCTestCase {
     func testShouldThrowExceptionIfProtocolDependencyIsNotFound() {
         let module = EmptyTestModule()
         module.load()
-        let notifier = TestFatalErrorNotifier()
+        let notifier = FatalErrorNotifierMock()
         FatalErrorNotifier.currentNotifier = notifier
 
         let _: WeatherServiceProtocol! = Container.get()

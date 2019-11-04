@@ -51,7 +51,7 @@ class Weatherman {
     }
 }
 
-class TestFatalErrorNotifier: FatalErrorNotifierProtocol {
+class FatalErrorNotifierMock: FatalErrorNotifierProtocol {
     fileprivate var lastMessage: String!
     
     func notify(_ message: String) {

@@ -11,14 +11,14 @@ import PainlessInjection
 
 class ArgumentListTests: XCTestCase {
     
-    var notifier: TestFatalErrorNotifier!
+    var notifier: FatalErrorNotifierMock!
     
     override func setUp() {
         super.setUp()
         
         continueAfterFailure = false
         
-        notifier = TestFatalErrorNotifier()
+        notifier = FatalErrorNotifierMock()
         FatalErrorNotifier.currentNotifier = notifier
     }
     

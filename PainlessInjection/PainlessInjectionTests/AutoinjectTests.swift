@@ -15,7 +15,7 @@ fileprivate class AutoinjecteServiceUser: Module {
 }
 
 class AutoinjectTests: XCTestCase {
-    var errorNotifier: TestFatalErrorNotifier!
+    var errorNotifier: FatalErrorNotifierMock!
     
     override func setUp() {
         super.setUp()
@@ -29,7 +29,7 @@ class AutoinjectTests: XCTestCase {
         }
 
         TestModule().load()
-        errorNotifier = TestFatalErrorNotifier()
+        errorNotifier = FatalErrorNotifierMock()
         FatalErrorNotifier.currentNotifier = errorNotifier
     }
     
