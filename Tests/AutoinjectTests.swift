@@ -11,7 +11,7 @@
 import PainlessInjection
 import XCTest
 
-fileprivate class AutoinjecteServiceUser: Module {
+fileprivate struct AutoinjecteServiceUser {
     @Inject var service: ServiceProtocol
 }
 
