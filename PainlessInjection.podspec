@@ -23,6 +23,6 @@ Pod::Spec.new do |spec|
     :tag => "v" + spec.version.to_s
   }
 
-  spec.source_files  = "PainlessInjection/PainlessInjection/*.swift"
+  spec.source_files  = "Sources/*.swift"
 
 end

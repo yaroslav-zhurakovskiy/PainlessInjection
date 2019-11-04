@@ -14,13 +14,11 @@ let package = Package(
     targets: [
         .target(
             name: "PainlessInjection",
-            dependencies: [],
-            path: "PainlessInjection/PainlessInjection"
+            dependencies: []
         ),
         .testTarget(
             name: "PainlessInjectionTests",
-            dependencies: ["PainlessInjection"],
-            path: "PainlessInjection/PainlessInjectionTests"
+            dependencies: ["PainlessInjection"]
         )
     ]
 )

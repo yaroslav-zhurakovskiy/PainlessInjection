@@ -1,5 +1,5 @@
 language: swift
-xcode_project: PainlessInjection/PainlessInjection.xcodeproj
+xcode_project: PainlessInjection.xcodeproj
 xcode_scheme: PainlessInjection
 osx_image: xcode11.1
 xcode_destination: platform=iOS Simulator,OS=13.1,name=iPhone 8
