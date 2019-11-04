@@ -15,6 +15,8 @@ class ContainerTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
+        
+        continueAfterFailure = false
 
         timer = FakeTimer()
         PainlessInjection.Timer.factory = FakeTimerFactory(timer: timer)
@@ -136,7 +138,7 @@ class ContainerTests: XCTestCase {
 
         let _: WeatherServiceProtocol! = Container.get()
 
-        notifier.assertLastMessage("Could not find a dependency for type WeatherServiceProtocol.")
+        notifier.assertLastMessage(missingDependencyType: WeatherServiceProtocol.self)
     }
 
     func testShouldResolveType() {

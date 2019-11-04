@@ -16,6 +16,8 @@ class ArgumentListTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
+        continueAfterFailure = false
+        
         notifier = TestFatalErrorNotifier()
         FatalErrorNotifier.currentNotifier = notifier
     }
@@ -27,13 +29,18 @@ class ArgumentListTests: XCTestCase {
     }
     
     func testShouldRaiseTypeMistmatchError() {
-        
         let list = ArgumentList(args: ["Hello"])
         let _: Int! = list.at(0)
         let file = #file
         let line = #line - 2
         
-        notifier.assertLastMessage("Expected Int parameter at index 0 but got String: file \(file), line \(line)")
+        notifier.assertLastMessage(
+            exepcetedType: Int.self,
+            receivedType: String.self,
+            parameterIndex: 0,
+            inFile: file,
+            atLine: line
+        )
     }
     
     func testShouldRaiseNoParameterError() {

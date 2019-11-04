@@ -25,6 +25,6 @@ class SingletonDependency: Dependency {
             _value = _dependency.create(args)
             objc_sync_exit(self)
         }
-        return _value;
+        return _value
     }
 }

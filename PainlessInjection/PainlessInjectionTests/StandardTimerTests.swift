@@ -26,6 +26,8 @@ class StandardTimerTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
+        continueAfterFailure = false
+        
         timer = StandardTimer(interval: TimeInterval(seconds: TimerValueSeconds))
     }
     

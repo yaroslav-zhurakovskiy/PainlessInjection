@@ -63,7 +63,32 @@ class TestFatalErrorNotifier: FatalErrorNotifierProtocol {
     }
     
     func assertLastMessage(_ message: String, file: StaticString = #file, line: UInt = #line) {
+        XCTAssertNotNil(lastMessage, "No messages were notified.", file: file, line: line)
         XCTAssertEqual(lastMessage!, message, file: file, line: line)
+    }
+    
+    func assertLastMessage<Expected, Received>(
+        exepcetedType: Expected.Type,
+        receivedType: Received.Type,
+        parameterIndex: Int,
+        inFile: String,
+        atLine: Int,
+        file: StaticString = #file,
+        line: UInt = #line
+    ) {
+        assertLastMessage(
+            "Expected \(exepcetedType) parameter at index \(parameterIndex) but got \(receivedType): file \(inFile), line \(atLine)",
+            file: file,
+            line: line
+        )
+    }
+    
+    func assertLastMessage<T>(
+        missingDependencyType type: T.Type,
+        file: StaticString = #file,
+        line: UInt = #line
+    ) {
+        assertLastMessage("Could not find a dependency for type \(type).", file: file, line: line)
     }
 }
 

@@ -30,7 +30,7 @@ class CacheDependency: Dependency, TimerDelelgate {
             _timer.start()
             objc_sync_exit(self)
         }
-        return _value;
+        return _value
     }
     
     func onTick() {
