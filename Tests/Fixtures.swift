@@ -29,6 +29,8 @@ class WeatherServce: WeatherServiceProtocol {
 }
 
 class OptionalWeatherService: WeatherServiceProtocol {
+    static let defaultValue: Double = -1.0
+    
     let temperature: Double?
     
     init(temperature: Double?) {
@@ -36,7 +38,7 @@ class OptionalWeatherService: WeatherServiceProtocol {
     }
     
     func todayTemperature() -> Double {
-        return temperature ?? 0
+        return temperature ?? Self.defaultValue
     }
 }
 

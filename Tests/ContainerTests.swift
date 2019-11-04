@@ -112,7 +112,7 @@ class ContainerTests: XCTestCase {
         module.load()
         
         let service: WeatherServiceProtocol = Container.get(Optional<Any>.none)
-        AssertEqual(service.todayTemperature(), 0)
+        AssertEqual(service.todayTemperature(), OptionalWeatherService.defaultValue)
     }
     
     func testShouldGetDependenciesWithNilParamsWhenNonNillIsPAssed() {

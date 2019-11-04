@@ -11,11 +11,18 @@
 import PainlessInjection
 import XCTest
 
+fileprivate let temperatureStub: Double = 36.6
+fileprivate let optionalTemperatureStub: Double? = 66.9
+
 fileprivate struct AutoinjecteServiceUser {
     @Inject var service: ServiceProtocol
+    @Inject(temperatureStub) var weatherService: WeatherServiceProtocol
+    @Inject(optionalTemperatureStub as Any) var optionalWeatherServiceWithStub: OptionalWeatherService
+    @Inject(Optional<Double>.none) var optionalWeatherServiceWithoutStub: OptionalWeatherService
 }
 
 class AutoinjectTests: XCTestCase {
+    
     var errorNotifier: FatalErrorNotifierMock!
     
     override func setUp() {
@@ -26,6 +33,8 @@ class AutoinjectTests: XCTestCase {
         class TestModule: Module {
             override func load() {
                 define(ServiceProtocol.self) { Service() }
+                define(WeatherServiceProtocol.self) { WeatherServce(temperature: $0.at(0)) }
+                define(OptionalWeatherService.self) { OptionalWeatherService(temperature: $0.optionalAt(0))}
             }
         }
 
@@ -45,6 +54,25 @@ class AutoinjectTests: XCTestCase {
         let user = AutoinjecteServiceUser()
         
         XCTAssertTrue(user.service is Service, "service must be autowired to \(Service.self) but got \(type(of: user.service))")
+    }
+    
+    func testAutowiringWithParameters() {
+        let user = AutoinjecteServiceUser()
+        
+        XCTAssertTrue(user.weatherService is WeatherServce, "service must be autowired to \(WeatherServce.self) but got \(type(of: user.service))")
+        AssertEqual(user.weatherService.todayTemperature(), temperatureStub)
+    }
+    
+    func testAutowiringWithOptionalParametersPresent() {
+        let user = AutoinjecteServiceUser()
+        
+        AssertEqual(user.optionalWeatherServiceWithStub.todayTemperature(), optionalTemperatureStub!)
+    }
+    
+    func testAutowiringWithOptionalParametersMissing() {
+        let user = AutoinjecteServiceUser()
+        
+        AssertEqual(user.optionalWeatherServiceWithoutStub.todayTemperature(), OptionalWeatherService.defaultValue)
     }
 }
 
