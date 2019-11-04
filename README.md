@@ -54,6 +54,66 @@ let service = Container.get(type: Service.self)
 // Using service
 print(type(of: service))
 ```
+## Swift 5.1 @propertyWrapper feature
+If you use Swift 5.1 you can take advantage of concise form of autowiring. Just add @Inject attribute to your class/struct property, the framework will resolve everything for you.
+```swift
+// You service
+enum AuthServiceError: Error {
+    case serverIsDown
+    case tooManyAttempts
+}
+
+protocol AuthService: class {
+    func login(username: String, password: String, completion: @escaping (Result<Bool, AuthServiceError>) -> Void)
+}
+
+// Your controller that uses AuthService
+class LoginController: UIViewController {
+    // AuthService will be resolved automatically based on loaded modules
+    @Inject var service: AuthService
+    
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
+    
+     @IBAction func login() {
+        service.login(
+            username: usernameLabel.text ?? "",
+            password: passwordLabel.text ?? ""
+        )  { result in
+            // Implement the logic
+            // Redirect to home page
+        }
+    }
+}
+
+
+// Fake implementation that will enable you to test without the actual server
+class FakeAuthService: AuthService {
+    func login(username: String, password: String, completion: @escaping (Result<Bool, AuthServiceError>) -> Void) {
+        guard username != "error" && password != "error" else {
+            completion(.failure(AuthServiceError.serverIsDown))
+            return
+        }
+        
+        if username == "JohnDoe" && password == "132" {
+            completion(.success(true))
+        } else {
+            completion(.success(false))
+        }
+    }
+}
+
+// Module with fake services
+class TestModule: Module {
+    func load() {
+        define(AuthService.self) { FakeAuthService() } 
+    }
+}
+
+// Loading and testing 
+Container.load() // It will load TestModule
+type(of: LoginController().service) == FakeAuthService.self // AuthService is automatically resolved to FakeAuthService 
+```
 ## Dependencies with arguments and subdependencies
 ```swift
 // Define Services
