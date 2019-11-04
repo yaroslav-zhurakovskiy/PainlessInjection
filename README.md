@@ -19,12 +19,12 @@ github "yaroslav-zhurakovskiy/PainlessInjection"
 ```
 ## CocoaPods
 To install PainlessInjection with CocoaPods, add the following lines to your Podfile.
-```
+```ruby
 pod "PainlessInjection"
 ```
 ## Swift Package Manager
 You can use The Swift Package Manager to install PainlessInjection by adding the proper description to your Package.swift file:
-```
+```swift
 // swift-tools-version:5.1
 import PackageDescription
 
