@@ -100,7 +100,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C4A0CFBB1D3CF88F00BCEC00 /* Sources */ = {
+		C4A0CFBB1D3CF88F00BCEC00 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				C4A0CFBC1D3CF88F00BCEC00 /* ArgumentList.swift */,
@@ -109,7 +109,6 @@
 				C4A0CFBF1D3CF88F00BCEC00 /* DefineConfigurator.swift */,
 				C4A0CFC01D3CF88F00BCEC00 /* Dependency.swift */,
 				C4A0CFC11D3CF88F00BCEC00 /* FatalErrorNotifier.swift */,
-				C4A0CFC21D3CF88F00BCEC00 /* Info.plist */,
 				C4A0CFC31D3CF88F00BCEC00 /* Module.swift */,
 				C4A0CFC41D3CF88F00BCEC00 /* ModuleLoadingPredicate.swift */,
 				C4A0CFC51D3CF88F00BCEC00 /* PainlessInjector.h */,
@@ -121,8 +120,9 @@
 				C4466D141D3D2761008D0A80 /* ModuleLoader.swift */,
 				C4251EE61D3D4201005C5A57 /* OnDemandDependency.swift */,
 				C46B3DAE237039ED00706DF8 /* Inject.swift */,
+				C4A0CFC21D3CF88F00BCEC00 /* Info.plist */,
 			);
-			path = Sources;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		C4A0CFDA1D3CF89700BCEC00 /* Tests */ = {
@@ -132,13 +132,13 @@
 				C4A0CFDC1D3CF89700BCEC00 /* ContainerTests.swift */,
 				C4A0CFDD1D3CF89700BCEC00 /* FataErrorNotifierTests.swift */,
 				C4A0CFDE1D3CF89700BCEC00 /* Fixtures.swift */,
-				C4A0CFDF1D3CF89700BCEC00 /* Info.plist */,
 				C4A0CFE01D3CF89700BCEC00 /* ModuleLoadingTests.swift */,
 				C4A0CFE11D3CF89700BCEC00 /* TimeIntervalTests.swift */,
 				C4A0CFE21D3CF89700BCEC00 /* TimerTests.swift */,
 				C4251EE81D3D4657005C5A57 /* StandardTimerTests.swift */,
 				C44D7A6F224F3A4700D5DBB2 /* CustomAsserts.swift */,
 				C4ED55DA237030A300D5DA6F /* AutoinjectTests.swift */,
+				C4A0CFDF1D3CF89700BCEC00 /* Info.plist */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -146,7 +146,7 @@
 		C4A6EE1D1D340F3F00CB7442 = {
 			isa = PBXGroup;
 			children = (
-				C4A0CFBB1D3CF88F00BCEC00 /* Sources */,
+				C4A0CFBB1D3CF88F00BCEC00 /* Source */,
 				C4A0CFDA1D3CF89700BCEC00 /* Tests */,
 				C4A6EE281D340F3F00CB7442 /* Products */,
 			);
@@ -438,14 +438,16 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CURRENT_PROJECT_VERSION = 4;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 3;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
+				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "yaroslav-zhurakovskiy.PainlessInjector";
 				PRODUCT_NAME = PainlessInjection;
 				SKIP_INSTALL = YES;
@@ -459,14 +461,16 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CURRENT_PROJECT_VERSION = 4;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 3;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
+				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "yaroslav-zhurakovskiy.PainlessInjector";
 				PRODUCT_NAME = PainlessInjection;
 				SKIP_INSTALL = YES;

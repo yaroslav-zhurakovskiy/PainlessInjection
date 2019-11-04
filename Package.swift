@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.0
 
 import PackageDescription
 
@@ -14,11 +14,14 @@ let package = Package(
     targets: [
         .target(
             name: "PainlessInjection",
-            dependencies: []
+            dependencies: [],
+            path: "Source"
         ),
         .testTarget(
             name: "PainlessInjectionTests",
-            dependencies: ["PainlessInjection"]
+            dependencies: ["PainlessInjection"],
+            path: "Tests"
         )
-    ]
+    ],
+    swiftLanguageVersions: [.v5]
 )
