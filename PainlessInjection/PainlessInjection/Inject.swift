@@ -6,7 +6,7 @@
 //  Copyright © 2019 Yaroslav Zhurakovskiy. All rights reserved.
 //
 
-#if swift(>=5)
+#if swift(>=5.1)
 
 @propertyWrapper
 public struct Inject<Value> {
