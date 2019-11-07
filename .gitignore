@@ -17,6 +17,9 @@ DerivedData
 *.ipa
 *.xcuserstate
 
+# Visual Studio Code
+.vscode/
+
 # Appcode
 .idea/
 
