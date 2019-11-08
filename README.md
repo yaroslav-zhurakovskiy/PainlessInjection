@@ -1,3 +1,10 @@
+[![Platforms](https://img.shields.io/cocoapods/p/PainlessInjection.svg)](https://cocoapods.org/pods/PainlessInjection)
+[![License](https://img.shields.io/cocoapods/l/PainlessInjection.svg)](https://raw.githubusercontent.com/yaroslav-zhurakovsiy/PainlessInjection/master/LICENSE)
+
+[![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![CocoaPods compatible](https://img.shields.io/cocoapods/v/PainlessInjection.svg)](https://cocoapods.org/pods/PainlessInjection)
+
 [![Build Status](https://travis-ci.org/yaroslav-zhurakovskiy/PainlessInjection.svg?branch=master)](https://travis-ci.org/yaroslav-zhurakovskiy/PainlessInjection) [![codecov](https://codecov.io/gh/yaroslav-zhurakovskiy/PainlessInjection/branch/master/graph/badge.svg)](https://codecov.io/gh/yaroslav-zhurakovskiy/PainlessInjection)
 
 # PainlessInjection
