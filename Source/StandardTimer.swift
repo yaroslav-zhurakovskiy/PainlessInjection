@@ -9,23 +9,23 @@
 import Foundation
 
 open class StandardTimer: NSObject, TimerProtocol {
-    open var delegate: TimerDelelgate?
+    open weak var delegate: TimerDelelgate?
     
-    fileprivate let _timeInterval: TimeInterval
+    fileprivate let timeInterval: TimeInterval
     
     public init(interval: TimeInterval) {
-        _timeInterval = interval
+        timeInterval = interval
         super.init()
     }
     
-    var _nstimer:Foundation.Timer?
+    var nstimerVar: Foundation.Timer?
     open var nstimer: Foundation.Timer {
         get {
-            if let timer = _nstimer {
+            if let timer = nstimerVar {
                 return timer
             } else {
                 return Foundation.Timer(
-                    timeInterval: _timeInterval.timeInterval,
+                    timeInterval: timeInterval.timeInterval,
                     target: self,
                     selector: #selector(onTimer),
                     userInfo: nil,
@@ -33,7 +33,7 @@ open class StandardTimer: NSObject, TimerProtocol {
             }
         }
         set {
-            _nstimer = newValue
+            nstimerVar = newValue
         }
     }
     

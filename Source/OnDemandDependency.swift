@@ -9,18 +9,15 @@
 import Foundation
 
 class OnDemandDependency: Dependency {
-    fileprivate var _type: Any.Type
-    var type: Any.Type {
-        return _type
-    }
+    let type: Any.Type
+    let configurator: ([Any]) -> Any
     
-    fileprivate var _configurator: ([Any]) -> Any
-    init(type: Any.Type,  configurator: @escaping ([Any]) -> Any) {
-        _type = type
-        _configurator = configurator
+    init(type: Any.Type, configurator: @escaping ([Any]) -> Any) {
+        self.type = type
+        self.configurator = configurator
     }
-    
+     
     func create(_ args: [Any]) -> Any {
-        return _configurator(args)
+        return configurator(args)
     }
 }

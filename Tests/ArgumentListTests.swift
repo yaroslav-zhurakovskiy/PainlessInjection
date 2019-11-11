@@ -35,7 +35,7 @@ class ArgumentListTests: XCTestCase {
         let line = #line - 2
         
         notifier.assertLastMessage(
-            exepcetedType: Int.self,
+            expectedType: Int.self,
             receivedType: String.self,
             parameterIndex: 0,
             inFile: file,
@@ -49,7 +49,12 @@ class ArgumentListTests: XCTestCase {
         let file = #file
         let line = #line - 2
         
-        notifier.assertLastMessage("Expected NSDictionary parameter at index 0 but got nothing: file \(file), line \(line)")
+        notifier.assertLastmessage(
+            expectedType: NSDictionary.self,
+            parameterIndex: 0,
+            inFile: file,
+            atLine: line
+        )
     }
     
     func testShouldUseMultipleParams() {

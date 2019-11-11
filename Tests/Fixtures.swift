@@ -43,13 +43,14 @@ class OptionalWeatherService: WeatherServiceProtocol {
 }
 
 class Weatherman {
-    fileprivate let _weatherService: WeatherServiceProtocol
+    fileprivate let weatherService: WeatherServiceProtocol
+    
     init(weatherService: WeatherServiceProtocol) {
-        _weatherService = weatherService
+        self.weatherService = weatherService
     }
     
     func say() -> String {
-        return "Today`s temperature is \(_weatherService.todayTemperature())."
+        return "Today`s temperature is \(weatherService.todayTemperature())."
     }
 }
 
@@ -70,7 +71,7 @@ class FatalErrorNotifierMock: FatalErrorNotifierProtocol {
     }
     
     func assertLastMessage<Expected, Received>(
-        exepcetedType: Expected.Type,
+        expectedType: Expected.Type,
         receivedType: Received.Type,
         parameterIndex: Int,
         inFile: String,
@@ -78,11 +79,26 @@ class FatalErrorNotifierMock: FatalErrorNotifierProtocol {
         file: StaticString = #file,
         line: UInt = #line
     ) {
-        assertLastMessage(
-            "Expected \(exepcetedType) parameter at index \(parameterIndex) but got \(receivedType): file \(inFile), line \(atLine)",
-            file: file,
-            line: line
-        )
+        let lastMessage =
+            "Expected \(expectedType) parameter" +
+            " at index \(parameterIndex)" +
+            " but got \(receivedType): file \(inFile), line \(atLine)"
+        assertLastMessage(lastMessage, file: file, line: line)
+    }
+    
+    func assertLastmessage<Expected>(
+        expectedType: Expected.Type,
+        parameterIndex: Int,
+        inFile: String,
+        atLine: Int,
+        file: StaticString = #file,
+        line: UInt = #line
+    ) {
+        let lastMessage =
+            "Expected \(expectedType) parameter" +
+            " at index \(parameterIndex)" +
+            " but got nothing: file \(inFile), line \(atLine)"
+        assertLastMessage(lastMessage, file: file, line: line)
     }
     
     func assertLastMessage<T>(
@@ -93,7 +109,6 @@ class FatalErrorNotifierMock: FatalErrorNotifierProtocol {
         assertLastMessage("Could not find a dependency for type \(type).", file: file, line: line)
     }
 }
-
 
 class EmptyTestModule: Module {
     override func load() {
@@ -135,7 +150,7 @@ class DependencyDecorator: Dependency {
 }
 
 class FakeTimer: TimerProtocol {
-    var delegate: TimerDelelgate?
+    weak var delegate: TimerDelelgate?
     
     func timeout() {
         delegate?.onTick()
@@ -152,25 +167,36 @@ class FakeTimer: TimerProtocol {
     }
     
     func assertStartWasCalledTimes(_ times: Int, file: StaticString = #file, line: UInt = #line) {
-        XCTAssertTrue(startWasCalledTimes == times, "Expected start() to be called \(times). But was called \(startWasCalledTimes).", file: file, line: line)
+        XCTAssertTrue(
+            startWasCalledTimes == times,
+            "Expected start() to be called \(times). But was called \(startWasCalledTimes).",
+            file: file,
+            line: line
+        )
     }
     
     func assertStopWasCalledOnce(_ file: StaticString = #file, line: UInt = #line) {
-        XCTAssertTrue(stopWasCalledTimes == 1, "Expected stop() to be called once. But was called \(startWasCalledTimes).", file: file, line: line)
+        XCTAssertTrue(
+            stopWasCalledTimes == 1,
+            "Expected stop() to be called once. But was called \(startWasCalledTimes).",
+            file: file,
+            line: line
+        )
     }
 }
 
 class FakeTimerFactory: TimerFactoryProtocol {
-    fileprivate let _timer: FakeTimer
+    fileprivate let timer: FakeTimer
+    
     init(timer: FakeTimer) {
-        _timer = timer
+        self.timer = timer
     }
     func newTimerWithInterval(_ interval: PainlessInjection.TimeInterval) -> TimerProtocol {
-        return _timer
+        return timer
     }
 }
 
-class ModuleWithDependency : Module {
+class ModuleWithDependency: Module {
     var dependency: Dependency!
     override func load() {
         define(String.self) { "Hello" } . decorate { dependency in
@@ -180,7 +206,12 @@ class ModuleWithDependency : Module {
     }
     
     func assertDependencyType(_ type: Any.Type, file: StaticString = #file, line: UInt = #line) {
-        XCTAssertTrue(dependency.type == type, "Type should be String but got \(dependency.type)", file: file, line: line)
+        XCTAssertTrue(
+            dependency.type == type,
+            "Type should be String but got \(dependency.type)",
+            file: file,
+            line: line
+        )
 
     }
 }
@@ -204,23 +235,39 @@ class FakeNSTimer: Foundation.Timer {
     var spyFireDate: Date
     var spyInterval: Foundation.TimeInterval
     
-    override init(fireAt date: Date, interval ti: Foundation.TimeInterval, target t: Any, selector s: Selector, userInfo ui: Any?, repeats rep: Bool) {
-        self.spyTarget = t as AnyObject
-        self.spySelector = s
+    override init(
+        fireAt date: Date,
+        interval: Foundation.TimeInterval,
+        target: Any,
+        selector: Selector,
+        userInfo: Any?,
+        repeats: Bool
+    ) {
+        self.spyTarget = target as AnyObject
+        self.spySelector = selector
         self.spyFireDate = date
-        self.spyInterval = ti
-        super.init(fireAt: date, interval: ti, target: t, selector: s, userInfo: ui, repeats: rep)
+        self.spyInterval = interval
+        super.init(
+            fireAt: date,
+            interval: interval,
+            target: target,
+            selector: selector,
+            userInfo: userInfo,
+            repeats: repeats
+        )
     }
     
     var fireWasCalledTimes: Int = 0
     override func fire() {
         fireWasCalledTimes += 1
-        
-        //        self.spyTarget.performSelector(self.spySelector)
-        
     }
     func assertFireWasCallTimes(_ times: Int, file: StaticString = #file, line: UInt = #line) {
-        XCTAssertTrue(fireWasCalledTimes == times, "Expected fire() to be called \(times). But was called \(fireWasCalledTimes).", file: file, line: line)
+        XCTAssertTrue(
+            fireWasCalledTimes == times,
+            "Expected fire() to be called \(times). But was called \(fireWasCalledTimes).",
+            file: file,
+            line: line
+        )
     }
     
     var invalidateWasCalledTimes: Int = 0
@@ -228,6 +275,11 @@ class FakeNSTimer: Foundation.Timer {
         invalidateWasCalledTimes += 1
     }
     func assertInvalidateCallTimes(_ times: Int, file: StaticString = #file, line: UInt = #line) {
-        XCTAssertTrue(invalidateWasCalledTimes == times, "Expected fire() to be called \(times). But was called \(invalidateWasCalledTimes).", file: file, line: line)
+        XCTAssertTrue(
+            invalidateWasCalledTimes == times,
+            "Expected fire() to be called \(times). But was called \(invalidateWasCalledTimes).",
+            file: file,
+            line: line
+        )
     }
 }

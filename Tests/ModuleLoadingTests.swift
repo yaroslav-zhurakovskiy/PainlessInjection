@@ -9,13 +9,12 @@
 import XCTest
 import PainlessInjection
 
-
 class ModuleLoadingTests: XCTestCase {
     
     override func tearDown() {
         super.tearDown()
         
-        Container.unload();
+        Container.unload()
     }
     
     func testShouldLoadModules() {

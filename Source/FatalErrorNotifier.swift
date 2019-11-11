@@ -13,20 +13,20 @@ public protocol FatalErrorNotifierProtocol {
 }
 
 public struct FatalErrorNotifier {
+    private static var currentNotifierVar: FatalErrorNotifierProtocol?
     
-    fileprivate static var _currentNotifier: FatalErrorNotifierProtocol?
     public static var currentNotifier: FatalErrorNotifierProtocol {
         get {
-            if let current = _currentNotifier {
+            if let current = currentNotifierVar {
                 return current
             }
             return StandardFatalErrorNotifier()
         } set {
-            _currentNotifier = newValue
+            currentNotifierVar = newValue
         }
     }
     
     public static func reset() {
-        _currentNotifier = nil
+        currentNotifierVar = nil
     }
 }

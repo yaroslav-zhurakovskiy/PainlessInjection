@@ -12,7 +12,7 @@ import PainlessInjection
 class TimeIntervalTests: XCTestCase {
 
     func testSeconds() {
-        let interval = TimeInterval(seconds: 1)
+        let interval = PainlessInjection.TimeInterval(seconds: 1)
         
         XCTAssertEqual(interval.timeInterval, 1)
     }

@@ -26,8 +26,8 @@ class ContainerTests: XCTestCase {
     override func tearDown() {
         super.tearDown()
 
-        Container.unload();
-        FatalErrorNotifier.reset();
+        Container.unload()
+        FatalErrorNotifier.reset()
         Service.createdInstances = 0
         PainlessInjection.Timer.reset()
     }
@@ -39,7 +39,7 @@ class ContainerTests: XCTestCase {
         }
         _ = TestModule()
 
-        XCTAssertTrue(true, "Test module was created");
+        XCTAssertTrue(true, "Test module was created")
     }
 
     func testShouldAddDependency() {
@@ -52,7 +52,7 @@ class ContainerTests: XCTestCase {
         module.load()
 
         let service: WeatherServiceProtocol = Container.get()
-        AssertEqual(service.todayTemperature(), WeatherServce.defaultValue)
+        assertEqual(service.todayTemperature(), WeatherServce.defaultValue)
     }
 
     func testShouldAddDependencyOnleOnce() {
@@ -66,7 +66,7 @@ class ContainerTests: XCTestCase {
         module.load()
 
         let service: WeatherServiceProtocol = Container.get()
-        AssertEqual(service.todayTemperature(), 40)
+        assertEqual(service.todayTemperature(), 40)
     }
 
     func testShouldAddDifferentDependencies() {
@@ -83,7 +83,7 @@ class ContainerTests: XCTestCase {
 
         let service: WeatherServiceProtocol = Container.get()
         let text: String = Container.get()
-        AssertEqual(service.todayTemperature(), 40)
+        assertEqual(service.todayTemperature(), 40)
         XCTAssertEqual(text, "Hello")
     }
 
@@ -97,7 +97,7 @@ class ContainerTests: XCTestCase {
         module.load()
 
         let service: WeatherServiceProtocol = Container.get(55.0)
-        AssertEqual(service.todayTemperature(), 55.0)
+        assertEqual(service.todayTemperature(), 55.0)
     }
     
     func testShouldGetDependenciesWithNilParams() {
@@ -111,8 +111,8 @@ class ContainerTests: XCTestCase {
         let module = TestModule()
         module.load()
         
-        let service: WeatherServiceProtocol = Container.get(Optional<Any>.none)
-        AssertEqual(service.todayTemperature(), OptionalWeatherService.defaultValue)
+        let service: WeatherServiceProtocol = Container.get(Any?.none)
+        assertEqual(service.todayTemperature(), OptionalWeatherService.defaultValue)
     }
     
     func testShouldGetDependenciesWithNilParamsWhenNonNillIsPAssed() {
@@ -127,7 +127,7 @@ class ContainerTests: XCTestCase {
         module.load()
         
         let service: WeatherServiceProtocol = Container.get(60.0)
-        AssertEqual(service.todayTemperature(), 60)
+        assertEqual(service.todayTemperature(), 60)
     }
 
     func testShouldThrowExceptionIfProtocolDependencyIsNotFound() {
@@ -226,17 +226,17 @@ class ContainerTests: XCTestCase {
         let module = TestModule()
         module.load()
 
-        let s1: Service = Container.get()
-        let s2: Service = Container.get()
-        XCTAssertEqual(s1.id, 1, "Should have the same id until cache is valid")
-        XCTAssertEqual(s2.id, 1, "Should have the same id until cache is valid")
+        let service1: Service = Container.get()
+        let service2: Service = Container.get()
+        XCTAssertEqual(service1.id, 1, "Should have the same id until cache is valid")
+        XCTAssertEqual(service2.id, 1, "Should have the same id until cache is valid")
 
         timer.assertStartWasCalledTimes(1)
         timer.timeout()
         timer.assertStopWasCalledOnce()
 
-        let s3: Service = Container.get()
-        XCTAssertEqual(s3.id, 2, "Should have a new service.")
+        let service3: Service = Container.get()
+        XCTAssertEqual(service3.id, 2, "Should have a new service.")
         timer.assertStartWasCalledTimes(2)
     }
 
@@ -286,10 +286,12 @@ class ContainerTests: XCTestCase {
     func testWhenUseCacheScopeShouldReturnCorrectDependencyType() {
         class TestModule: ModuleWithDependency {
             override func load() {
-                define(String.self) { "Hello" } . inCacheScope(interval: TimeInterval(minutes: 1)) . decorate { dependency in
-                    self.dependency = dependency
-                    return dependency
-                }
+                define(String.self) {"Hello" }
+                    .inCacheScope(interval: TimeInterval(minutes: 1))
+                    .decorate { dependency in
+                        self.dependency = dependency
+                        return dependency
+                    }
             }
         }
         let module = TestModule()
@@ -302,7 +304,9 @@ class ContainerTests: XCTestCase {
         class TestModule: ModuleWithDependency {
             override func load() {
                 define(String.self) { "Hello" }
-                define(WeatherServiceProtocol.self) { args in WeatherServce(temperature: args.at(0)) }
+                define(WeatherServiceProtocol.self) { args in
+                    WeatherServce(temperature: args.at(0))
+                }
             }
         }
         let module = TestModule()
@@ -312,6 +316,6 @@ class ContainerTests: XCTestCase {
         let service = Container.get(type: WeatherServiceProtocol.self, args: [10.0])
         
         XCTAssertEqual(string, "Hello")
-        AssertEqual(service.todayTemperature(), 10)
+        assertEqual(service.todayTemperature(), 10)
     }
 }

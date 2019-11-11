@@ -6,18 +6,23 @@
 //  Copyright © 2016 Yaroslav Zhurakovskiy. All rights reserved.
 //
 
+import Foundation
 import XCTest
 import PainlessInjection
 
-let TimerValueSeconds: Int = 2
+let timerValueSeconds: Int = 2
 
-func dispatchAfter(seconds: Int, block: @escaping () -> Void) {
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(UInt64(seconds) * NSEC_PER_SEC)) / Double(NSEC_PER_SEC)) {
-        block()
+extension Double {
+    init(seconds: Int) {
+        self = Double(Int64(UInt64(seconds) * NSEC_PER_SEC)) / Double(NSEC_PER_SEC)
     }
-    
 }
 
+func dispatchAfter(seconds: Int, block: @escaping () -> Void) {
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(seconds)) {
+        block()
+    }
+}
 
 class StandardTimerTests: XCTestCase {
     
@@ -28,7 +33,7 @@ class StandardTimerTests: XCTestCase {
         
         continueAfterFailure = false
         
-        timer = StandardTimer(interval: TimeInterval(seconds: TimerValueSeconds))
+        timer = StandardTimer(interval: TimeInterval(seconds: timerValueSeconds))
     }
     
     func testSmoke() {
@@ -45,12 +50,11 @@ class StandardTimerTests: XCTestCase {
     
     func testShouldInvalidateOnDealloc() {
         let nstimerMock = FakeNSTimer()
-        timer.nstimer = nstimerMock
-        timer = nil
-        
         defer {
             nstimerMock.assertInvalidateCallTimes(1)
         }
+        timer.nstimer = nstimerMock
+        timer = nil
     }
     
     func testShouldCallDelegateAfterDelay() {
@@ -58,10 +62,10 @@ class StandardTimerTests: XCTestCase {
         timer.delegate = delegateMock
         timer.start()
         let expectation = self.expectation(description: "Standard timer")
-        dispatchAfter(seconds: TimerValueSeconds) {
+        dispatchAfter(seconds: timerValueSeconds) {
             expectation.fulfill()
         }
-        waitForExpectations(timeout: Foundation.TimeInterval(TimerValueSeconds + 1)) { error in
+        waitForExpectations(timeout: Foundation.TimeInterval(timerValueSeconds + 1)) { error in
             XCTAssertNil(error, "Shold not return any error.")
             delegateMock.assertCallOnTickOnce()
         }
