@@ -11,14 +11,14 @@
 import PainlessInjection
 import XCTest
 
-fileprivate let temperatureStub: Double = 36.6
-fileprivate let optionalTemperatureStub: Double? = 66.9
+private let temperatureStub: Double = 36.6
+private let optionalTemperatureStub: Double? = 66.9
 
-fileprivate struct AutoinjecteServiceUser {
+private struct AutoinjecteServiceUser {
     @Inject var service: ServiceProtocol
     @Inject(temperatureStub) var weatherService: WeatherServiceProtocol
     @Inject(optionalTemperatureStub as Any) var optionalWeatherServiceWithStub: OptionalWeatherService
-    @Inject(Optional<Double>.none) var optionalWeatherServiceWithoutStub: OptionalWeatherService
+    @Inject(Optional<Double>.none as Any) var optionalWeatherServiceWithoutStub: OptionalWeatherService
 }
 
 class AutoinjectTests: XCTestCase {
@@ -53,28 +53,33 @@ class AutoinjectTests: XCTestCase {
     func testAutowiring() {
         let user = AutoinjecteServiceUser()
         
-        XCTAssertTrue(user.service is Service, "service must be autowired to \(Service.self) but got \(type(of: user.service))")
+        XCTAssertTrue(
+            user.service is Service,
+            "service must be autowired to \(Service.self) but got \(type(of: user.service))"
+        )
     }
     
     func testAutowiringWithParameters() {
         let user = AutoinjecteServiceUser()
         
-        XCTAssertTrue(user.weatherService is WeatherServce, "service must be autowired to \(WeatherServce.self) but got \(type(of: user.service))")
-        AssertEqual(user.weatherService.todayTemperature(), temperatureStub)
+        XCTAssertTrue(
+            user.weatherService is WeatherServce,
+            "service must be autowired to \(WeatherServce.self) but got \(type(of: user.service))"
+        )
+        assertEqual(user.weatherService.todayTemperature(), temperatureStub)
     }
     
     func testAutowiringWithOptionalParametersPresent() {
         let user = AutoinjecteServiceUser()
         
-        AssertEqual(user.optionalWeatherServiceWithStub.todayTemperature(), optionalTemperatureStub!)
+        assertEqual(user.optionalWeatherServiceWithStub.todayTemperature(), optionalTemperatureStub!)
     }
     
     func testAutowiringWithOptionalParametersMissing() {
         let user = AutoinjecteServiceUser()
         
-        AssertEqual(user.optionalWeatherServiceWithoutStub.todayTemperature(), OptionalWeatherService.defaultValue)
+        assertEqual(user.optionalWeatherServiceWithoutStub.todayTemperature(), OptionalWeatherService.defaultValue)
     }
 }
-
 
 #endif

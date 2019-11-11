@@ -9,32 +9,32 @@
 import Foundation
 
 class CacheDependency: Dependency, TimerDelelgate {
+    private var value: Any!
+    private var dependency: Dependency
+    private var timer: TimerProtocol
     
-    fileprivate var _value: Any!
-    fileprivate var _dependency: Dependency
-    fileprivate var _timer: TimerProtocol
     init(dependency: Dependency, interval: TimeInterval) {
-        _dependency = dependency
-        _timer = Timer.factory.newTimerWithInterval(interval)
-        _timer.delegate = self
+        self.dependency = dependency
+        self.timer = Timer.factory.newTimerWithInterval(interval)
+        self.timer.delegate = self
     }
     
     var type: Any.Type {
-        return _dependency.type
+        return dependency.type
     }
     
     func create(_ args: [Any]) -> Any {
-        if _value == nil {
+        if value == nil {
             objc_sync_enter(self)
-            _value = _dependency.create(args)
-            _timer.start()
+            value = dependency.create(args)
+            timer.start()
             objc_sync_exit(self)
         }
-        return _value
+        return value as Any
     }
     
     func onTick() {
-        _value = nil
-        _timer.stop()
+        value = nil
+        timer.stop()
     }
 }

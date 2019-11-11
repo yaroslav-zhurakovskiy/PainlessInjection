@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "PainlessInjection"
-  spec.version      = "1.3.0"
+  spec.version      = "1.4.0"
   spec.summary      = "PainlessInjection is a lightweight dependency injection framework for Swift."
 
   spec.description  = <<-DESC
@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
 
   spec.platform     = :ios, "8.0"
   spec.requires_arc = true
-  spec.swift_version = '5.0'
+  spec.swift_version = '5.1'
 
   spec.source       = {
     :git => "https://github.com/yaroslav-zhurakovskiy/PainlessInjection.git",

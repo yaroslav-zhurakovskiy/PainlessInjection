@@ -5,10 +5,10 @@ import PackageDescription
 let package = Package(
     name: "PainlessInjection",
     platforms: [
-        .iOS(.v8),
+        .iOS(.v8)
     ],
     products: [
-        .library(name: "PainlessInjection", targets: ["PainlessInjection"]),
+        .library(name: "PainlessInjection", targets: ["PainlessInjection"])
     ],
     dependencies: [],
     targets: [

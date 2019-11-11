@@ -9,6 +9,6 @@
 import Foundation
 import XCTest
 
-func AssertEqual<T: FloatingPoint>(_ val1: T, _ val2: T) {
+func assertEqual<T: FloatingPoint>(_ val1: T, _ val2: T) {
     XCTAssertEqual(val1, val2, accuracy: 0.001 as! T)
 }

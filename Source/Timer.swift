@@ -19,26 +19,26 @@ public protocol TimerProtocol {
     func stop()
 }
 
-
 public protocol TimerFactoryProtocol {
     func newTimerWithInterval(_ interval: TimeInterval) -> TimerProtocol
 }
 
 public struct Timer {
-    fileprivate static var _factory: TimerFactoryProtocol?
+    private static var factoryImpl: TimerFactoryProtocol?
+    
     public static var factory: TimerFactoryProtocol {
         get {
-            if let factory = _factory {
+            if let factory = factoryImpl {
                 return factory
             }
             return StandardTimerFactory()
         }
         set {
-            _factory = newValue
+            factoryImpl = newValue
         }
     }
     
     public static func reset() {
-        _factory = nil
+        factoryImpl = nil
     }
 }
