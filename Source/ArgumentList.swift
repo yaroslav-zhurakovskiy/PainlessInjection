@@ -21,7 +21,7 @@ public struct ArgumentList {
                 "Expected \(T.self) parameter" +
                 " at index \(index)" +
                 " but got nothing: file \(file), line \(line)"
-            FatalErrorNotifier.currentNotifier.notify(msg)
+            FatalErrorNotifier.currentNotifier.notify(msg, file: file, line: line)
             return nil
         }
         
@@ -30,7 +30,7 @@ public struct ArgumentList {
                 "Expected \(T.self) parameter" +
                 " at index \(index)" +
                 " but got \(type(of: args[0])): file \(file), line \(line)"
-            FatalErrorNotifier.currentNotifier.notify(msg)
+            FatalErrorNotifier.currentNotifier.notify(msg, file: file, line: line)
             return nil
         }
         
@@ -43,7 +43,7 @@ public struct ArgumentList {
                 "Expected \(T.self) parameter" +
                 " at index \(index)" +
                 " but got nothing: file \(file), line \(line)"
-            FatalErrorNotifier.currentNotifier.notify(msg)
+            FatalErrorNotifier.currentNotifier.notify(msg, file: file, line: line)
             return nil
         }
         

@@ -49,7 +49,7 @@ class ArgumentListTests: XCTestCase {
         let file = #file
         let line = #line - 2
         
-        notifier.assertLastmessage(
+        notifier.assertLastMessage(
             expectedType: NSDictionary.self,
             parameterIndex: 0,
             inFile: file,

@@ -41,7 +41,7 @@ class StandardTimerTests: XCTestCase {
     }
     
     func testShouldInvalidateOnStop() {
-        let nstimerMock = FakeNSTimer()
+        let nstimerMock = NSTimerMock()
         timer.nstimer = nstimerMock
         timer.stop()
         
@@ -49,7 +49,7 @@ class StandardTimerTests: XCTestCase {
     }
     
     func testShouldInvalidateOnDealloc() {
-        let nstimerMock = FakeNSTimer()
+        let nstimerMock = NSTimerMock()
         defer {
             nstimerMock.assertInvalidateCallTimes(1)
         }
@@ -58,7 +58,7 @@ class StandardTimerTests: XCTestCase {
     }
     
     func testShouldCallDelegateAfterDelay() {
-        let delegateMock = FakeTimerDelegate()
+        let delegateMock = TimerDelegatMock()
         timer.delegate = delegateMock
         timer.start()
         let expectation = self.expectation(description: "Standard timer")

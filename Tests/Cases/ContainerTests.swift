@@ -11,15 +11,15 @@ import PainlessInjection
 
 class ContainerTests: XCTestCase {
 
-    var timer: FakeTimer!
+    var timer: TimerMock!
 
     override func setUp() {
         super.setUp()
         
         continueAfterFailure = false
 
-        timer = FakeTimer()
-        PainlessInjection.Timer.factory = FakeTimerFactory(timer: timer)
+        timer = TimerMock()
+        PainlessInjection.Timer.factory = TimerFactoryStub(timer: timer)
 
     }
 
@@ -137,10 +137,16 @@ class ContainerTests: XCTestCase {
         FatalErrorNotifier.currentNotifier = notifier
 
         let _: WeatherServiceProtocol! = Container.get()
+        let file = #file
+        let line = #line - 2
 
-        notifier.assertLastMessage(missingDependencyType: WeatherServiceProtocol.self)
+        notifier.assertLastMessage(
+            missingDependencyType: WeatherServiceProtocol.self,
+            inFile: file,
+            atLine: line
+        )
     }
-
+    
     func testShouldResolveType() {
         class TestModule: Module {
             override func load() {
@@ -200,11 +206,11 @@ class ContainerTests: XCTestCase {
 
     func testShouldWrapDependency() {
         class TestModule: Module {
-            var decorator: DependencyDecorator!
+            var decorator: DependencySpy!
 
             override func load() {
                 define(ServiceProtocol.self) { Service() } . decorate { dependency in
-                    self.decorator = DependencyDecorator(dependency: dependency)
+                    self.decorator = DependencySpy(dependency: dependency)
                     return self.decorator
                 }
             }
@@ -214,7 +220,7 @@ class ContainerTests: XCTestCase {
 
         let _: ServiceProtocol = Container.get()
 
-        XCTAssertTrue(module.decorator.wasCalled, "Should decorate dependency")
+        XCTAssertEqual(module.decorator.numberOfCreationCalls, 1, "Should decorate dependency")
     }
 
     func testShouldCreateDependencyWithCachedScope() {

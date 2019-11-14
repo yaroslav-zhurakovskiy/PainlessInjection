@@ -40,33 +40,6 @@ public struct Container {
         }
     }
     
-    public static func get<T>(type: T.Type, args: [Any] = []) -> T {
-        return get(args: args)
-    }
-    
-    public static func get<T>(_ args: Any...) -> T! {
-        return get(args: args.map { $0 })
-    }
-    
-    public static func get<T, T1>(_ arg1: T1) -> T! {
-        return get(args: [arg1])
-    }
-    
-    private static func get<T>(args: [Any]) -> T! {
-        let name = "\(T.self)"
-        guard let dependency = dependencies[name] else {
-            FatalErrorNotifier.currentNotifier.notify("Could not find a dependency for type \(name).")
-            return nil
-        }
-        
-        guard let object = dependency.create(args.map { $0 }) as? T else {
-            FatalErrorNotifier.currentNotifier.notify("Dependency for type \(name) is not \(T.self).")
-            return nil
-        }
-        
-        return object
-    }
-    
     public static func unload() {
         dependencies = [:]
         modules = []
@@ -75,4 +48,50 @@ public struct Container {
     public static var loadedModules: [String] {
         return modules.map { "\(type(of: $0))" }
     }
+}
+
+public extension Container {
+    static func get<T>(
+         type: T.Type,
+         args: [Any] = [],
+         file: StaticString = #file,
+         line: UInt = #line
+     ) -> T {
+         return get(args: args, file: file, line: line)
+     }
+     
+     static func get<T>(
+         _ args: Any...,
+         file: StaticString = #file,
+         line: UInt = #line
+     ) -> T! {
+         return get(args: args.map { $0 }, file: file, line: line)
+     }
+     
+     private static func get<T>(
+         args: [Any],
+         file: StaticString = #file,
+         line: UInt = #line
+     ) -> T! {
+         let name = "\(T.self)"
+         guard let dependency = dependencies[name] else {
+             FatalErrorNotifier.currentNotifier.notify(
+                 "Could not find a dependency for type \(name).",
+                 file: file,
+                 line: line
+             )
+             return nil
+         }
+         
+         guard let object = dependency.create(args.map { $0 }) as? T else {
+             FatalErrorNotifier.currentNotifier.notify(
+                 "Dependency for type \(name) is not \(T.self).",
+                 file: file,
+                 line: line
+             )
+             return nil
+         }
+         
+         return object
+     }
 }

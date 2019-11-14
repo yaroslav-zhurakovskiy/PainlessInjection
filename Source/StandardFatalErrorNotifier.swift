@@ -9,7 +9,7 @@
 import Foundation
 
 open class StandardFatalErrorNotifier: FatalErrorNotifierProtocol {
-    open func notify(_ message: String) {
-        fatalError(message)
+    open func notify(_ message: String, file: StaticString, line: UInt) {
+        fatalError(message, file: file, line: line)
     }
 }

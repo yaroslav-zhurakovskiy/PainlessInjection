@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol FatalErrorNotifierProtocol {
-    func notify(_ message: String)
+    func notify(_ message: String, file: StaticString, line: UInt)
 }
 
 public struct FatalErrorNotifier {
