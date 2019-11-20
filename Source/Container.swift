@@ -28,27 +28,59 @@ public struct Container {
         let name = "\(type)"
         return dependencies[name]
     }
-    
+}
+
+extension Container {
+    public static func load<T: Module>(_ type: T.Type) {
+       let module = type.init()
+       if module.loadingPredicate().shouldLoadModule() {
+         module.load()
+       }
+       modules.append(module)
+    }
+
+    public static func load<T: Module>(_ types: [T.Type]) {
+       for type in types {
+           load(type)
+       }
+    }
+
+    public static var loadedModules: [String] {
+       return modules.map { "\(type(of: $0))" }
+    }
+}
+
+func test() {
+    Container.load([
+        Module.self,
+        Module.self,
+        Module.self,
+        Module.self,
+        Module.self,
+        Module.self
+    ])
+}
+
+#if canImport(ObjectiveC)
+extension Container {
     public static func load() {
         let loader = ModuleLoader()
-        modules = loader.listOfModules()
-            .compactMap { module in
-                module.loadingPredicate().shouldLoadModule() ? module : nil
+        
+        let founModules = loader.listOfModules()
+        for module in founModules {
+            if module.loadingPredicate().shouldLoadModule() {
+                module.load()
             }
-        modules.forEach { module in
-            module.load()
         }
+        modules.append(contentsOf: founModules)
     }
     
     public static func unload() {
         dependencies = [:]
         modules = []
     }
-    
-    public static var loadedModules: [String] {
-        return modules.map { "\(type(of: $0))" }
-    }
 }
+#endif
 
 public extension Container {
     static func get<T>(

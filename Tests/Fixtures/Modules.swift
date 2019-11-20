@@ -11,7 +11,8 @@ import PainlessInjection
 import XCTest
 
 class EmptyTestModule: Module {
-    override func load() {
+    func load() {
+        
     }
 }
 
@@ -22,7 +23,7 @@ class ModuleWithDependency: Module {
         super.init()
     }
     
-    override func load() {
+    func load() {
         define(String.self) { "Hello" } . decorate { dependency in
             self.dependency = dependency
             return dependency

@@ -8,8 +8,8 @@
 
 import Foundation
 
+#if canImport(ObjectiveC)
 class ModuleLoader {
-    
     func listOfModules() -> [Module] {
         var result: [Module] = []
 
@@ -23,6 +23,7 @@ class ModuleLoader {
             objc_getClassList(classes, numberOfClasses)
             for index in 0..<Int(numberOfClasses) {
                 let cls: AnyClass = classes[index]
+                
                 if class_getSuperclass(cls) != Module.self { continue }
                 
                 if  let moduleClass = cls as? Module.Type {
@@ -34,5 +35,6 @@ class ModuleLoader {
         
         return result
     }
-    
 }
+
+#endif

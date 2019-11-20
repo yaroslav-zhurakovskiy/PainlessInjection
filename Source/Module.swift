@@ -7,30 +7,39 @@
 //
 
 import Foundation
+import ObjectiveC
 
-open class Module: NSObject {
+public protocol ModuleTrait {
+    init()
     
-    public required override init() {
-        super.init()
+    func load()
+    
+    func loadingPredicate() -> ModuleLoadingPredicate
+    @discardableResult
+    func define(_ type: Any.Type, configuration: @escaping () -> Any ) -> DefineDependencyStatement
+    @discardableResult
+    func define(_ type: Any.Type, configuration: @escaping (ArgumentList) -> Any) -> DefineDependencyStatement
+    func resolve<T>(_ args: Any...) -> T
+}
+
+public extension ModuleTrait {
+    func load() {
+        
     }
     
-    open func load() {
-    
-    }
-    
-    open func loadingPredicate() -> ModuleLoadingPredicate {
+    func loadingPredicate() -> ModuleLoadingPredicate {
         return LoadModulePredicate()
     }
     
     @discardableResult
-    open func define(_ type: Any.Type, configuration: @escaping () -> Any ) -> DefineDependencyStatement {
+    func define(_ type: Any.Type, configuration: @escaping () -> Any ) -> DefineDependencyStatement {
         let dependency = OnDemandDependency(type: type, configurator: { _ in configuration() })
         Container.add(type, dependency: dependency)
         return DefineDependencyStatement(type: type, dependency: dependency)
     }
     
     @discardableResult
-    open func define(_ type: Any.Type, configuration: @escaping (ArgumentList) -> Any) -> DefineDependencyStatement {
+    func define(_ type: Any.Type, configuration: @escaping (ArgumentList) -> Any) -> DefineDependencyStatement {
         let dependency = OnDemandDependency(type: type, configurator: { (args: [Any]) in
             return configuration(ArgumentList(args: args))
         })
@@ -38,10 +47,22 @@ open class Module: NSObject {
         return DefineDependencyStatement(type: type, dependency: dependency)
     }
     
-    open func resolve<T>(_ args: Any...) -> T {
+    func resolve<T>(_ args: Any...) -> T {
         if args.count == 1 {
             return Container.get(args[0])
         }
         return Container.get(args)
     }
 }
+
+#if canImport(ObjectiveC)
+open class Module: NSObject, ModuleTrait {
+    public required override init() {
+        super.init()
+    }
+}
+#else
+open class Module: ModuleTrait {
+
+}
+#endif

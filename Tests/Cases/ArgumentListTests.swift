@@ -66,7 +66,5 @@ class ArgumentListTests: XCTestCase {
         XCTAssertEqual(text, "Hello")
         XCTAssertEqual(number, 12)
         notifier.assertNotErrors()
-        
     }
-    
 }

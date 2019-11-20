@@ -31,7 +31,7 @@ class AutoinjectTests: XCTestCase {
         continueAfterFailure = false
         
         class TestModule: Module {
-            override func load() {
+            func load() {
                 define(ServiceProtocol.self) { Service() }
                 define(WeatherServiceProtocol.self) { WeatherServce(temperature: $0.at(0)) }
                 define(OptionalWeatherService.self) { OptionalWeatherService(temperature: $0.optionalAt(0))}

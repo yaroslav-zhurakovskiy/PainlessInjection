@@ -34,7 +34,7 @@ class ContainerTests: XCTestCase {
 
     func testShouldCreateNewDependencyModule() {
         class TestModule: Module {
-            override func load() {
+            func load() {
             }
         }
         _ = TestModule()
@@ -44,7 +44,7 @@ class ContainerTests: XCTestCase {
 
     func testShouldAddDependency() {
         class TestModule: Module {
-            override func load() {
+            func load() {
                 define(WeatherServiceProtocol.self) { WeatherServce() }
             }
         }
@@ -57,7 +57,7 @@ class ContainerTests: XCTestCase {
 
     func testShouldAddDependencyOnleOnce() {
         class TestModule: Module {
-            override func load() {
+            func load() {
                 define(WeatherServiceProtocol.self) { WeatherServce(temperature: 40) }
                 define(WeatherServiceProtocol.self) { WeatherServce(temperature: 50) }
             }
@@ -71,7 +71,7 @@ class ContainerTests: XCTestCase {
 
     func testShouldAddDifferentDependencies() {
         class TestModule: Module {
-            override func load() {
+            func load() {
                 define(WeatherServiceProtocol.self) {
                     WeatherServce(temperature: 40)
                 }
@@ -89,7 +89,7 @@ class ContainerTests: XCTestCase {
 
     func testShouldGetDependenciesWithParams() {
         class TestModule: Module {
-            override func load() {
+            func load() {
                 define(WeatherServiceProtocol.self) { args in WeatherServce(temperature: args.at(0)) }
             }
         }
@@ -102,7 +102,7 @@ class ContainerTests: XCTestCase {
     
     func testShouldGetDependenciesWithNilParams() {
         class TestModule: Module {
-            override func load() {
+            func load() {
                 define(WeatherServiceProtocol.self) { args in
                     OptionalWeatherService(temperature: args.optionalAt(0))
                 }
@@ -117,7 +117,7 @@ class ContainerTests: XCTestCase {
     
     func testShouldGetDependenciesWithNilParamsWhenNonNillIsPAssed() {
         class TestModule: Module {
-            override func load() {
+            func load() {
                 define(WeatherServiceProtocol.self) { args in
                     OptionalWeatherService(temperature: args.optionalAt(0))
                 }
@@ -149,7 +149,7 @@ class ContainerTests: XCTestCase {
     
     func testShouldResolveType() {
         class TestModule: Module {
-            override func load() {
+            func load() {
                 define(WeatherServiceProtocol.self) { WeatherServce(temperature: 44) }
                 define(Weatherman.self) { Weatherman(weatherService: self.resolve()) }
             }
@@ -163,7 +163,7 @@ class ContainerTests: XCTestCase {
 
     func testShouldResolveTypeIndependetlyOfDeclerationOrder() {
         class TestModule: Module {
-            override func load() {
+            func load() {
                 define(Weatherman.self) { Weatherman(weatherService: self.resolve()) }
                 define(WeatherServiceProtocol.self) { WeatherServce(temperature: 44) }
             }
@@ -177,7 +177,7 @@ class ContainerTests: XCTestCase {
 
     func testShouldResolveTypeWithParams() {
         class TestModule: Module {
-            override func load() {
+            func load() {
                 define(Weatherman.self) { Weatherman(weatherService: self.resolve(60.0)) }
                 define(WeatherServiceProtocol.self) { args in WeatherServce(temperature: args.at(0)) }
             }
@@ -191,7 +191,7 @@ class ContainerTests: XCTestCase {
 
     func testShouldCreateDependencyWithSingletonScope() {
         class TestModule: Module {
-            override func load() {
+            func load() {
                 define(ServiceProtocol.self) { Service() } . inSingletonScope()
             }
         }
@@ -208,7 +208,7 @@ class ContainerTests: XCTestCase {
         class TestModule: Module {
             var decorator: DependencySpy!
 
-            override func load() {
+            func load() {
                 define(ServiceProtocol.self) { Service() } . decorate { dependency in
                     self.decorator = DependencySpy(dependency: dependency)
                     return self.decorator
@@ -225,7 +225,7 @@ class ContainerTests: XCTestCase {
 
     func testShouldCreateDependencyWithCachedScope() {
         class TestModule: Module {
-            override func load() {
+            func load() {
                 define(Service.self) { Service() } . inCacheScope(interval: TimeInterval(seconds: 60))
             }
         }
@@ -249,7 +249,7 @@ class ContainerTests: XCTestCase {
     func testShouldReturnDefineConfigurator() {
         class TestModule: Module {
             var configurator: DefineDependencyStatement!
-            override func load() {
+            func load() {
                 configurator = define(WeatherServiceProtocol.self) { args in WeatherServce(temperature: args.at(0)) }
             }
         }
@@ -268,7 +268,7 @@ class ContainerTests: XCTestCase {
                 }
             }
         }
-        let module = TestModule()
+        let module = ModuleWithDependency()
         module.load()
         
         module.assertDependencyType(String.self)

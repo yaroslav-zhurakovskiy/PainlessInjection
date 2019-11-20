@@ -4,9 +4,11 @@ xcode_scheme: PainlessInjection
 jobs:
     include:
         - osx_image: xcode11.2
-          xcode_destination: platform=iOS Simulator,OS=13.2,name=iPhone 8
-        - osx_image: xcode11.1
-          xcode_destination: platform=iOS Simulator,OS=13.1,name=iPhone 8
+          xcode_destination: platform=iOS Simulator,OS=13.2.2,name=iPhone 8
+        - osx_image: xcode10.3
+          xcode_destination: platform=iOS Simulator,OS=10.3,name=iPhone 6
+        - osx_image: xcode10.2
+          xcode_destination: platform=iOS Simulator,OS=8.1,name=iPhone 6
 after_success:
     - bash <(curl -s https://codecov.io/bash) -t d57dba6a-8e17-4a91-b7bf-ef7abe812e24
 install:
