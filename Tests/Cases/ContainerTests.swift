@@ -10,17 +10,10 @@ import XCTest
 import PainlessInjection
 
 class ContainerTests: XCTestCase {
-
-    var timer: TimerMock!
-
     override func setUp() {
         super.setUp()
         
         continueAfterFailure = false
-
-        timer = TimerMock()
-        PainlessInjection.Timer.factory = TimerFactoryStub(timer: timer)
-
     }
 
     override func tearDown() {
@@ -29,7 +22,6 @@ class ContainerTests: XCTestCase {
         Container.unload()
         FatalErrorNotifier.reset()
         Service.createdInstances = 0
-        PainlessInjection.Timer.reset()
     }
 
     func testShouldCreateNewDependencyModule() {
