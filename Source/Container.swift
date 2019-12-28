@@ -31,13 +31,15 @@ public struct Container {
     
     public static func load() {
         let loader = ModuleLoader()
-        modules = loader.listOfModules()
+        let modulesToBeLoaded = loader.listOfModules()
             .compactMap { module in
                 module.loadingPredicate().shouldLoadModule() ? module : nil
             }
-        modules.forEach { module in
+        modulesToBeLoaded.forEach { module in
             module.load()
         }
+        
+        modules = modulesToBeLoaded
     }
     
     public static func unload() {
@@ -45,8 +47,8 @@ public struct Container {
         modules = []
     }
     
-    public static var loadedModules: [String] {
-        return modules.map { "\(type(of: $0))" }
+    public static var loadedModules: [Module] {
+        return modules
     }
 }
 
@@ -94,4 +96,15 @@ public extension Container {
          
          return object
      }
+}
+
+public extension Container {
+    static func load(_ types: [Module.Type]) {
+        let modulesToBeLoaded = types.map { $0.init() }
+            .compactMap { $0.loadingPredicate().shouldLoadModule() ? $0 : nil }
+        
+        modulesToBeLoaded.forEach { $0.load() }
+        
+        modules = modulesToBeLoaded
+    }
 }

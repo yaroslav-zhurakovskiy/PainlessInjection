@@ -34,5 +34,4 @@ class ModuleLoader {
         
         return result
     }
-    
 }
