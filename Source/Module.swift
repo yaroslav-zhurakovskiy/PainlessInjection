@@ -22,14 +22,14 @@ open class Module: NSObject {
     }
     
     @discardableResult
-    open func define(_ type: Any.Type, configuration: @escaping () -> Any ) -> DefineDependencyStatement {
+    open func define<T>(_ type: T.Type, configuration: @escaping () -> T) -> DefineDependencyStatement<T> {
         let dependency = OnDemandDependency(type: type, configurator: { _ in configuration() })
         Container.add(type, dependency: dependency)
         return DefineDependencyStatement(type: type, dependency: dependency)
     }
     
     @discardableResult
-    open func define(_ type: Any.Type, configuration: @escaping (ArgumentList) -> Any) -> DefineDependencyStatement {
+    open func define<T>(_ type: T.Type, configuration: @escaping (ArgumentList) -> T) -> DefineDependencyStatement<T> {
         let dependency = OnDemandDependency(type: type, configurator: { (args: [Any]) in
             return configuration(ArgumentList(args: args))
         })

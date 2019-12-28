@@ -8,11 +8,11 @@
 
 import Foundation
 
-public struct DefineDependencyStatement {
+public struct DefineDependencyStatement<T> {
     private var dependency: Dependency
-    private let type: Any.Type
+    private let type: T.Type
     
-    init(type: Any.Type, dependency: Dependency) {
+    init(type: T.Type, dependency: Dependency) {
         self.type = type
         self.dependency = dependency
     }
@@ -20,13 +20,6 @@ public struct DefineDependencyStatement {
     @discardableResult
     public func inSingletonScope() -> DefineDependencyStatement {
         let singletonDependency = SingletonDependency(dependency: dependency)
-        Container.setDependency(singletonDependency, forType: type)
-        return self
-    }
-    
-    @discardableResult
-    public func inCacheScope(interval: TimeInterval) -> DefineDependencyStatement {
-        let singletonDependency = CacheDependency(dependency: dependency, interval: interval)
         Container.setDependency(singletonDependency, forType: type)
         return self
     }

@@ -223,34 +223,13 @@ class ContainerTests: XCTestCase {
         XCTAssertEqual(module.decorator.numberOfCreationCalls, 1, "Should decorate dependency")
     }
 
-    func testShouldCreateDependencyWithCachedScope() {
-        class TestModule: Module {
-            override func load() {
-                define(Service.self) { Service() } . inCacheScope(interval: TimeInterval(seconds: 60))
-            }
-        }
-        let module = TestModule()
-        module.load()
-
-        let service1: Service = Container.get()
-        let service2: Service = Container.get()
-        XCTAssertEqual(service1.id, 1, "Should have the same id until cache is valid")
-        XCTAssertEqual(service2.id, 1, "Should have the same id until cache is valid")
-
-        timer.assertStartWasCalledTimes(1)
-        timer.timeout()
-        timer.assertStopWasCalledOnce()
-
-        let service3: Service = Container.get()
-        XCTAssertEqual(service3.id, 2, "Should have a new service.")
-        timer.assertStartWasCalledTimes(2)
-    }
-
     func testShouldReturnDefineConfigurator() {
         class TestModule: Module {
-            var configurator: DefineDependencyStatement!
+            var configurator: DefineDependencyStatement<WeatherServiceProtocol>!
             override func load() {
-                configurator = define(WeatherServiceProtocol.self) { args in WeatherServce(temperature: args.at(0)) }
+                configurator = define(WeatherServiceProtocol.self) { args in
+                    WeatherServce(temperature: args.at(0))
+                }
             }
         }
         let module = TestModule()
@@ -281,23 +260,6 @@ class ContainerTests: XCTestCase {
                     self.dependency = dependency
                     return dependency
                 }
-            }
-        }
-        let module = TestModule()
-        module.load()
-        
-        module.assertDependencyType(String.self)
-    }
-    
-    func testWhenUseCacheScopeShouldReturnCorrectDependencyType() {
-        class TestModule: ModuleWithDependency {
-            override func load() {
-                define(String.self) {"Hello" }
-                    .inCacheScope(interval: TimeInterval(minutes: 1))
-                    .decorate { dependency in
-                        self.dependency = dependency
-                        return dependency
-                    }
             }
         }
         let module = TestModule()

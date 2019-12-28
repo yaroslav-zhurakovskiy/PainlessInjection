@@ -20,7 +20,6 @@
 		C46EBFD2237D7FA400E59594 /* DependencyDoubles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46EBFD0237D7FA100E59594 /* DependencyDoubles.swift */; };
 		C46EBFD4237D80B900E59594 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46EBFD3237D80B900E59594 /* Service.swift */; };
 		C4A0CFCB1D3CF88F00BCEC00 /* ArgumentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFBC1D3CF88F00BCEC00 /* ArgumentList.swift */; };
-		C4A0CFCC1D3CF88F00BCEC00 /* CacheDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFBD1D3CF88F00BCEC00 /* CacheDependency.swift */; };
 		C4A0CFCD1D3CF88F00BCEC00 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFBE1D3CF88F00BCEC00 /* Container.swift */; };
 		C4A0CFCE1D3CF88F00BCEC00 /* DefineConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFBF1D3CF88F00BCEC00 /* DefineConfigurator.swift */; };
 		C4A0CFCF1D3CF88F00BCEC00 /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0CFC01D3CF88F00BCEC00 /* Dependency.swift */; };
@@ -70,7 +69,6 @@
 		C46EBFD0237D7FA100E59594 /* DependencyDoubles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyDoubles.swift; sourceTree = "<group>"; };
 		C46EBFD3237D80B900E59594 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		C4A0CFBC1D3CF88F00BCEC00 /* ArgumentList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArgumentList.swift; sourceTree = "<group>"; };
-		C4A0CFBD1D3CF88F00BCEC00 /* CacheDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheDependency.swift; sourceTree = "<group>"; };
 		C4A0CFBE1D3CF88F00BCEC00 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		C4A0CFBF1D3CF88F00BCEC00 /* DefineConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefineConfigurator.swift; sourceTree = "<group>"; };
 		C4A0CFC01D3CF88F00BCEC00 /* Dependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				C4A0CFBC1D3CF88F00BCEC00 /* ArgumentList.swift */,
-				C4A0CFBD1D3CF88F00BCEC00 /* CacheDependency.swift */,
 				C4A0CFBE1D3CF88F00BCEC00 /* Container.swift */,
 				C4A0CFBF1D3CF88F00BCEC00 /* DefineConfigurator.swift */,
 				C4A0CFC01D3CF88F00BCEC00 /* Dependency.swift */,
@@ -368,7 +365,6 @@
 				C4A0CFD21D3CF88F00BCEC00 /* Module.swift in Sources */,
 				C4A0CFCD1D3CF88F00BCEC00 /* Container.swift in Sources */,
 				C4A0CFD81D3CF88F00BCEC00 /* TimeInterval.swift in Sources */,
-				C4A0CFCC1D3CF88F00BCEC00 /* CacheDependency.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
