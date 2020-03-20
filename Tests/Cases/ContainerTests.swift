@@ -167,7 +167,7 @@ class ContainerTests: XCTestCase {
         XCTAssertEqual(weatherman.say(), "Today`s temperature is 44.0.")
     }
 
-    func testShouldResolveTypeWithParams() {
+    func testShouldResolveTypeWithOneParam() {
         class TestModule: Module {
             override func load() {
                 define(Weatherman.self) { Weatherman(weatherService: self.resolve(60.0)) }
@@ -179,6 +179,24 @@ class ContainerTests: XCTestCase {
 
         let weatherman: Weatherman = Container.get()
         XCTAssertEqual(weatherman.say(), "Today`s temperature is 60.0.")
+    }
+    
+    func testShouldResolveTypeWithMultipleParams() {
+        class TestModule: Module {
+            override func load() {
+                define(WeathermanClient.self) {
+                    let weatherman: NamedWetherman = self.resolve("Bob", WeatherServce(temperature: 60))
+                    return WeathermanClient(weatherman: weatherman)
+                }
+                define(NamedWetherman.self) { args in NamedWetherman(name: args.at(0), weatherService: args.at(1)) }
+                define(WeatherServiceProtocol.self) { args in WeatherServce(temperature: args.at(0)) }
+            }
+        }
+        let module = TestModule()
+        module.load()
+        
+        let client: WeathermanClient = Container.get()
+        XCTAssertEqual(client.testSay(), "Bob says: Today`s temperature is 60.0.")
     }
 
     func testShouldCreateDependencyWithSingletonScope() {

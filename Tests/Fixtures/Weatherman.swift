@@ -19,3 +19,28 @@ class Weatherman {
         return "Today`s temperature is \(weatherService.todayTemperature())."
     }
 }
+
+class NamedWetherman: Weatherman {
+    private let name: String
+    
+    init(name: String, weatherService: WeatherServiceProtocol) {
+        self.name = name
+        super.init(weatherService: weatherService)
+    }
+    
+    override func say() -> String {
+        return "\(name) says: \(super.say())"
+    }
+}
+
+class WeathermanClient {
+    private let weatherman: Weatherman
+    
+    init(weatherman: Weatherman) {
+        self.weatherman = weatherman
+    }
+    
+    func testSay() -> String {
+        return weatherman.say()
+    }
+}

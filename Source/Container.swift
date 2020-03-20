@@ -70,7 +70,7 @@ public extension Container {
          return get(args: args.map { $0 }, file: file, line: line)
      }
      
-     private static func get<T>(
+     internal static func get<T>(
          args: [Any],
          file: StaticString = #file,
          line: UInt = #line

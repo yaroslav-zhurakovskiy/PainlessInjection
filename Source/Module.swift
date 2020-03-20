@@ -38,9 +38,6 @@ open class Module: NSObject {
     }
     
     open func resolve<T>(_ args: Any...) -> T {
-        if args.count == 1 {
-            return Container.get(args[0])
-        }
-        return Container.get(args)
+        return Container.get(args: args)
     }
 }
