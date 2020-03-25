@@ -12,7 +12,7 @@ class ModuleLoader {
     
     func listOfModules() -> [Module] {
         var result: [Module] = []
-
+        
         let numberOfClasses = objc_getClassList(nil, 0)
         if numberOfClasses > 0 {
             let classesStorage = UnsafeMutablePointer<AnyClass?>.allocate(capacity: Int(numberOfClasses))
@@ -22,16 +22,16 @@ class ModuleLoader {
             let classes = AutoreleasingUnsafeMutablePointer<AnyClass>(classesStorage)
             objc_getClassList(classes, numberOfClasses)
             for index in 0..<Int(numberOfClasses) {
-                let cls: AnyClass = classes[index]
-                if class_getSuperclass(cls) != Module.self { continue }
-                
-                if  let moduleClass = cls as? Module.Type {
-                    let module: Module = moduleClass.init()
-                    result.append(module)
+                if let cls: AnyClass = classesStorage[index] {
+                    if class_getSuperclass(cls) != Module.self { continue }
+                    
+                    if  let moduleClass = cls as? Module.Type {
+                        let module: Module = moduleClass.init()
+                        result.append(module)
+                    }
                 }
             }
         }
-        
         return result
     }
 }
