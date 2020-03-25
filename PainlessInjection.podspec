@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "PainlessInjection"
-  spec.version      = "1.7.0"
+  spec.version      = "1.8.0"
   spec.summary      = "PainlessInjection is a lightweight dependency injection framework for Swift."
 
   spec.description  = <<-DESC
